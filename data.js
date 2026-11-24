@@ -9,7 +9,7 @@ const L = {
   TK: LC + "iVEgQx6Cg8", PT: LC + "iPZruX9hwO",
   OF: H + "www.medibt.com/51/?idx=118", OC: H + "www.medibt.com/51/?idx=123",
   BP: H + "barkiri.com/products/p97", HR: H + "smartstore.naver.com/redbalm/products/13645867054",
-  PR_S: H + "www.coupang.com/np/search?q=%ED%93%A8%EB%A1%AF+%EC%84%B8%EC%82%AC%EB%AF%B8%ED%94%84%EB%A1%9C%ED%8B%B4",
+  PR_S: LC + "iVLl93N52W", NW: LC + "iVLjT2ZpCu", PEA: LC + "iVLlkWShUG", OD: LC + "iVLlBWH1Eq", BEN: LC + "iVLlSrf2oC",
   DF: H + "display.cjonstyle.com", NW_REF: H + "www.cowlr.kr/protein/78?price_period=6m"
 };
 
@@ -33,10 +33,13 @@ export const DECKS = {
     ],
     items: [
       { slug: "taekwang-oats-2kg", cat: "grain", tag: "혼합 1위", core: 1, img: "taekwang-oats-2kg.jpg", name: "태광선식 서리태 귀리쉐이크 2kg", desc: "2큰술(40g)·172.5kcal·단백5.6g·섬유3.8g", badge: "1잔 202원~", price: "10,120원", numPrice: 10120, url: L.TK, sig: "low", sigText: "저점", pos: 15, trend: [14900,14120,13800,14120,11900,10120], n1: ["40g(2큰술)","172.5","5.6g","3.8g","<1g"], n100: ["100g","431","14g","9.5g","2g"] },
-      { slug: "now-wpi-2kg", cat: "wpi", tag: "무첨가 WPI", core: 1, img: "skin-kits.jpg", name: "나우푸드 WPI 무맛 2.27kg", desc: "1스쿱(28g)·단백24g(86%)·섬유0g·감미료0%", badge: "1잔 1,300원~", price: "128,750원", numPrice: 128750, url: L.NW_REF, sig: "mid", sigText: "평균-1%", pos: 48, trend: [143900,135000,116050,130500,129900,128750], n1: ["28g(1스쿱)","110","24g","0g","0g"], n100: ["100g","393","85.7g","0g","0g"] },
+      { slug: "now-wpi-2kg", cat: "wpi", tag: "무첨가 WPI", core: 1, img: "skin-kits.jpg", name: "나우푸드 WPI 무맛 2.27kg", desc: "1스쿱(28g)·단백24g(86%)·섬유0g·감미료0%", badge: "1잔 1,300원~", price: "128,750원", numPrice: 128750, url: L.NW, sig: "mid", sigText: "평균-1%", pos: 48, trend: [143900,135000,116050,130500,129900,128750], n1: ["28g(1스쿱)","110","24g","0g","0g"], n100: ["100g","393","85.7g","0g","0g"] },
       { slug: "protiwon-grain-490g", cat: "grain", tag: "입문 곡물", core: 1, img: "skin-kits.jpg", name: "프로티원 단백질 쉐이크 곡물맛 490g", desc: "2스푼(35g)·단백18g·섬유2g·당1g", badge: "1잔 1,680원~", price: "23,500원", numPrice: 23500, url: L.PT, sig: "mid", sigText: "평균가", pos: 42, trend: [29900,26500,25800,24900,23500,23500], n1: ["35g(2스푼)","117","18g","2g","1g"], n100: ["100g","334","51.4g","5.7g","2.9g"] },
       { slug: "purot-sesame-400g", cat: "plant", tag: "고섬유 비건", core: 1, img: "skin-kits.jpg", name: "퓨롯 세사미 프로틴 400g (쿠팡2통)", desc: "3스푼(57g)·단백18g·섬유13g·무첨가", badge: "1잔 4,120원~", price: "28,865원", numPrice: 28865, url: L.PR_S, sig: "low", sigText: "저점", pos: 18, trend: [46000,39000,32000,30850,28865,28865], n1: ["57g(3스푼)","211","18g","13g","9g(저GI)"], n100: ["100g","370","31.6g","22.8g","15.8g"] },
       { slug: "drfit-dangcare-14p", cat: "plant", tag: "당0g 식전", core: 1, img: "skin-kits.jpg", name: "닥터핏 당케어 14포", desc: "1포(30g)·단백20g·섬유5.4g·당0g", badge: "1잔 3,070원~", price: "43,000원", numPrice: 43000, url: L.DF, sig: "mid", sigText: "평균가", pos: 50, trend: [49000,46000,45000,44000,43000,43000], n1: ["30g(1포)","105","20g","5.4g","0g"], n100: ["100g","350","66.7g","18g","0g"] },
+      { slug: "now-pea-3kg", cat: "plant", tag: "비건 완두 1위", core: 1, img: "skin-kits.jpg", name: "나우푸드 피(완두) 프로틴 3.18kg", desc: "1스쿱(33g)·단백24g·96회·미국산 비건·속편함", badge: "1잔 776원", price: "74,520원", numPrice: 74520, url: L.PEA, sig: "low", sigText: "저점근처", pos: 24, trend: [82000,79500,79180,76000,74520,74520], n1: ["33g(1스쿱)","120","24g","0g","0g"], n100: ["100g","364","72.7g","0g","0g"] },
+      { slug: "oneday-wpih-1kg", cat: "wpi", tag: "WPIH 가성비", core: 1, img: "skin-kits.jpg", name: "원데이뉴트리션 웨이프로틴 WPIH 1.3kg", desc: "1스쿱(30g)·단백25.9g·43회·가수분해 빠른흡수", badge: "1잔 1,416원", price: "60,900원", numPrice: 60900, url: L.OD, sig: "mid", sigText: "평균가", pos: 48, trend: [62900,61900,60900,60900,60900,60900], n1: ["30g(1스쿱)","110","25.9g","0g","0g"], n100: ["100g","367","86.3g","0g","0g"] },
+      { slug: "benetin-soy-2kg", cat: "plant", tag: "초저가 ISP", core: 0, img: "skin-kits.jpg", name: "베네틴 소이 프로틴 ISP 무맛 2kg", desc: "1스쿱(30g)·단백27g(90%)·중국산 대두·나트륨330mg", badge: "1잔 347원", price: "22,900원", numPrice: 22900, url: L.BEN, sig: "low", sigText: "최저점", pos: 10, trend: [24900,23900,22904,22900,22900,22900], n1: ["30g(1스쿱)","115","27g","0g","0g"], n100: ["100g","383","90g","0g","0g"] },
       { slug: "on-goldstandard-2kg", cat: "wpi", tag: "운동 정석", core: 0, img: "skin-kits.jpg", name: "옵티멈 골드스탠다드 2.27kg", desc: "1스쿱(31g)·단백24g·73회·단맛 강함", badge: "1잔 1,080원~", price: "79,000원", numPrice: 79000, url: L.NW_REF, sig: "mid", sigText: "평균가", pos: 45, trend: [92000,88000,85000,82000,79000,79000], n1: ["31g(1스쿱)","120","24g","0~1g","1g"], n100: ["100g","387","77.4g","1.6g","3.2g"] }
     ]
   },
