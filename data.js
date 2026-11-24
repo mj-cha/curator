@@ -9,7 +9,7 @@ const L = {
   TK: LC + "iVEgQx6Cg8", PT: LC + "iPZruX9hwO",
   OF: H + "www.medibt.com/51/?idx=118", OC: H + "www.medibt.com/51/?idx=123",
   BP: H + "barkiri.com/products/p97", HR: H + "smartstore.naver.com/redbalm/products/13645867054",
-  PR_S: LC + "iVUQ7xSvgi", NW: LC + "iVUPqOsHIq", PEA: LC + "iVUPgsn3uu", OD: LC + "iVUPxAJK8a", BEN: LC + "iVUPCsoN1E", NMD: LC + "iVURcnI49A", PSY: LC + "iVURjj7wIu",
+  PR_S: LC + "iVUQ7xSvgi", NW: LC + "iVUPqOsHIq", PEA: LC + "iVUPgsn3uu", OD: LC + "iVUPxAJK8a", BEN: LC + "iVUPCsoN1E", NMD: LC + "iVURcnI49A", PSY: LC + "iVURjj7wIu", CMT: LC + "iVWEKDKIlE", NRJ: LC + "iVWx3zM61c",
   DF: H + "display.cjonstyle.com", NW_REF: H + "www.cowlr.kr/protein/78?price_period=6m"
 };
 
@@ -42,6 +42,8 @@ export const DECKS = {
       { slug: "benetin-soy-2kg", cat: "plant", tag: "초저가 ISP", core: 0, img: "skin-kits.jpg", name: "베네틴 소이 프로틴 ISP 무맛 2kg", desc: "1스쿱(30g)·단백27g(90%)·중국산 대두·나트륨330mg", badge: "1잔 347원", price: "22,900원", numPrice: 22900, url: L.BEN, sig: "low", sigText: "최저점", pos: 10, trend: [24900,23900,22904,22900,22900,22900], n1: ["30g(1스쿱)","115","27g","0g","0g"], n100: ["100g","383","90g","0g","0g"] },
       { slug: "muhwadang-nmd-1kg", cat: "grain", tag: "식전 혈당 식이섬유", core: 1, img: "skin-kits.jpg", name: "무화당 난소화성 말토덱스트린 1kg", desc: "1회 6g(식이섬유 5.1g) · 무맛·투명 용해 · 식후 혈당 상승 억제", badge: "1회 86원", price: "14,300원", numPrice: 14300, url: L.NMD, sig: "low", sigText: "정상최저", pos: 20, trend: [15900,14900,14300,14300,14300,14300], n1: ["6g(1티스푼)","12","0g","5.1g","0g"], n100: ["100g","200","0g","85g","0g"] },
       { slug: "jayeoncho-psyllium-300g", cat: "grain", tag: "포만감 식이섬유", core: 0, img: "skin-kits.jpg", name: "자연초 차전자피 분말 300g", desc: "1회 5g(식이섬유 4.0g) · 수분 팽창 포만감 · 타자마자 섭취", badge: "1회 115원", price: "6,900원", numPrice: 6900, url: L.PSY, sig: "mid", sigText: "입문용", pos: 35, trend: [7900,6900,6900,6900,6900,6900], n1: ["5g(1티스푼)","10","0g","4.0g","0g"], n100: ["100g","200","0g","80g","0g"] },
+      { slug: "nurungji-9030", cat: "grain", tag: "구수한 식단", core: 0, img: "taekwang-oats-2kg.jpg", name: "구수한 누룽지 (간편 식사·간식용)", desc: "따뜻한 물만 부어 먹는 저자극 곡물 간식", badge: "쿠팡", price: "9,030원", numPrice: 9030, url: L.NRJ, sig: "low", sigText: "실속가", pos: 25, trend: [9900,9500,9030,9030,9030,9030] },
+      { slug: "comet-11900", cat: "grain", tag: "생활 필수", core: 0, img: "skin-kits.jpg", name: "코멧 생활 필수템 (쿠팡 PB)", desc: "쿠팡 자체 브랜드 실속 대용량 생활용품", badge: "로켓", price: "11,900원", numPrice: 11900, url: L.CMT, sig: "low", sigText: "실속가", pos: 20, trend: [12900,12400,11900,11900,11900,11900] },
       { slug: "on-goldstandard-2kg", cat: "wpi", tag: "운동 정석", core: 0, img: "skin-kits.jpg", name: "옵티멈 골드스탠다드 2.27kg", desc: "1스쿱(31g)·단백24g·73회·단맛 강함", badge: "1잔 1,080원~", price: "79,000원", numPrice: 79000, url: L.NW_REF, sig: "mid", sigText: "평균가", pos: 45, trend: [92000,88000,85000,82000,79000,79000], n1: ["31g(1스쿱)","120","24g","0~1g","1g"], n100: ["100g","387","77.4g","1.6g","3.2g"] }
     ]
   },
