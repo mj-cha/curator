@@ -1,0 +1,464 @@
+/* 고수템 맘테스트 음성 인터뷰 웹폼 — 모바일 390px 퍼스트, AI 슬롭 배제 */
+:root {
+  --bg: #FAF9F6;
+  --surface: #FFFFFF;
+  --ink: #1E293B;
+  --ink-muted: #526071;
+  --line: #E5E2DC;
+  --accent: #C85A32;
+  --accent-dark: #A84623;
+  --accent-soft: #FDF1EC;
+  --record: #DC2626;
+  --record-soft: #FEF2F2;
+  --ok: #1B4332;
+  --ok-soft: #ECFDF5;
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-shell {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: 16px 16px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* 상단 진행바 */
+.top-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-muted);
+}
+
+.time-badge {
+  font-size: 12px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 6px;
+  background: var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+
+/* 카드 공통 */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  box-shadow: 0 2px 10px rgba(30, 41, 59, 0.04);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* 오프닝 */
+.intro-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.intro-title {
+  margin: 0 0 12px;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.32;
+  letter-spacing: -0.02em;
+}
+
+.intro-desc {
+  margin: 0 0 18px;
+  font-size: 15px;
+  color: var(--ink-muted);
+}
+
+.intro-rules {
+  margin: 0 0 20px;
+  padding: 14px 16px 14px 32px;
+  background: var(--bg);
+  border-radius: 12px;
+  font-size: 14px;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* 질문 카드 */
+.q-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--surface);
+  background: var(--ink);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.q-title {
+  margin: 0 0 8px;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+  word-break: keep-all;
+}
+
+.q-guide {
+  margin: 0 0 16px;
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  word-break: keep-all;
+}
+
+/* 선택 칩 */
+.chips-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.chip-btn {
+  appearance: none;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+  min-height: 44px;
+}
+
+.chip-btn:hover {
+  border-color: var(--accent);
+}
+
+.chip-btn.selected {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-dark);
+}
+
+/* 음성 입력 박스 */
+.voice-box {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+.voice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.voice-label {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.speech-status {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-muted);
+}
+
+.speech-status.recording {
+  color: var(--record);
+}
+
+/* 대형 마이크 버튼 (엄지 터치 최적화) */
+.mic-btn {
+  width: 100%;
+  min-height: 54px;
+  border: 2px solid var(--accent);
+  background: var(--surface);
+  color: var(--accent-dark);
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: transform 0.1s ease, background 0.15s ease;
+}
+
+.mic-btn:active {
+  transform: scale(0.98);
+}
+
+.mic-btn.recording {
+  background: var(--record-soft);
+  border-color: var(--record);
+  color: var(--record);
+  animation: pulseBorder 1.3s infinite;
+}
+
+@keyframes pulseBorder {
+  0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.35); }
+  70% { box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+
+.mic-fallback-tip {
+  margin: 0 0 10px;
+  padding: 10px 12px;
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #92400E;
+}
+
+.answer-textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--surface);
+  resize: vertical;
+}
+
+.answer-textarea:focus,
+.text-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* 일반 입력 필드 */
+.field-group {
+  margin-bottom: 18px;
+}
+
+.field-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.text-input {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--surface);
+}
+
+.error-msg {
+  margin: 0 0 12px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--record);
+}
+
+/* 버튼 */
+.nav-actions {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-ghost {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  min-height: 48px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  padding: 0 16px;
+  transition: background 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: var(--bg);
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink-muted);
+}
+
+.btn-lg,
+.btn-full {
+  width: 100%;
+}
+
+/* 완료 화면 */
+.done-card {
+  text-align: center;
+}
+
+.done-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  background: var(--ok-soft);
+  color: var(--ok);
+  font-size: 26px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.done-title {
+  margin: 0 0 8px;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.done-desc {
+  margin: 0 0 18px;
+  font-size: 14.5px;
+  color: var(--ink-muted);
+}
+
+.summary-box {
+  text-align: left;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 13px;
+  color: var(--ink);
+  max-height: 240px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.done-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* 아이패드 / 태블릿(768px 이상) 대면 인터뷰 최적화 */
+@media (min-width: 700px) {
+  .app-shell {
+    max-width: 680px;
+    padding: 32px 24px 48px;
+    gap: 18px;
+  }
+  .card {
+    padding: 32px 30px;
+    border-radius: 20px;
+  }
+  .intro-title { font-size: 28px; }
+  .q-title { font-size: 22px; }
+  .q-guide { font-size: 15px; }
+  .chips-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .chip-btn {
+    font-size: 15.5px;
+    padding: 13px 16px;
+    min-height: 52px;
+  }
+  .mic-btn {
+    min-height: 64px;
+    font-size: 18px;
+  }
+  .answer-textarea {
+    font-size: 16px;
+    min-height: 120px;
+  }
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>입문 준비물 경험 인터뷰 (약 3분)</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <!-- 상단 진행 표시줄 -->
+    <header class="top-bar" id="topBar" hidden>
+      <div class="progress-meta">
+        <span class="step-label" id="stepLabel">질문 1 / 7</span>
+        <span class="time-badge">말로 편하게 3분</span>
+      </div>
+      <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </header>
+
+    <!-- 0. 오프닝 화면 (서비스명·유도 단어 0건) -->
+    <section class="card intro-card" id="introScreen">
+      <div class="intro-eyebrow">실제 경험 조사 · 약 3분</div>
+      <h1 class="intro-title">운동이나 취미 준비물,<br />어떻게 고르셨나요?</h1>
+      <p class="intro-desc">
+        최근에 운동이나 취미를 새로 시작하며 물건을 고르셨던 실제 경험담을 모으고 있어요.
+        <strong>타자 치기 귀찮으시면 마이크 버튼을 눌러 말하듯 편하게</strong> 답해 주세요.
+      </p>
+      <ul class="intro-rules">
+        <li>정답은 없어요. 최근에 겪으신 그대로만 알려주세요.</li>
+        <li>무엇을 팔거나 홍보하는 설문이 전혀 아닙니다.</li>
+        <li>음성 파일은 저장되지 않고 글자로만 바로 바뀝니다.</li>
+      </ul>
+      <div class="field-group">
+        <label class="field-label" for="respondentInfo">간단한 소개 (선택 · 예: 30대 직장인)</label>
+        <input type="text" id="respondentInfo" class="text-input" placeholder="예: 30대 직장인 / 20대 대학생" maxlength="40" />
+      </div>
+      <button type="button" class="btn-primary btn-lg" id="startBtn">
+        시작하기 (8문항)
+      </button>
+    </section>
+
+    <!-- 1~7. 질문 카드 화면 -->
+    <section class="card question-card" id="questionScreen" hidden>
+      <div class="q-badge" id="qBadge">Q1</div>
+      <h2 class="q-title" id="qTitle"></h2>
+      <p class="q-guide" id="qGuide"></p>
+
+      <!-- 객관식 구간/선택 칩 (그래프 자동 집계용) -->
+      <div class="chips-wrap" id="chipsWrap" hidden></div>
+
+      <!-- 주관식 + 대형 마이크 음성 입력 영역 -->
+      <div class="voice-box" id="voiceBox">
+        <div class="voice-header">
+          <span class="voice-label" id="voiceLabel">말로 편하게 답변해 주세요</span>
+          <span class="speech-status" id="speechStatus">대기 중</span>
+        </div>
+
+        <button type="button" class="mic-btn" id="micBtn" aria-pressed="false">
+          <span class="mic-icon" aria-hidden="true">🎤</span>
+          <span class="mic-text" id="micBtnText">눌러서 말하기</span>
+        </button>
+
+        <p class="mic-fallback-tip" id="micFallbackTip" hidden>
+          이 브라우저에서는 버튼 음성인식이 제한돼요. 아래 입력창을 누른 뒤 <strong>휴대폰 키보드의 🎤 마이크 버튼</strong>을 눌러 말씀해 주세요!
+        </p>
+
+        <textarea
+          id="answerTextarea"
+          class="answer-textarea"
+          rows="4"
+          placeholder="마이크를 눌러 말씀하시거나, 직접 입력하셔도 됩니다."
+        ></textarea>
+      </div>
+
+      <!-- Q7 전용 연락처(선택) 입력 -->
+      <div class="field-group" id="contactGroup" hidden>
+        <label class="field-label" for="contactInput">비교 리스트 받아보실 연락처 또는 카톡 ID (선택)</label>
+        <input type="text" id="contactInput" class="text-input" placeholder="원하실 때만 적어주세요 (예: 010-0000-0000)" maxlength="60" />
+      </div>
+
+      <p class="error-msg" id="errorMsg" hidden></p>
+
+      <!-- 하단 이전/다음 버튼 -->
+      <div class="nav-actions">
+        <button type="button" class="btn-secondary" id="prevBtn">이전</button>
+        <button type="button" class="btn-primary" id="nextBtn">다음</button>
+      </div>
+    </section>
+
+    <!-- 8. 제출 완료 화면 -->
+    <section class="card done-card" id="doneScreen" hidden>
+      <div class="done-icon" aria-hidden="true">✓</div>
+      <h2 class="done-title">소중한 경험 감사합니다!</h2>
+      <p class="done-desc" id="doneDesc">
+        응답이 안전하게 기록되었습니다. 솔직하게 들려주신 이야기가 정말 큰 도움이 됩니다.
+      </p>
+
+      <div class="summary-box" id="summaryBox"></div>
+
+      <div class="done-actions">
+        <button type="button" class="btn-secondary btn-full" id="copyBtn">
+          내 답변 텍스트 복사하기 (카톡 전달용)
+        </button>
+        <button type="button" class="btn-ghost btn-full" id="restartBtn">
+          새 응답 다시 기록하기
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script src="./questions.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
