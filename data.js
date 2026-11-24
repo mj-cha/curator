@@ -9,7 +9,7 @@ const L = {
   TK: LC + "iVEgQx6Cg8", PT: LC + "iPZruX9hwO",
   OF: H + "www.medibt.com/51/?idx=118", OC: H + "www.medibt.com/51/?idx=123",
   BP: H + "barkiri.com/products/p97", HR: H + "smartstore.naver.com/redbalm/products/13645867054",
-  PR_S: LC + "iVLl93N52W", NW: LC + "iVLjT2ZpCu", PEA: LC + "iVLlkWShUG", OD: LC + "iVLlBWH1Eq", BEN: LC + "iVLlSrf2oC",
+  PR_S: LC + "iVLl93N52W", NW: LC + "iVLjT2ZpCu", PEA: LC + "iVQZqOLQrI", OD: LC + "iVLlBWH1Eq", BEN: LC + "iVLlSrf2oC",
   DF: H + "display.cjonstyle.com", NW_REF: H + "www.cowlr.kr/protein/78?price_period=6m"
 };
 
