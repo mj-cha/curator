@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GOSUTEM · 먼저 해본 사람의 장면에서 시작하다</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="app">
+  <!-- 상단 글로벌 네비게이션 -->
+  <header class="nav">
+    <div class="nav-in">
+      <div class="brand" onclick="resetHome()">
+        <div class="brand-mark">G</div>
+        <div class="brand-name">GOSUTEM</div>
+      </div>
+      <label class="search-pill" aria-label="취미 검색">
+        <input id="qInput" type="search" placeholder="어떤 취미를 시작해 볼까요? (수영, 러닝, 홈카페, 캠핑...)" oninput="renderFeed()">
+        <button class="search-go" type="button" onclick="renderFeed()" aria-label="검색">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+      </label>
+      <div class="nav-right">
+        <button class="nav-link hide-m" onclick="document.getElementById('avoidSec').scrollIntoView()">사지 마 TOP 3</button>
+        <div class="mode-sw">
+          <button id="mPc" class="on" onclick="setMode('pc')">PC</button>
+          <button id="mMob" onclick="setMode('mob')">모바일</button>
+        </div>
+        <button class="act-pill" onclick="openMyActivity()">내 활동 <span class="cnt" id="actCnt">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 풀비주얼 에디토리얼 히어로 (29CM + STUMP) -->
+  <section class="hero">
+    <div class="hero-in">
+      <div class="hero-left">
+        <div>
+          <div class="eyebrow"><span class="dot"></span>EDITORIAL ARCHIVE · NO SHOPPING NOISE</div>
+          <h1 class="hero-title">사고 후회하지 마세요.<br>먼저 해본 사람대로<br>시작하세요.</h1>
+          <p class="hero-desc">장비부터 사면 90%는 서랍에 쌓입니다. 가격표와 광고를 걷어내고, 진짜 해본 사람의 첫 장면과 돈 안 들이는 시작법만 모았습니다.</p>
+          <div class="hero-actions">
+            <button class="btn-w" onclick="openStory('swim')">오늘의 이야기 열기 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+            <button class="btn-ghost" onclick="document.getElementById('avoidSec').scrollIntoView()">초보 '사지 마' 리스트</button>
+          </div>
+        </div>
+        <div class="hero-foot">
+          <div><strong>128건</strong>검증된 첫 행동 기록</div>
+          <div><strong>41개</strong>광고 없는 '사지 마' 판정</div>
+          <div><strong>0원</strong>시작 전 필수 지출</div>
+        </div>
+      </div>
+      <div class="hero-right" id="heroStage">
+        <img id="heroImg" src="./assets/swim.jpg" alt="고수의 실제 장면">
+        <div class="hero-cap">
+          <div>
+            <div class="k" id="heroK">ISSUE 01 · SWIMMING</div>
+            <div class="t" id="heroT">힘든 날을 버티게 해준 첫 취미 · MJ의 수영 이야기</div>
+          </div>
+          <div class="hero-dots" id="heroDots"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 선형 SVG 아이콘 카테고리 바 (Airbnb) -->
+  <div class="cat-wrap">
+    <div class="cat-in">
+      <div class="cat-list" id="catList"></div>
+      <div class="filter-meta" id="feedCount">6개의 검증된 이야기</div>
+    </div>
+  </div>
+
+  <!-- 4열 에디토리얼 카드 피드 -->
+  <main class="sec">
+    <div class="sec-head">
+      <div>
+        <h2>지금 가장 많이 따라 해보는 장면</h2>
+        <p>카드를 누르면 5분 첫 행동과 준비물 '탁탁탁' 분류가 바로 열립니다.</p>
+      </div>
+    </div>
+    <div class="grid4" id="feedGrid"></div>
+  </main>
+
+  <!-- 다크 대비 섹션: 초보 사지 마 TOP 3 (STUMP 리듬) -->
+  <section class="dark-band" id="avoidSec">
+    <div class="dark-in">
+      <div class="eyebrow"><span class="dot"></span>HONEST WARNING · SPONSOR FREE</div>
+      <h2 style="margin:10px 0 0;font-size:26px;font-weight:800;letter-spacing:-.02em">먼저 해본 사람들이 말린 '사지 마' TOP 3</h2>
+      <div class="dark-grid">
+        <div class="avoid-card">
+          <span class="avoid-badge">수영 · 사지 마</span>
+          <h3>노패킹 선수용 수경</h3>
+          <p>예뻐 보여서 첫날 샀다가 눈 주변이 너무 아파서 2번 쓰고 서랍행. 초보는 무조건 실리콘 패킹 수경부터 시작하세요.</p>
+        </div>
+        <div class="avoid-card">
+          <span class="avoid-badge">홈카페 · 사지 마</span>
+          <h3>10만 원 이하 저가 에스프레소 머신</h3>
+          <p>압력이 약해 크레마도 안 나오고 청소만 번거롭습니다. 3만 원대 하리오 드리퍼가 맛과 만족도가 훨씬 높습니다.</p>
+        </div>
+        <div class="avoid-card">
+          <span class="avoid-badge">러닝 · 사지 마</span>
+          <h3>카본 플레이트 대회용 러닝화</h3>
+          <p>발목 근력이 잡히기 전에 신으면 무릎·정강이 부상 지름길입니다. 처음 3개월은 쿠션 좋은 데일리화가 정답입니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-in">
+      <div><strong>GOSUTEM</strong> · 대표자 및 개인정보보호책임자 차명진</div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <span>공정 원칙: '사지 마' 라벨과 기본 정렬은 광고로 바꿀 수 없으며, 제휴 링크에는 수수료 여부를 투명하게 표기합니다.</span>
+        <button class="reset-btn" type="button" onclick="resetPilotSession()">시연 초기화</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 슬라이드 오버 드로어 (상세 · 첫 행동 · 준비물 탁탁탁 · 내 활동) -->
+  <div class="overlay" id="overlay" onclick="if(event.target===this)closeDrawer()">
+    <div class="drawer" role="dialog" aria-modal="true">
+      <div class="d-head">
+        <button class="d-close" onclick="closeDrawer()">← 닫기</button>
+        <div class="d-tabs" id="drawerTabs">
+          <button id="dtStory" class="on" onclick="switchDrawer('story')">이야기 · 첫 행동</button>
+          <button id="dtGear" onclick="switchDrawer('gear')">준비물 탁탁탁</button>
+        </div>
+        <button class="d-close" id="photoModeBtn" onclick="togglePhotoGrid()">2×2 룩북</button>
+      </div>
+      <div class="d-scroll" id="drawerBody"></div>
+      <div class="d-foot" id="drawerFoot"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+</div>
+<script src="./data.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
