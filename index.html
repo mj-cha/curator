@@ -7,10 +7,10 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:#E5E2DC;color:#171717;font:12.5px/1.48 "Pretendard Variable",Pretendard,-apple-system,"Noto Sans KR",sans-serif;word-break:keep-all;-webkit-font-smoothing:antialiased}
+body{margin:0;background:#E5E2DC;color:#171717;font:12.5px/1.52 "Pretendard Variable",Pretendard,-apple-system,"Noto Sans KR",sans-serif;word-break:keep-all;-webkit-font-smoothing:antialiased}
 h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inherit;color:inherit;text-decoration:none;cursor:pointer}
 .num{font-variant-numeric:tabular-nums}
-.app{max-width:440px;width:100%;margin:0 auto;min-height:100vh;background:#F6F5F1;padding-bottom:82px;box-shadow:0 12px 36px rgba(0,0,0,.08)}
+.app{max-width:440px;width:100%;margin:0 auto;min-height:100vh;background:#F6F5F1;padding-bottom:84px;box-shadow:0 12px 36px rgba(0,0,0,.08)}
 @media(min-width:484px){body{padding-top:16px}.app{border-radius:22px 22px 0 0;overflow:hidden}}
 .bar{background:#11110F;color:#EAE8E3;font-size:10.5px;line-height:1.45;padding:7px 12px;text-align:center}
 .in{padding:12px 12px 0;display:flex;flex-direction:column;gap:11px}
@@ -19,7 +19,7 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
 .pbtns{display:flex;gap:5px}
 .pbtn{height:27px;padding:0 10px;border-radius:999px;background:#FFF;border:1px solid #DDDAD3;font-size:11px;font-weight:700;color:#2E2D2A;display:inline-flex;align-items:center;gap:3px}
 .hdr h1{font-size:17.5px;font-weight:800;line-height:23px;letter-spacing:-.03em}
-.hdr p{font-size:12px;color:#4E4B45;line-height:17.5px;margin-top:4px}
+.hdr p{font-size:12.5px;color:#3E3C37;line-height:18px;margin-top:4px}
 .meta-pills{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
 .mpill{font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:5px;background:#EAE7E0;color:#48453F}
 .mpill.hi{background:#11110F;color:#D4FF34}
@@ -36,9 +36,9 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
 .nb-step{font-size:10px;font-weight:800;background:#FEE2E2;color:#991B1B;padding:2px 6px;border-radius:4px}
 .nb-head b{font-size:12.5px;font-weight:800}
 .nb-list{display:grid;gap:6px}
-.nb-item{background:#F8F7F4;border:1px solid #EAE7E0;border-radius:8px;padding:7px 9px;font-size:11.5px;line-height:1.42}
-.nb-item b{color:#991B1B;font-weight:800}
-.nb-item em{font-style:normal;color:#0F5132;font-weight:700;display:block;margin-top:2px}
+.nb-item{background:#F8F7F4;border:1px solid #EAE7E0;border-radius:8px;padding:8px 10px;font-size:11.5px;line-height:1.5}
+.nb-item b{color:#991B1B;font-weight:800;display:block;margin-bottom:2px}
+.nb-item em{font-style:normal;color:#0F5132;font-weight:700;display:block;margin-top:3px}
 .sb{height:36px;border-radius:9px;background:#FFF;border:1px solid #E4E1DA;padding:0 11px;display:flex;align-items:center;gap:7px}
 .sb input{border:0;background:none;width:100%;font-size:12px;outline:none}
 .sort-bar{font-size:10.5px;color:#6E6B64;display:flex;justify-content:space-between;align-items:center;padding:0 2px}
@@ -55,10 +55,11 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
 .lbl.zero{background:#EAE7E0;color:#48453F}
 .src-b{font-size:10px;font-weight:600;color:#6E6B64;background:#F3F2EE;padding:2px 6px;border-radius:4px}
 .pinfo h3{font-size:13.5px;font-weight:800;line-height:18px;letter-spacing:-.02em;color:#171717}
-.pspec{font-size:11.5px;color:#5E5B55;line-height:15.5px}
-.ptip{background:#F8F7F4;border-radius:8px;padding:7px 9px;font-size:11.5px;line-height:16px;color:#2E2D2A}
-.ptip b{color:#0F5132}
-.ptip em{font-style:normal;color:#B42318;font-weight:700;display:block;margin-top:2px}
+.pspec{font-size:11.5px;color:#5E5B55;line-height:16px}
+.ptip{background:#F8F7F4;border-radius:9px;padding:8px 10px;font-size:12px;line-height:1.55;color:#262522;display:grid;gap:5px}
+.ptip-who{font-size:11px;font-weight:800;color:#0F5132;display:block}
+.ptip-ctx{color:#2E2D2A}
+.ptip-warn{font-style:normal;font-size:11.5px;color:#B42318;font-weight:700;border-top:1px dashed #E2DFD7;padding-top:5px}
 .ob-toggle{width:100%;background:#F3F2EE;border:1px solid #E2DFD7;border-radius:9px;padding:8px 10px;display:flex;align-items:center;justify-content:space-between;gap:8px;text-align:left;transition:all .12s}
 .ob-toggle:hover{border-color:#171717}
 .ob-toggle.is-open{background:#11110F;color:#F2F1EC;border-color:#11110F}
@@ -167,20 +168,21 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
   var DECKS={
     rtx:{
       title:"RTX 5060 Ti · 5070 고수 4인 교차검증 가방",
-      sub:"테크 유튜버 고수 4인(신성조 · 잇섭 · 뻘짓연구소 · 마인드피씨)의 실측 리뷰와 엔비디아 공식 스펙을 교차 검증해, 돈 아까운 하급기·병목 함정은 빼고 해상도·용도별 실패 없는 4종만 추렸습니다.",
+      sub:"테크 유튜버 고수 4인(신성조 · 잇섭 · 뻘짓연구소 · 마인드피씨)의 실측 리뷰와 엔비디아 공식 스펙을 교차 검증해, 돈 아까운 하급기·병목 함정은 빼고 모니터 해상도와 용도별 실패 없는 4종만 추렸습니다.",
       pills:["고수 4인(신성조·잇섭·뻘짓·마인드피씨) 일치","비추천 3종 제휴링크 0개","다나와·퀘이사존·중고 직통"],
       singlePick:true,
       nobuy:[
-        ["사지 마세요 · RTX 3060 재출시 (53.9만)","구형 아키텍처 재고떨이 · DLSS 4 미지원 (퀘이사존 2026.06)","0원 대안: 기존 그래픽카드 유지 또는 5060 Ti 8GB로 직행"],
-        ["사지 마세요 · QHD 방송용 5060 Ti 8GB & 4070 중고(75만)","DLSS 4(2GB 점유)+OBS 방송 시 8GB 초과 급락. 4070 중고는 5060 Ti 신품가와 겹쳐 보증 손해","대안: FHD로 낮추거나 12GB 이상(5070) 선택"],
-        ["사지 마세요 · 최하급 방열판 모델 (벤투스 등)","3만 원 아끼려다 풀로드 발열·팬 소음이 방송 마이크로 유입 (신성조 티어표 2025.04)","대안: +3만 원 보태 중상급 쿨링(ASUS DUAL·갤럭시·MSI 게이밍) 선택"]
+        ["사지 마세요 01 · 이름만 신상인 구형 'RTX 3060 재출시 (53.9만 원)'","5년 전 구형 칩을 다시 포장해 파는 재고 상품입니다. 최신 AI 화질 보정 기술(DLSS 4)이 아예 작동하지 않아 새로 사면 손해입니다. (근거: 퀘이사존 2026.06 리포트)","해결책: 지금 쓰는 그래픽카드를 그대로 쓰거나, 최신 세대인 5060 Ti 8GB로 바로 가세요."],
+        ["사지 마세요 02 · 고화질(QHD) 모니터 + 방송용으로 '5060 Ti 8GB' 사기","유튜버 잇섭·뻘짓연구소 실측 결과, 최신 AI 프레임 생성 기능과 방송 프로그램을 동시에 켜면 8GB 메모리가 꽉 차서 화면이 뚝뚝 끊깁니다.","해결책: 일반 화질(FHD) 모니터로 게임할 때만 8GB를 사고, 고화질 모니터·방송용이면 5070(12GB) 이상을 고르세요."],
+        ["사지 마세요 03 · 3만 원 아끼려고 팬·방열판이 부실한 '최하급 모델(벤투스 등)' 사기","유튜버 신성조(그래픽카드 등급표)·뻘짓연구소가 공통 지적했듯, 가장 싼 모델은 열을 식히는 금속판이 얇아 게임할 때 시끄러운 팬 소음이 마이크로 다 들어갑니다.","해결책: 3만 원만 보태 열과 소음을 잘 잡는 검증된 중상급 모델(ASUS DUAL · MSI 게이밍 · 갤럭시 BLACK)을 고르세요."]
       ],
       items:[
-        {id:"r1",lbl:"알짜템 · FHD 원픽",lblCls:"",src:"고수 4인 일치",img:"rtx-5060ti-8g.jpg",
+        {id:"r1",lbl:"알짜템 · 일반 모니터(FHD) 실속 1위",lblCls:"",src:"마인드피씨·신성조 검증",img:"rtx-5060ti-8g.jpg",
          name:"ASUS DUAL 지포스 RTX 5060 Ti OC D7 8GB",
-         spec:"4,608코어 · 128-bit · 180W · 배그 교전 하위 1% 108fps (7800X3D 실측)",
-         tip:"“FHD 롤·배그 방송 실속 정답. 정격 600W 파워 그대로 장착해 파워 교체비 0원.”",
-         warn:"주의: PCIe 5.0 x8 레인이라 구형 PCIe 3.0 보드에서 VRAM 초과 시 프레임 10~13% 하락 가능",
+         spec:"일반 모니터(FHD) 게임·방송용 · 메모리 8GB · 전력 180W (배그 교전 최저 108프레임 유지)",
+         who:"누가·왜 추천하나요? (마인드피씨 · 신성조 · 잇섭 교차 검증)",
+         tip:"유튜버 마인드피씨 실측 기준, 일반 모니터(FHD)에서 롤·배틀그라운드·오버워치를 방송과 함께 끊김 없이 돌리기에 가장 가성비가 좋은 입문 모델입니다. 특히 고성능 그래픽카드로 바꿀 때는 보통 컴퓨터 전원장치(파워)도 10만 원 넘게 주고 새로 교체해야 하지만, 이 제품은 전기를 적게 먹어서(180W) 집에 쓰던 일반 PC(정격 600W 파워)에 부품만 꽂으면 추가 비용 0원으로 바로 작동합니다.",
+         warn:"사기 전 체크: 산 지 4~5년 넘은 구형 컴퓨터(PCIe 3.0 메인보드)에 꽂아 초고화질 게임을 돌리면 데이터 통로가 좁아 성능이 10%가량 덜 나올 수 있습니다.",
          refPrice:850000,defOpt:0,
          sum:"다나와 73~80만 · 쿠팡 792,430원 · 중고 55~62만",
          qlinks:[["다나와 실시간",DN("ASUS DUAL RTX 5060 Ti 8GB")],["에누리 최저가",EN("RTX 5060 Ti 8GB")],["퀘이사존 핫딜",QZ("5060 Ti")],["번개장터 중고",BJ("RTX 5060 Ti 8GB")]],
@@ -190,11 +192,12 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
            {k:"퀘이사존 지름/할인정보 특가",b:"커뮤니티 핫딜",bCls:"alt",sub:"카드·토스/카카오페이 체감 특가 실시간 검색",p:730000,pTxt:"특가 조회",u:QZ("5060 Ti"),cta:"퀘이사존"},
            {k:"번개장터·당근 중고 매물",b:"중고 실시간",bCls:"used",sub:"무상 AS 2년+ 직거래 S급 참고 시세 55~62만 (신품 대비 -21만)",p:580000,pTxt:"55~62만 원",u:BJ("RTX 5060 Ti 8GB"),cta:"중고 매물"}
          ]},
-        {id:"r3",lbl:"알짜템 · 체급 +30% 종결",lblCls:"",src:"잇섭·마인드피씨 일치",img:"rtx-5070-12g.jpg",
+        {id:"r3",lbl:"알짜템 · +10만 원으로 성능 +30% 종결",lblCls:"",src:"잇섭·마인드피씨 만장일치",img:"rtx-5070-12g.jpg",
          name:"MSI 지포스 RTX 5070 게이밍 트리오 OC D7 12GB",
-         spec:"6,144코어(+33%) · 192-bit 672GB/s(+50%) · PCIe x16 풀레인 · 250W · 배그 하위 1% 135fps",
-         tip:"“5060 Ti 16GB(134.9만)에서 10만 원만 보태면 기본 성능 +30%. x16 풀레인이라 구형 보드 병목 0.”",
-         warn:"주의: 3팬(트라이프로져4) 길이라 케이스 호환 및 정격 700~750W 파워 확인 필수",
+         spec:"고화질 모니터(QHD) 게임·원컴 방송용 · 메모리 12GB · 3팬 정숙 쿨링 (배그 교전 최저 135프레임)",
+         who:"누가·왜 추천하나요? (잇섭 · 마인드피씨 · 신성조 만장일치)",
+         tip:"유튜버 잇섭(3DMark 벤치마크)과 마인드피씨(배그·검은신화 오공 실측) 모두 입을 모아 추천한 주력 모델입니다. 바로 아래 등급인 5060 Ti 16GB(134.9만 원)에서 10만 원만 보태면, 화면을 그리는 두뇌(코어 6,144개)와 데이터 통로 폭이 훨씬 넓어져 실제 게임 속도가 30% 이상 더 빠르게 나옵니다. 메인보드 연결 통로(PCIe x16)도 꽉 채워 써서 구형 PC에 꽂아도 성능 손실이 없습니다.",
+         warn:"사기 전 체크: 팬이 3개 달린 긴 모델이라 내 컴퓨터 케이스 안에 들어가는 크기인지, 컴퓨터 전원장치(파워)가 700~750W 이상인지 꼭 확인하세요.",
          refPrice:1520000,defOpt:0,
          sum:"다나와 135~144만 · 쿠팡 1,449,000원 · 중고 110~130만",
          qlinks:[["다나와 실시간",DN("MSI RTX 5070 게이밍 트리오 12GB")],["에누리 최저가",EN("RTX 5070 12GB")],["퀘이사존 핫딜",QZ("5070")],["번개장터 중고",BJ("RTX 5070 12GB")]],
@@ -203,13 +206,14 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
            {k:"쿠팡 로켓배송 (트리오 3팬)",b:"제휴 · 로켓",bCls:"aff",sub:"확인 기준가 1,449,000원 · 무료배송·무이자 (클릭 시 현재가 확인)",p:1449000,pTxt:"1,449,000원",u:R3,cta:"쿠팡 현재가"},
            {k:"퀘이사존 지름/할인정보 특가",b:"커뮤니티 핫딜",bCls:"alt",sub:"컴퓨터 커뮤니티 실시간 그래픽카드 체감 특가 검색",p:1320000,pTxt:"특가 조회",u:QZ("5070"),cta:"퀘이사존"},
            {k:"번개장터·당근 중고 매물",b:"중고 실시간",bCls:"used",sub:"시리얼 무상보증 2년+ 확인 필수 · 참고 시세 110~130만",p:1200000,pTxt:"110~130만 원",u:BJ("RTX 5070"),cta:"중고 매물"},
-           {k:"대체템 · 라데온 RX 9070 16GB",b:"순수게임 대체",bCls:"alt",sub:"OBS 방송(NVENC) 안 켜고 게임만 할 때 가성비 대체템",p:1098000,pTxt:"109.8만~",u:DN("라데온 RX 9070 16GB"),cta:"다나와 조회"}
+           {k:"대체템 · 라데온 RX 9070 16GB",b:"순수게임 대체",bCls:"alt",sub:"OBS 방송(엔비디아 인코더) 안 켜고 게임만 할 때 가성비 대안",p:1098000,pTxt:"109.8만~",u:DN("라데온 RX 9070 16GB"),cta:"다나와 조회"}
          ]},
-        {id:"r2",lbl:"조건부 · AI·4K 편집용",lblCls:"cond",src:"잇섭·뻘짓연구소",img:"rtx-5060ti-16g.jpg",
+        {id:"r2",lbl:"조건부 추천 · AI 그림·4K 영상 편집용",lblCls:"cond",src:"잇섭·뻘짓연구소 분석",img:"rtx-5060ti-16g.jpg",
          name:"MSI 지포스 RTX 5060 Ti 게이밍 OC D7 16GB",
-         spec:"4,608코어 · 16GB VRAM · 128-bit(448GB/s) · 풀로드 62℃·38.8dB 정숙",
-         tip:"“로컬 AI 이미지 생성·4K 영상 편집으로 16GB VRAM이 필수일 때만 선택하세요.”",
-         warn:"주의: 8GB와 코어 수(4,608개) 동일. 순수 게이머는 10만 원 위 5070이 훨씬 유리함",
+         spec:"대용량 메모리 16GB 탑재 · 최대 온도 62℃ / 소음 38.8dB 초정숙 (뻘짓연구소 실측)",
+         who:"누가·왜 추천하나요? (잇섭 · 뻘짓연구소 용도 구분)",
+         tip:"잇섭과 뻘짓연구소가 짚어준 핵심은 ‘79만 원짜리 8GB 모델과 기본 게임 두뇌(코어 4,608개)는 똑같고, 데이터를 담아두는 메모리 용량만 16GB로 2배 늘린 모델’이라는 점입니다. 따라서 내 컴퓨터에서 직접 AI 이미지 생성(스테이블 디퓨전 등)을 돌리거나 4K 고화질 영상을 편집해 메모리가 많이 필요한 분에게만 추천합니다.",
+         warn:"사기 전 체크: AI 작업 없이 순수하게 게임·방송만 할 거라면, 134.9만 원에 이걸 사는 것보다 10만 원만 보태 위쪽 RTX 5070(144.9만 원)을 사는 게 게임 속도가 30% 더 빠릅니다.",
          refPrice:1450000,defOpt:0,
          sum:"다나와 95~135만 · 쿠팡 1,349,000원 · 중고 65~80만",
          qlinks:[["다나와 실시간",DN("MSI RTX 5060 Ti 게이밍 16GB")],["퀘이사존 핫딜",QZ("5060 Ti 16GB")],["번개장터 중고",BJ("RTX 5060 Ti 16GB")]],
@@ -218,11 +222,12 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
            {k:"쿠팡 로켓배송 (트윈프로져)",b:"제휴 · 로켓",bCls:"aff",sub:"확인 기준가 1,349,000원 · 상급 방열판 (클릭 시 현재가 확인)",p:1349000,pTxt:"1,349,000원",u:R2,cta:"쿠팡 현재가"},
            {k:"번개장터·당근 중고 매물",b:"중고 실시간",bCls:"used",sub:"주의: AI 24시간 작업장 매물 여부 확인 필수 (참고 65~80만)",p:720000,pTxt:"65~80만 원",u:BJ("RTX 5060 Ti 16GB"),cta:"중고 매물"}
          ]},
-        {id:"r4",lbl:"조건부 · 4K 하이엔드",lblCls:"cond",src:"신성조 티어 검증",img:"rtx-5070ti-16g.jpg",
+        {id:"r4",lbl:"조건부 추천 · 4K 최고화질 방송·작업용",lblCls:"cond",src:"신성조 하이엔드 검증",img:"rtx-5070ti-16g.jpg",
          name:"갤럭시 GALAX 지포스 RTX 5070 Ti BLACK OC 16GB",
-         spec:"8,960코어 · 256-bit(896GB/s) · 16GB VRAM · 300W · 듀얼 NVENC 인코더",
-         tip:"“383만 원으로 폭등한 5080 대신 고르는 4K 고주사율 방송·작업 마지노선.”",
-         warn:"주의: 300W 고전력이라 ATX 3.1 750~850W GOLD 파워 필수 · FHD/일반 QHD엔 과투자",
+         spec:"4K 초고화질 모니터용 · 메모리 16GB · 방송 송출 칩 2개(듀얼 인코더) · 전력 300W",
+         who:"누가·왜 추천하나요? (신성조 · 퀘이사존 하이엔드 대안)",
+         tip:"유튜버 신성조가 분석했듯, 윗등급인 RTX 5080 가격이 380만 원대로 폭등하면서 200만 원대 초반으로 4K 초고화질 게임과 다중 방송 송출(방송 처리 칩 2개 내장)을 타협 없이 돌릴 수 있는 현실적인 최상위 모델입니다.",
+         warn:"사기 전 체크: 전기를 300W나 먹는 고성능 부품이라 최신 규격(ATX 3.1) 750~850W 이상 고급 파워가 필수입니다. 일반 모니터로 롤·배그만 하신다면 과투자이니 5060 Ti나 5070으로 80만 원 이상 아끼세요.",
          refPrice:2250000,defOpt:0,
          sum:"다나와 210~225만 · 쿠팡 2,203,000원 · 퀘이사존 특가",
          qlinks:[["다나와 실시간",DN("갤럭시 RTX 5070 Ti EX GAMER BLACK 16GB")],["퀘이사존 핫딜",QZ("5070 Ti")],["번개장터 중고",BJ("RTX 5070 Ti")]],
@@ -233,8 +238,8 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
          ]}
       ],
       notes:[
-        ["고수템 실시간 시세 대조 안내 (다나와 · 에누리 · 퀘이사존 · 번개장터)","표기된 숫자는 고수가 검증한 <em>확인일 기준가</em>이며, 그래픽카드 시세는 매일 변동됩니다. 결제 전 카드 내 <em>[다나와 조회] · [퀘이사존(컴퓨터 전문 커뮤니티 핫딜)] · [번개장터 중고]</em> 버튼을 눌러 당일 최저가를 반드시 대조하세요."],
-        ["2026.11 조립PC 시세 주의 (퀘이사존 견적 게시판 기준)","DDR5 32GB 램(66만 원)·SSD 1TB(35만 원) 급등으로 새 본체 풀구성은 307만 원에 달합니다. 기존 라이젠 5600X(DDR4) 유저는 <em>그래픽카드만 업그레이드</em>하는 것이 200만 원 이상 아끼는 길입니다."]
+        ["초보자를 위한 그래픽카드 용어 1분 통역","• <em>FHD / QHD / 4K</em> : 모니터 화질 등급(FHD=일반 모니터, QHD=고화질, 4K=초고화질 TV급). 화질이 높을수록 그래픽카드 메모리가 많이 필요합니다.<br>• <em>파워(전원공급장치, W)</em> : 컴퓨터에 전기를 보내는 부품입니다. 그래픽카드가 전기를 많이 먹으면 파워까지 새로 바꿔야 해서 10만 원 넘게 추가 비용이 듭니다.<br>• <em>PCIe 통로(레인)</em> : 메인보드와 그래픽카드가 데이터를 주고받는 도로 넓이입니다."],
+        ["2026.11 조립PC 시세 주의 (퀘이사존 견적 게시판 기준)","DDR5 32GB 램(66만 원)·SSD 1TB(35만 원) 급등으로 새 본체 풀구성은 307만 원에 달합니다. 기존 라이젠 5600X(DDR4) 컴퓨터를 쓰신다면 본체를 새로 사지 말고 <em>그래픽카드만 교체</em>하는 것이 200만 원 이상 아끼는 길입니다."]
       ]
     },
     skin:{
@@ -245,15 +250,16 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
       baseLabel:"5종 단품 정가 합산 (73,000원)",
       baseTotal:73000,
       nobuy:[
-        ["사지 마세요 · 코팩 & 물리적 피지 압출기","모공만 넓어져 2번 쓰고 버림","0원 대안: 밤마다 코 옆 삼각존에 비판텐 쌀알 반 톨 얇게 도포"],
-        ["다 사지 마세요 · 5종 풀세트 일괄 구매","집에 스킨·수분크림·선크림이 있다면 5개를 다 살 필요가 없음","고수 조합: 핵심 2종(메디비티 앰플 1.2만 + 약국 비판텐 1만 = 2.2만 원)으로만 시작"]
+        ["사지 마세요 01 · 코팩 & 물리적 피지 압출기","코 옆 블랙헤드를 접착제로 억지로 뜯어내면 피지가 빠진 자리에 모공만 더 넓어집니다. (직접 2번 해보고 후회)","0원 대안: 뜯어내지 말고 밤마다 코 옆 삼각존에 비판텐 연고를 쌀알 반 톨만큼 얇게 발라 굳은 피지를 부드럽게 녹이세요."],
+        ["다 사지 마세요 02 · 5종 화장품 풀세트 일괄 구매","집 화장대에 이미 쓰고 있는 스킨·수분크림·선크림이 있다면 5개를 전부 새로 살 필요가 없습니다.","고수 조합: 성분의 핵심인 2종(메디비티 모공 앰플 1.2만 + 약국 비판텐 1만 = 2.2만 원)으로만 먼저 시작해 51,000원을 아끼세요."]
       ],
       items:[
         {id:"s1",lbl:"알짜템 · 핵심 01",lblCls:"",src:"1번 성분 갈락토미세스 60%",img:"skin-kits.jpg",
          name:"메디비티 멜라노 하이드라 모공 앰플 50ml",
          spec:"갈락토미세스 발효여과물 60% + 나이아신아마이드 10% + 바쿠치올",
-         tip:"“정제수 대신 발효 원액이 1번 성분. 단품 1개만 살 땐 배송비 없는 쿠팡 로켓(12,000원)이 공식몰보다 3,500원 더 쌉니다.”",
-         warn:"주의: 기준가 12,000원보다 비싸면 사지 마세요 · 예민 피부는 3일 귀 뒤 패치테스트 권장",
+         who:"왜 이 앰플이 핵심인가요? (차명진 1개월 내돈내산 성분 분석)",
+         tip:"대부분의 화장품은 성분표 1번(가장 많이 들어간 원료)이 그냥 ‘물(정제수)’이지만, 이 앰플은 20만 원대 명품 에센스(SK-II 피테라)의 핵심 성분과 같은 계열인 ‘갈락토미세스 발효 원액(60%)’이 1번 성분입니다. 여기에 식약처 미백 고시 기준(2~5%)보다 2배 높은 나이아신아마이드 10%가 들어 있어 잡티와 피지를 동시에 잡아줍니다. 단품 1개만 살 때는 무료배송인 쿠팡 로켓(12,000원)이 배송비 3,500원이 붙는 공식몰보다 저렴합니다.",
+         warn:"사기 전 체크: 기준가 12,000원보다 비싸면 사지 마세요. 유효성분 함량이 높아 예민한 피부는 첫 3일간 귀 뒤에 먼저 테스트해 보세요.",
          defOpt:0,
          sum:"쿠팡 12,000원(무배) · 공식몰 15,500원 · 뷰리티 16,520원",
          offers:[
@@ -264,8 +270,9 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
         {id:"s2",lbl:"알짜템 · 핵심 02",lblCls:"",src:"약국 일반의약품",img:"bepanthen.jpg",
          name:"바이엘 비판텐 연고 30g (덱스판테놀 5%)",
          spec:"프로비타민 B5(덱스판테놀 5%) + 라놀린 장벽 보호 베이스",
-         tip:"“밤마다 코 옆 삼각존에 쌀알 반 톨 얇게 도포. 일반의약품이라 바키리에서 동네 약국 최저가를 찍고 가세요.”",
-         warn:"주의: 공식 효능은 피부염·습진·상처 회복이며 피지 정돈 체감은 개인 경험입니다",
+         who:"왜 약국 연고를 함께 쓰나요? (기름은 기름으로 녹이는 원리)",
+         tip:"코 옆 삼각존에 오돌토돌하게 박힌 블랙헤드는 결국 굳어버린 기름입니다. 피부 장벽을 회복시키는 덱스판테놀 5%와 보습 유지 성분이 든 비판텐을 밤마다 코 옆에만 쌀알 반 톨만큼 얇게 펴 바르고 자면, 굳은 피지가 부드러워지며 결이 매끈해집니다. 일반의약품이라 인터넷 구매는 안 되며, 바키리 사이트에서 내 동네 약국 최저가(9,000~11,000원)를 확인하고 방문하세요.",
+         warn:"사기 전 체크: 비판텐의 공식 허가 효능은 피부염·습진·상처 회복이며, 블랙헤드·피지 정돈 체감은 개인 사용 경험입니다. 지성 피부는 넓게 바르지 말고 코 옆에만 소량 쓰세요.",
          defOpt:0,
          sum:"동네 약국 약 10,000원(바키리 조회) · 집 재생연고 0원",
          offers:[
@@ -274,9 +281,10 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
          ]},
         {id:"s3",lbl:"선택템 · 건성 STEP 01",lblCls:"cond",src:"속당김 방어",img:"laneige.jpg",
          name:"라네즈 크림스킨 세라펩타이드 리파이너 170ml",
-         spec:"세라펩타이드 보습 장벽 토너 · 고보습 액상",
-         tip:"“속건조 건성 피부엔 1단계로 최고지만, 지성 피부나 여름철엔 유분감이 무거워 빼도 됩니다.”",
-         warn:"주의: 온라인 후기 다수에서 지성·수부지 피부는 좁쌀·화장 밀림 주의 의견",
+         spec:"세라펩타이드 보습 장벽 토너 · 크림 한 통을 녹인 고보습 액상",
+         who:"누구에게 필요한가요? (속건조 건성 피부 vs 지성 피부 구분)",
+         tip:"세안 직후 얼굴이 찢어질 듯 당기는 속건조 건성 피부라면 앰플 바르기 전 1단계로 발랐을 때 속당김을 확실히 잡아줍니다. 반대로 이미 집에 보습 스킨이 있거나 유분이 많은 지성 피부라면 사지 않고 건너뛰셔도 됩니다.",
+         warn:"사기 전 체크: 온라인 실구매 후기 다수에서 지성·여름철 피부에는 유분감이 무거워 좁쌀 여드름이나 화장 밀림이 생길 수 있다는 의견이 있습니다.",
          defOpt:0,
          sum:"집 토너 0원 대체 · 다나와 2.4~2.8만 · 쿠팡 로켓",
          offers:[
@@ -286,9 +294,10 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
          ]},
         {id:"s4",lbl:"선택템 · 잡티 STEP 03",lblCls:"cond",src:"세트 구매 시만 유리",img:"medibt-cream.jpg",
          name:"메디비티 포어제로 멜라노 피테라 크림 50ml & 2종 세트",
-         spec:"앰플 위를 덮어 잡티·수분 잠그는 마무리 크림 (단품 vs 2종 세트 비교)",
-         tip:"“크림 단품만 사면 배송비 3,500원이 붙어 손해입니다. 살 거면 공식몰 2종 세트(23,500원 무배)로 사고, 아니면 집 수분크림을 쓰세요.”",
-         warn:"주의: 앰플을 쿠팡(1.2만)에서 샀다면 크림은 집 수분크림(0원)으로 대체하는 편이 알뜰함",
+         spec:"앰플 위를 덮어 잡티·수분 증발을 막아주는 마무리 크림",
+         who:"언제 사는 게 이득인가요? (단품 배송비 함정 피하기)",
+         tip:"1번 모공 앰플을 바른 뒤 수분이 날아가지 않게 덮어주는 짝꿍 크림입니다. 단, 공식몰에서 크림 단품만 사면 배송비 3,500원이 붙어 15,500원이 되므로 비효율적입니다. 처음부터 앰플+크림을 같이 쓰실 분만 공식몰 2종 세트(23,500원 무료배송)로 구매하시고, 아니면 집에 있는 수분크림을 그대로 쓰세요.",
+         warn:"사기 전 체크: 위 1번 앰플을 쿠팡(12,000원)에서 단품으로 사셨다면, 이 크림은 사지 말고 집에 있는 수분크림(0원)으로 대체하시는 편이 가장 알뜰합니다.",
          defOpt:0,
          sum:"집 수분크림 0원 · 공식몰 2종세트 23,500원 · 단품 15,500원",
          offers:[
@@ -298,9 +307,10 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
          ]},
         {id:"s5",lbl:"집에 있는 걸로 · STEP 05",lblCls:"zero",src:"야외 레포츠용",img:"hera.jpg",
          name:"헤라 선메이트 레포츠 프로 워터프루프 70ml",
-         spec:"SPF50+ PA++++ · 땀·물에 강한 야외 레포츠 전용 선크림",
-         tip:"“야외 물놀이처럼 땀과 물이 많을 때만 필요해요. 일상 출퇴근이면 집에 있는 선크림 쓰세요!”",
-         warn:"주의: 워터프루프 밀착력이 강해 저녁 세안 시 이중 클렌징 필수",
+         spec:"SPF50+ PA++++ · 땀과 물에 쉽게 지워지지 않는 야외용 선크림",
+         who:"누구에게 필요한가요? (야외 운동·여행 vs 일상 출퇴근)",
+         tip:"발리 서핑이나 야외 러닝·골프처럼 땀과 물에 선크림이 쉽게 씻겨 내려가는 환경에서 주근깨를 막아준 방수 선크림입니다. 실내 위주 일상 출퇴근이라면 굳이 새로 사지 마시고 집에 있는 데일리 선크림을 그대로 쓰세요.",
+         warn:"사기 전 체크: 물에 안 지워지는 워터프루프 제품이라 저녁 세안 시 클렌징오일이나 폼으로 꼼꼼히 씻어내야 모공이 막히지 않습니다.",
          defOpt:0,
          sum:"집 선크림 0원 대체 · 다나와 2.2~2.6만 · 스마트스토어",
          offers:[
@@ -321,14 +331,15 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
       baseLabel:"소포장 사료 + 간식 일반 구매가 (97,800원)",
       baseTotal:97800,
       nobuy:[
-        ["사지 마세요 · 10kg 대용량 딱딱한 건사료 단일 포대","이빨 약한 16살 노령견은 물에 불려야 하고, 큰 포대는 절반 먹기 전에 마르고 산패됨","고수 대안: 200g씩 32팩으로 개별 밀봉된 말랑한 반습식 6.4kg 벌크(100g당 1,014원)"]
+        ["사지 마세요 · 10kg 대용량 딱딱한 건사료 단일 포대","16살 노령견은 치아와 잇몸이 약해 딱딱한 건사료를 씹기 힘들고, 한 포대로 된 대용량 사료는 개봉 후 절반도 먹기 전에 딱딱하게 마르고 기름기가 산패됩니다.","고수 대안: 200g씩 32봉지로 낱개 밀봉 포장되어 마지막 봉지까지 말랑하고 촉촉한 반습식 벌크 박스(100g당 1,014원)로 바꾸세요."]
       ],
       items:[
         {id:"p1",lbl:"알짜템 · 주식 원픽",lblCls:"",src:"100g당 1,014원 최저",img:"achimae.jpg",
          name:"대용량 아침애 강아지 한우 수제사료 6.4kg (200g×32팩)",
          spec:"말랑한 반습식 · 200g 개별 소포장 32봉 · 국내산 한우",
-         tip:"“마지막 32번째 봉지까지 촉촉합니다. 1.2kg/3.2kg 소포장보다 6.4kg 벌크 박스가 100g당 단가(1,014원)가 가장 저렴해요.”",
-         warn:"주의: 사료 교체 시 3~4일간 기존 사료와 섞어 급여하고, 식후 가벼운 양치를 병행해 주세요",
+         who:"왜 16살 노령견 주식으로 골랐나요? (실급여 견주 기록)",
+         tip:"물에 불리지 않아도 처음부터 말랑말랑한 반습식이라 이빨 약한 노령견이 편하게 씹어 먹습니다. 무엇보다 200g씩 32팩으로 개별 밀봉되어 있어 마지막 32번째 봉지를 뜯을 때까지 마르지 않고 촉촉하며, 1.2kg·3.2kg 소포장보다 6.4kg 대용량 박스가 100g당 단가(1,014원)가 가장 저렴합니다.",
+         warn:"사기 전 체크: 사료를 처음 바꿀 때는 장이 놀라지 않게 3~4일간 기존 사료와 섞어 급여하고, 부드러운 반습식 특성상 치아에 끼기 쉬우니 식후 가벼운 양치를 함께 해주세요.",
          defOpt:0,
          sum:"쿠팡 64,880원(100g당 1,014원 최저) · 다나와 비교 · 후기 원문",
          offers:[
@@ -339,8 +350,9 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
         {id:"p2",lbl:"선택템 · 사료 토핑용",lblCls:"cond",src:"100g당 1,643원",img:"bowwow.jpg",
          name:"바우와우 혼합 강아지 간식 350g × 2봉 (총 700g)",
          spec:"국내산 혼합맛 2봉 묶음 · 말랑해서 작게 잘라 사료 토핑용으로 적합",
-         tip:"“입맛 떨어져 사료 남길 때 3~4알만 작게 잘라 섞어 주면 그릇을 비웁니다.”",
-         warn:"주의: 쿠팡 대표 썸네일 포장지 사진은 150g 공용 이미지이나 실제 발송 옵션은 350g×2봉(총 700g)입니다",
+         who:"언제 함께 주면 좋나요? (사료 거부할 때 입맛 돋우는 토핑)",
+         tip:"노령견이 컨디션이 떨어져 사료만 주면 안 먹으려 할 때, 이 혼합 간식을 3~4알만 손으로 작게 쪼개 사료 위에 고명(토핑)처럼 섞어 주면 냄새를 맡고 그릇을 깨끗이 비웁니다.",
+         warn:"사기 전 체크: 쿠팡 판매처의 대표 썸네일 사진은 150g 포장지 공용 이미지로 등록되어 있으나, 실제 주문·발송되는 옵션은 350g×2봉(총 700g) 묶음입니다.",
          defOpt:0,
          sum:"쿠팡 11,500원(100g당 1,643원) · 다나와 비교 · 0원 생략",
          offers:[
@@ -351,8 +363,9 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
         {id:"p3",lbl:"선택템 · 노즈워크 대용량",lblCls:"cond",src:"100g당 1,335원",img:"meongsumugang.jpg",
          name:"목우촌 펫9단 멍수무강 강아지 소고기 져키 1.1kg",
          spec:"국내산 소고기 · 노즈워크·칭찬 보상용 1.1kg 대용량 통",
-         tip:"“1.1kg 대용량이라 100g당 1,335원꼴로 가성비가 뛰어나 노즈워크 매트에 숨겨 주기 좋습니다.”",
-         warn:"주의: 대용량(1.1kg)이므로 개봉 후 뚜껑을 꼭 밀봉 보관하고 체중별 하루 권장 급여량을 지켜 주세요",
+         who:"언제 함께 주면 좋나요? (치매 예방 후각 놀이 · 노즈워크용)",
+         tip:"노령견은 산책 시간이 줄어드는 대신 집 안에서 코로 냄새를 맡으며 간식을 찾는 ‘노즈워크’ 놀이가 치매 예방과 스트레스 해소에 중요합니다. 국내산 소고기 져키가 1.1kg 대용량(100g당 1,335원)으로 들어 있어 부담 없이 매트에 숨겨 주기 좋습니다.",
+         warn:"사기 전 체크: 1.1kg 대용량 통이므로 개봉 후 공기가 통하지 않게 뚜껑을 꼭 닫아 보관하고, 강아지 체중별 하루 권장 급여량을 넘지 않게 조절해 주세요.",
          defOpt:0,
          sum:"쿠팡 14,680원(100g당 1,335원) · 다나와 비교 · 0원 제외",
          offers:[
@@ -368,7 +381,7 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
   };
 
   var h=location.hash.slice(1),cur=DECKS[h]?h:"rtx",q="",src=u=>u.indexOf("http")===0?u:"img/"+u;
-  /* 기본 열림: RTX 탭은 MSI 지포스(r3: MSI 지포스 RTX 5070, r2: MSI 지포스 RTX 5060 Ti)만 열림, 다른 카드는 접힘 */
+  /* 기본 열림: RTX 탭은 MSI 지포스(r3, r2)만 열림, 다른 카드는 접힘 */
   var picks={rtx:{item:"r3",opt:0},skin:{s1:0,s2:0,s3:0,s4:0,s5:0},pet:{p1:0,p2:0,p3:0}};
   var openMap={r1:false,r3:true,r2:true,r4:false,s1:true,s2:false,s3:false,s4:false,s5:false,p1:true,p2:false,p3:false};
 
@@ -401,7 +414,7 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
       var sv=Math.max(0,(d.baseTotal||cb.tot)-cb.tot);
       $("anchor-box").innerHTML='<div class="anchor"><div class="ac-col"><span>'+d.baseLabel+'</span><s class="num">'+won(d.baseTotal)+'</s><small>무작정 단품 풀세트 구매 시</small></div><div class="ac-col"><span>지금 내 고수 조합 총비용</span><b class="num">'+won(cb.tot)+'</b><small>'+(sv>0?'불필요 지출 -'+won(sv)+' 절약':'최저가 경로 선택 중')+'</small></div></div>';
     }
-    $("nobuy-box").innerHTML='<div class="nobuy"><div class="nb-head"><b>먼저 빼고 시작할 것 (비추천 · 0원 대안)</b><span class="nb-step">제휴 링크 0개</span></div><div class="nb-list">'+d.nobuy.map(n=>'<div class="nb-item"><b>'+n[0]+'</b> — '+n[1]+'<em>→ '+n[2]+'</em></div>').join("")+'</div></div>';
+    $("nobuy-box").innerHTML='<div class="nobuy"><div class="nb-head"><b>먼저 빼고 시작할 것 (비추천 · 0원 대안)</b><span class="nb-step">제휴 링크 0개</span></div><div class="nb-list">'+d.nobuy.map(n=>'<div class="nb-item"><b>'+n[0]+'</b>'+n[1]+'<em>→ '+n[2]+'</em></div>').join("")+'</div></div>';
 
     var list=d.items.filter(it=>!q||(it.name+it.spec+it.tip+it.offers.map(o=>o.k+o.sub).join("")).toLowerCase().indexOf(q.toLowerCase())>-1);
     $("secs-box").innerHTML=list.map(it=>{
@@ -409,7 +422,7 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
       var selIdx=d.singlePick?(isItemOn?picks[cur].opt:-1):(picks[cur][it.id]??it.defOpt);
       var isOpen=!!openMap[it.id];
       var qbar=it.qlinks?'<div class="qbar"><span>실시간 시세 직통:</span>'+it.qlinks.map(ql=>'<a class="qlink" href="'+ql[1]+'" target="_blank" rel="noopener">'+ql[0]+' ↗</a>').join("")+'</div>':'';
-      return '<article class="pcard'+(isItemOn?' is-picked':'')+'"><div class="ptop"><div class="pi"><img src="'+src(it.img)+'" alt="'+it.name+'"></div><div class="pinfo"><div class="badges"><span class="lbl'+(it.lblCls?' '+it.lblCls:'')+'">'+it.lbl+'</span><span class="src-b">'+it.src+'</span></div><h3>'+it.name+'</h3><p class="pspec">'+it.spec+'</p></div></div><div class="ptip"><b>고수 판정</b> '+it.tip+'<em>'+it.warn+'</em></div><button type="button" class="ob-toggle'+(isOpen?' is-open':'')+'" data-tog="'+it.id+'" aria-expanded="'+isOpen+'"><div class="ob-tl"><b>어디서 살까요? · 가격·구매처 비교 ('+it.offers.length+'곳)</b><span>'+(it.sum||'')+'</span></div><span class="ob-tr">'+(isOpen?'가격비교 접기 ▴':'가격비교 열기 ▾')+'</span></button><div class="ob-body'+(isOpen?' is-open':'')+'"><div class="olist">'+it.offers.map((o,idx)=>{
+      return '<article class="pcard'+(isItemOn?' is-picked':'')+'"><div class="ptop"><div class="pi"><img src="'+src(it.img)+'" alt="'+it.name+'"></div><div class="pinfo"><div class="badges"><span class="lbl'+(it.lblCls?' '+it.lblCls:'')+'">'+it.lbl+'</span><span class="src-b">'+it.src+'</span></div><h3>'+it.name+'</h3><p class="pspec">'+it.spec+'</p></div></div><div class="ptip"><span class="ptip-who">'+(it.who||'고수 검증 의견')+'</span><p class="ptip-ctx">'+it.tip+'</p><em class="ptip-warn">'+it.warn+'</em></div><button type="button" class="ob-toggle'+(isOpen?' is-open':'')+'" data-tog="'+it.id+'" aria-expanded="'+isOpen+'"><div class="ob-tl"><b>어디서 살까요? · 가격·구매처 비교 ('+it.offers.length+'곳)</b><span>'+(it.sum||'')+'</span></div><span class="ob-tr">'+(isOpen?'가격비교 접기 ▴':'가격비교 열기 ▾')+'</span></button><div class="ob-body'+(isOpen?' is-open':'')+'"><div class="olist">'+it.offers.map((o,idx)=>{
         var on=selIdx===idx;
         return '<div class="orow'+(on?' on':'')+'"><div class="or-left" data-pick="'+it.id+':'+idx+'"><span class="or-rad"></span><div class="or-txt"><div class="or-title"><span>'+o.k+'</span><span class="obadge'+(o.bCls?' '+o.bCls:'')+'">'+o.b+'</span></div><span class="or-sub">'+o.sub+'</span></div></div><div class="or-right"><span class="or-price num">'+o.pTxt+'</span>'+(o.u?'<a class="or-go'+(o.bCls==='aff'?'':' sub')+'" href="'+o.u+'" target="_blank" rel="noopener">'+o.cta+' ↗</a>':'')+'</div></div>';
       }).join("")+'</div>'+qbar+'</div></article>';
