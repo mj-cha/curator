@@ -1,6 +1,4 @@
-/* 고수하우스(GOSU-HOUSE) 전사 AI 솔루션 ERP 스튜디오 메인 컨트롤러 (src/screens/studioApp.js · 15KB 이하)
-   - 상단 5대 사업부(전체/고수템/CEA/블로그·쿠팡/마케팅·SNS/대학원·BD) ERP 워크스페이스 스위처
-   - 좌측 7대 통합 메뉴 (컨텐츠 스튜디오 94종 템플릿 허브 + 로보엠디 3대 제작 스튜디오 + 핸디핏 검증 엔진) */
+/* 고수하우스 전사 AI 솔루션 ERP 스튜디오 컨트롤러 (src/screens/studioApp.js · 15KB 이하) */
 (function () {
   var R = window.GOSU_ROBOMD_DATA;
   var H = window.GOSU_HANDYFIT_DATA;
@@ -10,9 +8,9 @@
   var CS = window.GOSU_CS_HUB;
 
   var state = {
-    bizUnit: "all",          /* all | gosutem | cea | blog | mkt | lab */
-    menu: "cshub",           /* home | cshub | studio | landing | copy | utm | report */
-    studioTab: "image",      /* image | video | design */
+    bizUnit: "all",
+    menu: "cshub",
+    studioTab: "image",
     csItems: CS ? CS.loadCatalog() : [],
     csFolder: "all",
     csViewMode: "card",
