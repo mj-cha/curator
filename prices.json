@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.11.27 기준 (쿠팡·다나와·퀘이사존·번개장터 대조)",
+  "updatedAt": "2026.11.28 기준 대조",
   "items": {
     "r1": { "coupangPrice": 792430, "danawaRange": "73~80만 원", "usedRange": "55~62만 원" },
     "r2": { "coupangPrice": 1349000, "danawaRange": "95~135만 원", "usedRange": "65~80만 원" },
@@ -7,7 +7,9 @@
     "r4": { "coupangPrice": 2203000, "danawaRange": "210~225만 원", "usedRange": "매물 희소" },
     "s1": { "coupangPrice": 12000, "officialPrice": 15500, "vurityPrice": 16520 },
     "s2": { "pharmacyPrice": 10000 },
+    "s3": { "coupangPrice": 27000, "danawaPrice": 24500 },
     "s4": { "setPrice": 23500, "singlePrice": 15500 },
+    "s5": { "danawaPrice": 23000, "storePrice": 24000 },
     "p1": { "coupangPrice": 64880, "unit100g": "1,014원" },
     "p2": { "coupangPrice": 11500, "unit100g": "1,643원" },
     "p3": { "coupangPrice": 14680, "unit100g": "1,335원" }

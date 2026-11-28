@@ -7,123 +7,124 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:#E5E2DC;color:#171717;font:12.5px/1.52 "Pretendard Variable",Pretendard,-apple-system,"Noto Sans KR",sans-serif;word-break:keep-all;-webkit-font-smoothing:antialiased}
+body{margin:0;background:#E5E2DC;color:#171717;font:13px/1.54 "Pretendard Variable",Pretendard,-apple-system,"Noto Sans KR",sans-serif;word-break:keep-all;-webkit-font-smoothing:antialiased}
 h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inherit;color:inherit;text-decoration:none;cursor:pointer}
 .num{font-variant-numeric:tabular-nums}
-.app{max-width:440px;width:100%;margin:0 auto;min-height:100vh;background:#F6F5F1;padding-bottom:84px;box-shadow:0 12px 36px rgba(0,0,0,.08)}
+.app{max-width:440px;width:100%;margin:0 auto;min-height:100vh;background:#F6F5F1;padding-bottom:84px;box-shadow:0 12px 36px rgba(0,0,0,.08);overflow-x:hidden}
 @media(min-width:484px){body{padding-top:16px}.app{border-radius:22px 22px 0 0;overflow:hidden}}
-.bar{background:#11110F;color:#EAE8E3;font-size:10.5px;line-height:1.45;padding:7px 12px;text-align:center}
-.in{padding:12px 12px 0;display:flex;flex-direction:column;gap:11px}
+.bar{background:#11110F;color:#EAE8E3;font-size:11px;line-height:1.45;padding:7px 12px;text-align:center}
+.in{padding:12px 12px 0;display:flex;flex-direction:column;gap:11px;min-width:0}
 .top-row{display:flex;align-items:center;justify-content:space-between;gap:6px}
-.brand-tag{font-size:10.5px;font-weight:800;color:#0F5132;background:#E6F2EC;padding:3px 9px;border-radius:999px}
+.brand-tag{font-size:11px;font-weight:800;color:#0F5132;background:#E6F2EC;padding:3px 9px;border-radius:999px}
 .pbtns{display:flex;gap:5px}
-.pbtn{height:27px;padding:0 10px;border-radius:999px;background:#FFF;border:1px solid #DDDAD3;font-size:11px;font-weight:700;color:#2E2D2A;display:inline-flex;align-items:center;gap:3px}
+.pbtn{height:28px;padding:0 10px;border-radius:999px;background:#FFF;border:1px solid #DDDAD3;font-size:11px;font-weight:700;color:#2E2D2A;display:inline-flex;align-items:center;gap:3px}
 .hdr h1{font-size:17.5px;font-weight:800;line-height:23px;letter-spacing:-.03em}
-.hdr p{font-size:12.5px;color:#3E3C37;line-height:18px;margin-top:4px}
+.hdr p{font-size:12.5px;color:#3E3C37;line-height:18.5px;margin-top:4px}
 .meta-pills{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
-.mpill{font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:5px;background:#EAE7E0;color:#48453F}
+.mpill{font-size:11px;font-weight:700;padding:2px 8px;border-radius:5px;background:#EAE7E0;color:#48453F}
 .mpill.hi{background:#11110F;color:#D4FF34}
-.nav-stack{display:grid;gap:6px}
-.mode-tabs{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;background:#11110F;padding:4px;border-radius:11px}
+.nav-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:6px}
+.mode-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;background:#11110F;padding:4px;border-radius:11px}
 .mtab{height:35px;border:0;border-radius:8px;background:none;font-size:12.5px;font-weight:800;color:#A8A59E;display:inline-flex;align-items:center;justify-content:center;gap:5px}
 .mtab[aria-selected="true"]{background:#D4FF34;color:#11110F;box-shadow:0 1px 3px rgba(0,0,0,.18)}
-.sub-tabs{display:flex;gap:6px;overflow-x:auto;padding:2px 1px 4px;scrollbar-width:none;-ms-overflow-style:none}
-.sub-tabs::-webkit-scrollbar{display:none}
-.stab{flex:none;height:33px;padding:0 12px;border:1px solid #DDDAD3;border-radius:999px;background:#FFF;font-size:11.5px;font-weight:800;color:#5E5B55;white-space:nowrap;transition:all .12s}
+.sub-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+.stab{height:34px;padding:0 6px;border:1px solid #DDDAD3;border-radius:10px;background:#FFF;font-size:11.5px;font-weight:800;color:#5E5B55;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:all .12s;text-align:center}
 .stab[aria-selected="true"]{background:#11110F;color:#FFF;border-color:#11110F;box-shadow:0 2px 5px rgba(0,0,0,.1)}
-.all-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
-.atile{background:#FFF;border:1px solid #E2DFD7;border-radius:13px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 6px rgba(0,0,0,.03)}
+.all-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.atile{background:#FFF;border:1px solid #E2DFD7;border-radius:13px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 6px rgba(0,0,0,.03);min-width:0}
 .at-img{position:relative;width:100%;aspect-ratio:1/1;background:#FFF;border-bottom:1px solid #F1EFEA;padding:10px;display:grid;place-items:center;overflow:hidden;cursor:pointer}
 .at-img img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .16s}
 .at-img:hover img{transform:scale(1.03)}
-.at-bag{position:absolute;top:7px;left:7px;font-size:9.5px;font-weight:800;padding:2px 6px;border-radius:5px;background:rgba(17,17,15,.84);color:#FFF;backdrop-filter:blur(4px)}
-.at-lbl{position:absolute;bottom:7px;left:7px;font-size:9.5px;font-weight:800;padding:2px 6px;border-radius:4px;background:#E6F2EC;color:#0F5132}
+.at-bag{position:absolute;top:7px;left:7px;font-size:10px;font-weight:800;padding:2px 6px;border-radius:5px;background:rgba(17,17,15,.84);color:#FFF;backdrop-filter:blur(4px)}
+.at-lbl{position:absolute;bottom:7px;left:7px;font-size:10px;font-weight:800;padding:2px 6px;border-radius:4px;background:#E6F2EC;color:#0F5132}
 .at-lbl.cond{background:#FEF3C7;color:#92400E}
 .at-lbl.zero{background:#EAE7E0;color:#48453F}
-.at-body{padding:9px 10px 10px;display:flex;flex-direction:column;gap:5px;flex:1;justify-content:space-between}
+.at-body{padding:9px 10px 10px;display:flex;flex-direction:column;gap:5px;flex:1;justify-content:space-between;min-width:0}
 .at-title{font-size:12px;font-weight:800;line-height:16px;color:#171717;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:32px;cursor:pointer}
 .at-price{display:flex;align-items:center;justify-content:space-between;gap:4px;flex-wrap:wrap;font-size:11.5px;font-weight:800;color:#0F5132}
 .at-actions{display:grid;grid-template-columns:1fr auto;gap:4px;margin-top:2px}
-.at-btn{height:27px;padding:0 7px;border-radius:7px;font-size:10.5px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;border:1px solid #DDDAD3;background:#F8F7F4;color:#262522}
+.at-btn{height:28px;padding:0 7px;border-radius:7px;font-size:10.5px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;border:1px solid #DDDAD3;background:#F8F7F4;color:#262522}
 .at-btn.pri{background:#171717;color:#FFF;border-color:#171717}
-.anchor{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#11110F;color:#F2F1EC;border-radius:12px;padding:10px 12px}
-.ac-col span{display:block;font-size:10.5px;color:#A8A59E}
+.anchor{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;background:#11110F;color:#F2F1EC;border-radius:12px;padding:10px 12px}
+.ac-col{min-width:0}
+.ac-col span{display:block;font-size:11px;color:#A8A59E}
 .ac-col s{font-size:14px;color:#8E8B84;font-weight:700}
 .ac-col b{font-size:15.5px;color:#D4FF34;font-weight:800}
-.ac-col small{display:block;font-size:10.5px;color:#E6E3DC;margin-top:1px}
-.nobuy{background:#FFF;border:1.5px solid #262522;border-radius:12px;padding:10px 12px;display:grid;gap:7px}
+.ac-col small{display:block;font-size:11px;color:#E6E3DC;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nobuy{background:#FFF;border:1.5px solid #262522;border-radius:12px;padding:10px 12px;display:grid;grid-template-columns:minmax(0,1fr);gap:7px}
 .nb-head{display:flex;align-items:center;justify-content:space-between;gap:6px}
-.nb-step{font-size:10px;font-weight:800;background:#FEE2E2;color:#991B1B;padding:2px 6px;border-radius:4px}
+.nb-step{font-size:10.5px;font-weight:800;background:#FEE2E2;color:#991B1B;padding:2px 6px;border-radius:4px;white-space:nowrap}
 .nb-head b{font-size:12.5px;font-weight:800}
 .nb-list{display:grid;gap:6px}
-.nb-item{background:#F8F7F4;border:1px solid #EAE7E0;border-radius:8px;padding:8px 10px;font-size:11.5px;line-height:1.5}
+.nb-item{background:#F8F7F4;border:1px solid #EAE7E0;border-radius:8px;padding:8px 10px;font-size:12px;line-height:1.52}
 .nb-item b{color:#991B1B;font-weight:800;display:block;margin-bottom:2px}
 .nb-item em{font-style:normal;color:#0F5132;font-weight:700;display:block;margin-top:3px}
-.sb{height:36px;border-radius:9px;background:#FFF;border:1px solid #E4E1DA;padding:0 11px;display:flex;align-items:center;gap:7px}
-.sb input{border:0;background:none;width:100%;font-size:12px;outline:none}
-.sort-bar{font-size:10.5px;color:#6E6B64;display:flex;justify-content:space-between;align-items:center;padding:0 2px}
-.plist{display:grid;gap:11px}
-.pcard{background:#FFF;border:1px solid #E2DFD7;border-radius:14px;padding:11px;display:grid;gap:8px;box-shadow:0 2px 6px rgba(0,0,0,.02)}
+.sb{height:37px;border-radius:9px;background:#FFF;border:1px solid #E4E1DA;padding:0 11px;display:flex;align-items:center;gap:7px;min-width:0}
+.sb input{border:0;background:none;width:100%;min-width:0;font-size:12px;outline:none}
+.sort-bar{font-size:11px;color:#6E6B64;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:4px 8px;padding:0 2px}
+.plist{display:grid;grid-template-columns:minmax(0,1fr);gap:11px;min-width:0}
+.pcard{background:#FFF;border:1px solid #E2DFD7;border-radius:14px;padding:12px;display:grid;grid-template-columns:minmax(0,1fr);gap:9px;box-shadow:0 2px 6px rgba(0,0,0,.02);min-width:0}
 .pcard.is-picked{border:1.5px solid #11110F}
-.ptop{display:flex;gap:11px;align-items:flex-start}
-.pi{width:96px;height:96px;aspect-ratio:1/1;flex:none;border-radius:10px;border:1px solid #ECEAE4;background:#FFF;padding:6px;display:grid;place-items:center;overflow:hidden}
+.ptop{display:flex;gap:11px;align-items:flex-start;min-width:0}
+.pi{width:96px;height:96px;aspect-ratio:1/1;flex:none;border-radius:10px;border:1px solid #ECEAE4;background:#FFF;padding:5px;display:grid;place-items:center;overflow:hidden}
 .pi img{width:100%;height:100%;object-fit:contain;display:block}
-.pinfo{flex:1;min-width:0;display:grid;gap:3px}
+.pinfo{flex:1;min-width:0;display:grid;gap:4px}
 .badges{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
-.lbl{font-size:10px;font-weight:800;padding:2px 6px;border-radius:4px;background:#E6F2EC;color:#0F5132}
+.lbl{font-size:10.5px;font-weight:800;padding:2px 6px;border-radius:4px;background:#E6F2EC;color:#0F5132;white-space:nowrap}
 .lbl.cond{background:#FEF3C7;color:#92400E}
 .lbl.zero{background:#EAE7E0;color:#48453F}
-.src-b{font-size:10px;font-weight:600;color:#6E6B64;background:#F3F2EE;padding:2px 6px;border-radius:4px}
-.pinfo h3{font-size:13.5px;font-weight:800;line-height:18px;letter-spacing:-.02em;color:#171717}
-.pspec{font-size:11.5px;color:#5E5B55;line-height:16px}
-.ptip{background:#F8F7F4;border-radius:9px;padding:8px 10px;font-size:12px;line-height:1.55;color:#262522;display:grid;gap:5px}
-.ptip-who{font-size:11px;font-weight:800;color:#0F5132;display:block}
+.src-b{font-size:10.5px;font-weight:600;color:#6E6B64;background:#F3F2EE;padding:2px 6px;border-radius:4px;white-space:nowrap}
+.pinfo h3{font-size:14px;font-weight:800;line-height:19px;letter-spacing:-.02em;color:#171717}
+.pspec{font-size:11.5px;color:#5E5B55;line-height:16.5px}
+.ptip{background:#F8F7F4;border-radius:9px;padding:9px 10px;font-size:12.5px;line-height:1.56;color:#262522;display:grid;gap:5px;min-width:0}
+.ptip-who{font-size:11.5px;font-weight:800;color:#0F5132;display:block}
 .ptip-ctx{color:#2E2D2A}
 .ptip-warn{font-style:normal;font-size:11.5px;color:#B42318;font-weight:700;border-top:1px dashed #E2DFD7;padding-top:5px}
-.ob-toggle{width:100%;background:#F3F2EE;border:1px solid #E2DFD7;border-radius:9px;padding:8px 10px;display:flex;align-items:center;justify-content:space-between;gap:8px;text-align:left;transition:all .12s}
+.ob-toggle{width:100%;min-width:0;background:#F3F2EE;border:1px solid #E2DFD7;border-radius:9px;padding:8px 10px;display:flex;align-items:center;justify-content:space-between;gap:8px;text-align:left;transition:all .12s}
 .ob-toggle:hover{border-color:#171717}
 .ob-toggle.is-open{background:#11110F;color:#F2F1EC;border-color:#11110F}
-.ob-tl{display:flex;flex-direction:column;gap:1px;min-width:0}
-.ob-tl b{font-size:11.5px;font-weight:800}
-.ob-tl span{font-size:10.5px;color:#66635D;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ob-tl{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0;overflow:hidden}
+.ob-tl b{font-size:11.5px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ob-tl span{font-size:11px;color:#66635D;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
 .ob-toggle.is-open .ob-tl span{color:#CFCBC2}
 .ob-tr{flex:none;font-size:11px;font-weight:800;color:#0F5132;background:#E6F2EC;padding:4px 8px;border-radius:6px;white-space:nowrap}
 .ob-toggle.is-open .ob-tr{background:#D4FF34;color:#11110F}
-.ob-body{display:none;gap:6px;padding-top:2px}
+.ob-body{display:none;grid-template-columns:minmax(0,1fr);gap:6px;padding-top:2px;min-width:0}
 .ob-body.is-open{display:grid}
-.olist{display:grid;gap:5px}
-.orow{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:7px 9px;border-radius:9px;border:1px solid #E6E3DC;background:#FAF9F6}
+.olist{display:grid;grid-template-columns:minmax(0,1fr);gap:5px;min-width:0}
+.orow{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:8px 9px;border-radius:9px;border:1px solid #E6E3DC;background:#FAF9F6;min-width:0}
 .orow.on{background:#F0F9F4;border-color:#0F5132}
 .or-left{display:flex;align-items:center;gap:7px;flex:1;min-width:0;cursor:pointer}
 .or-rad{width:15px;height:15px;border-radius:50%;border:1.5px solid #A8A59E;flex:none;display:grid;place-items:center;background:#FFF}
 .orow.on .or-rad{border-color:#0F5132;background:#0F5132}
 .orow.on .or-rad::after{content:"";width:5px;height:5px;border-radius:50%;background:#FFF}
 .or-txt{min-width:0;flex:1}
-.or-title{display:flex;align-items:center;gap:4px;flex-wrap:wrap;font-size:11.5px;font-weight:800;color:#171717}
-.obadge{font-size:9.5px;font-weight:800;padding:1px 5px;border-radius:4px;background:#0F5132;color:#FFF}
+.or-title{display:flex;align-items:center;gap:4px;flex-wrap:wrap;font-size:12px;font-weight:800;color:#171717}
+.obadge{font-size:10px;font-weight:800;padding:1px 5px;border-radius:4px;background:#0F5132;color:#FFF;white-space:nowrap}
 .obadge.aff{background:#EAE7E0;color:#524F49;font-weight:700}
 .obadge.used{background:#DBEAFE;color:#1E40AF}
 .obadge.alt{background:#FEF3C7;color:#92400E}
-.or-sub{font-size:10.5px;color:#66635D;line-height:14px;display:block;margin-top:1px}
+.or-sub{font-size:11px;color:#66635D;line-height:14.5px;display:block;margin-top:1px}
 .or-right{display:flex;align-items:center;gap:6px;flex:none}
-.or-price{font-size:12.5px;font-weight:800;color:#171717;text-align:right}
-.or-go{height:26px;padding:0 8px;border-radius:6px;background:#171717;color:#FFF;font-size:10.5px;font-weight:700;display:inline-flex;align-items:center;white-space:nowrap}
+.or-price{font-size:12.5px;font-weight:800;color:#171717;text-align:right;white-space:nowrap}
+.or-go{height:27px;padding:0 8px;border-radius:6px;background:#171717;color:#FFF;font-size:11px;font-weight:700;display:inline-flex;align-items:center;white-space:nowrap}
 .or-go.sub{background:#FFF;color:#171717;border:1px solid #CFCBC2}
 .qbar{display:flex;flex-wrap:wrap;gap:4px;align-items:center;padding-top:3px}
-.qbar span{font-size:10px;font-weight:700;color:#6E6B64;margin-right:2px}
-.qlink{font-size:10px;font-weight:700;padding:3px 7px;border-radius:6px;background:#F2F0EC;color:#2E2D2A;border:1px solid #DDDAD3}
+.qbar span{font-size:10.5px;font-weight:700;color:#6E6B64;margin-right:2px}
+.qlink{font-size:10.5px;font-weight:700;padding:3px 7px;border-radius:6px;background:#F2F0EC;color:#2E2D2A;border:1px solid #DDDAD3}
 .qlink:hover{border-color:#171717}
-.notes{background:#FFF;border:1px solid #E2DFD7;border-radius:13px;padding:6px 13px;display:grid}
+.notes{background:#FFF;border:1px solid #E2DFD7;border-radius:13px;padding:6px 13px;display:grid;grid-template-columns:minmax(0,1fr)}
 .note{font-size:12px;line-height:17.5px;color:#3C3A36;padding:9px 0;border-bottom:1px solid #F1EFEA}
 .note:last-child{border-bottom:0}
 .note b{color:#171717;display:block;margin-bottom:2px;font-size:12.5px;font-weight:800}
 .note em{font-style:normal;color:#B42318;font-weight:700}
 .note a{color:#0F5132;font-weight:700;text-decoration:underline}
-.foot{text-align:center;font-size:10.5px;color:#7E7B74;padding-top:12px;border-top:1px solid #E9E6DF;display:grid;gap:2px}
+.foot{text-align:center;font-size:11px;color:#7E7B74;padding-top:12px;border-top:1px solid #E9E6DF;display:grid;gap:2px}
 .cartbar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:440px;background:rgba(17,17,15,.96);color:#F2F1EC;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;z-index:50;border-top:1px solid #333}
-.cb-sum b{font-size:14.5px;font-weight:800;color:#D4FF34;display:block}
-.cb-sum span{font-size:11px;color:#CFCBC2}
-.cb-btn{height:36px;padding:0 13px;border-radius:9px;background:#D4FF34;color:#11110F;font-size:12px;font-weight:800;border:0;display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+.cb-sum{min-width:0;flex:1}
+.cb-sum b{font-size:14.5px;font-weight:800;color:#D4FF34;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cb-sum span{font-size:11px;color:#CFCBC2;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cb-btn{height:36px;padding:0 13px;border-radius:9px;background:#D4FF34;color:#11110F;font-size:12px;font-weight:800;border:0;display:inline-flex;align-items:center;gap:4px;white-space:nowrap;flex:none}
 </style>
 </head>
 <body>
@@ -143,10 +144,9 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
         <button role="tab" class="mtab" data-mode="bag" aria-selected="true">가방별 보기</button>
       </div>
       <div class="sub-tabs" id="sub-tabs" role="tablist" aria-label="가방 선택">
-        <button role="tab" class="stab" data-d="swim">수영 유튜버 5인 실물가방</button>
         <button role="tab" class="stab" data-d="skin">아현동 피부짱 5종</button>
-        <button role="tab" class="stab" data-d="pet">16살 잭러셀 수제사료</button>
-        <button role="tab" class="stab" data-d="rtx">남동생·남친·남편 선물용 RTX 5000</button>
+        <button role="tab" class="stab" data-d="pet">16살 노령견 사료</button>
+        <button role="tab" class="stab" data-d="rtx">선물용 RTX 5000</button>
       </div>
     </div>
     <div id="hdr-wrap" class="hdr">
@@ -158,11 +158,11 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
     <div id="nobuy-box"></div>
     <label class="sb">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8E8B84" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-      <input type="search" id="qi" placeholder="모델명·성분·판매처 검색 (5070, 다나와, 퀘이사존, 중고, 비판텐)">
+      <input type="search" id="qi" placeholder="모델명·성분·판매처 검색 (5070, 다나와, 비판텐)">
     </label>
     <div class="sort-bar">
-      <span>각 카드의 [가격·구매처 비교]를 눌러 열거나 접을 수 있어요</span>
-      <span id="sync-stamp">2026.11.27 기준 대조</span>
+      <span>카드의 [가격비교]를 눌러 판매처를 열거나 접어요</span>
+      <span id="sync-stamp">2026.11.28 기준 대조</span>
     </div>
     <div id="secs-box" class="plist"></div>
     <div id="notes-box"></div>
@@ -193,82 +193,6 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
   var won=n=>n===0?"0원":typeof n==="number"?n.toLocaleString("ko-KR")+"원":n;
 
   var DECKS={
-    swim:{
-      title:"수영 유튜버 5인(물먹는오예·초록·이프랑·오퐁·워터양) 실제 수영가방",
-      sub:"가상 예시가 아니라 실제 수영 유튜버 5인이 영상과 인포크에서 공개한 실제 가방(나헤 드라이백·르망고 메쉬백·블럭마트 5,100원 목욕바구니)과 실제 제품 실사(아레나 코브라·스완스 발키리·센티 싱글백·피닉스 건식타올·메노킨 30초 버블)를 다나와·쿠팡 최저가로 교차 비교합니다.",
-      pills:["실제 수영 유튜버 5인 실물 100%","첫 달 사지 마 3종 제휴링크 0개","합본 가방 실사 + 다나와·쿠팡 비교"],
-      singlePick:false,
-      baseLabel:"초보 무작정 풀세트 구매가 (184,000원)",
-      baseTotal:184000,
-      nobuy:[
-        ["사지 마세요 01 · 초급 첫 달 오리발(숏핀·롱핀) & 핸드패들","김민정 현직 수영강사(생체 2급)와 유튜버 공통 지적: 초급반 첫 두 달은 자유형 발차기만 배워 사물함 짐만 됩니다.","해결책: 8주 차 강사님 반입 공지 후 반 규정에 맞춰 사세요 (지금 지출 0원 · 55,000원 방어)."],
-        ["사지 마세요 02 · 실내 초급용 어두운 블랙 미러 & 선수용 노패킹 수경","실내·새벽 수영장 조명에서는 미러 렌즈가 어두워 바닥선이 안 보이고, 노패킹은 눈 압박이 심해 첫 주에 다시 사게 됩니다.","해결책: 스완스 발키리·뷰 블레이드제로·아레나 코브라 패킹형 수경으로 시작하세요."],
-        ["사지 마세요 03 · 500ml 대용량 샴푸 본통 & 비싼 수경 하드케이스","샤워실 선반이 좁아 큰 통은 떨어지고 가방에 다 샙니다. 수경 케이스도 따로 살 필요가 없습니다.","해결책: 이프랑처럼 다이소 꿀통(2개 1,000원)에 샴푸를 소분하고, 워터양·오퐁처럼 마른 실리콘 수모 안에 수경을 감싸 보관하세요 (0원)."]
-      ],
-      items:[
-        {id:"sw0",lbl:"합본 가방 실사 · 메인 가방",lblCls:"",src:"초록님×물먹는오예 · 이프랑 실착",img:"swim-bag-nahe.webp",
-         name:"나헤(nahe) 초경량 드라이백 & 블럭마트 5,100원 목욕바구니",
-         spec:"퇴근 직장인 초경량 방수가방(29,600원) · 이케아 렌사레(3,330원) · 블럭마트 목욕바구니(5,100원)",
-         who:"누가·왜 추천하나요? (초록님 0:45 · 이프랑 0:39 실물 검증)",
-         tip:"퇴근 후 회사 사람들에게 티 안 나게 다니려면 초록님이 정착한 ‘나헤 초경량 드라이백(29,600원)’이나 입문용 ‘이케아 렌사레 방수가방(3,330원)’이 가장 가볍습니다. 샤워실 안에 들고 들어갈 때는 이프랑이 “모든 수영인의 종착지”라고 꼽은 ‘블럭마트 목욕바구니(5,100원)’가 물빠짐과 선반 자립에 가장 편합니다.",
-         warn:"사기 전 체크: 첫 1~2주는 집에 있는 에코백과 대형 지퍼백(0원)으로 다녀본 뒤 본인 사물함 크기에 맞춰 고르셔도 됩니다.",
-         defOpt:0,
-         sum:"블럭마트 바구니 5,100원 · 이케아 렌사레 3,330원 · 나헤 드라이백 29,600원",
-         qlinks:[["다나와 나헤 드라이백",DN("하이타이드 나헤 드라이백")],["다나와 이케아 렌사레",H+"prod.danawa.com/info/?pcode=112251809"],["번개장터 수영 메쉬백",BJ("르망고 메쉬백")]],
-         offers:[
-           {k:"블럭마트 가성비 목욕 바구니 (이프랑 Best 3)",b:"5,100원 · 제휴",bCls:"aff",sub:"이프랑 인포크 추천 목록 기준가 5,100원 · 물빠짐 손잡이 바구니",p:5100,pTxt:"5,100원",u:LC+"egvngL",cta:"쿠팡 현재가"},
-           {k:"이케아 렌사레 방수가방 2.5L (초록 입문템)",b:"비제휴 다나와",bCls:"",sub:"다나와 최저가 3,330원 · 젖은 수영복 분리 수납 국민 방수백",p:3330,pTxt:"3,330원",u:H+"prod.danawa.com/info/?pcode=112251809",cta:"다나와 조회"},
-           {k:"나헤(nahe) 초경량 수영 드라이백 (초록 메인백)",b:"29,600원 · 제휴",bCls:"aff",sub:"초록 인포크 기준가 29,600원 (다나와 해외배송 33,940원 대비 저렴)",p:29600,pTxt:"29,600원",u:LC+"eEHEKL",cta:"쿠팡 현재가"},
-           {k:"집 에코백 + 대형 지퍼백 활용",b:"0원 대안",bCls:"used",sub:"첫 달 가방 지출 0원으로 시작",p:0,pTxt:"0원",u:"",cta:"0원 선택"}
-         ]},
-        {id:"sw1",lbl:"알짜템 · 2년 정착 수경",lblCls:"",src:"이프랑·초록·오퐁·워터양 전원 실착",img:"swim-goggles-swans.webp",
-         name:"스완스 발키리 패킹 수경 & 아레나 코브라 울트라 패킹 수경",
-         spec:"고무 패킹 밀착형 · 코걸이 교체 가능 · 스타트 시 벗겨짐 방지 실물 검증",
-         who:"누가·왜 추천하나요? (이프랑 2:12 · 초록 1:37 · 오퐁 3:11 교차 검증)",
-         tip:"오퐁님이 노패킹 수경을 쓰다 스타트할 때 물이 들어와 패킹형으로 바꿨듯, 입문~중급 강습에서는 고무 패킹이 눈두덩이를 편하게 잡아주는 ‘스완스 발키리(33,900원)’나 ‘아레나 코브라 울트라 패킹형(다나와 61,400원)’이 2년 이상 실패 없이 쓰는 정석입니다.",
-         warn:"사기 전 체크: 수경 케이스(14,000원)는 따로 사지 말고, 워터양·오퐁님처럼 다 쓴 수경을 마른 실리콘 수모 안에 돌돌 말아 넣으면 0원으로 렌즈 긁힘을 막을 수 있습니다.",
-         defOpt:0,
-         sum:"스완스 발키리 33,900원 · 아레나 코브라 다나와 61,400원 · 미개봉 중고",
-         qlinks:[["다나와 스완스 발키리",DN("스완스 발키리 수경")],["다나와 코브라 울트라",H+"prod.danawa.com/info/?pcode=112261843"],["번개장터 미개봉 수경",BJ("스완스 발키리 미개봉")]],
-         offers:[
-           {k:"스완스 발키리 고무패킹 수경 (이프랑 2년 정착)",b:"비제휴 쿠팡/다나와",bCls:"",sub:"인포크 확인 기준가 33,900원 · 스타트 물샘 없는 가성비 패킹 수경",p:33900,pTxt:"33,900원",u:H+"www.coupang.com/vp/products/7458867519",cta:"판매처 조회"},
-           {k:"아레나 코브라 울트라 스와이프 (초록·오퐁·워터양)",b:"다나와 최저가",bCls:"",sub:"다나와 90개 판매처 실시간 비교 최저 61,400원 (인포크 67,500원)",p:61400,pTxt:"61,400원",u:H+"prod.danawa.com/info/?pcode=112261843",cta:"다나와 조회"},
-           {k:"번개장터 택 유지 미개봉 중고",b:"중고 실시간",bCls:"used",sub:"사이즈 시착 실패 미개봉 매물 참고 시세 20,000~25,000원",p:22000,pTxt:"2.2만 원대",u:BJ("스완스 수경 미개봉"),cta:"중고 매물"}
-         ]},
-        {id:"sw2",lbl:"알짜템 · 탄탄이 수영복 & 실리콘 수모",lblCls:"",src:"이프랑·오퐁·물먹는오예 실착",img:"swim-suit-senti.webp",
-         name:"센티 팔레트 싱글백 탄탄이 수영복 & 헤이엄·곰림픽 실리콘 수모",
-         spec:"폴리에스터 100% 내염소성 원단 · 어깨끈 안 흘러내리는 싱글백/V백 + 실리콘 수모",
-         who:"누가·왜 추천하나요? (이프랑 3:27 · 오퐁 4:02 · 김민정 강사 감수)",
-         tip:"2만 원대 스판 혼방 수영복은 락스 물에 한 달이면 늘어나 비침이 생깁니다. 이프랑이 정착한 ‘센티 싱글백(68,000원)’이나 ‘이월 단색 탄탄이(3~4만 원대)’처럼 폴리에스터 100% 원단으로 시작하고, 수모는 머리를 덜 조이는 ‘헤이엄 실리콘 수모(14,000원)’로 맞추세요.",
-         warn:"사기 전 체크: 수영복은 피부 밀착 위생 용품이므로 중고 대신 새상품(또는 택 부착 이월 신품)을 권장합니다.",
-         defOpt:0,
-         sum:"이월 탄탄이+수모 4.5만 · 센티 싱글백 68,000원 · 헤이엄 수모 14,000원",
-         qlinks:[["다나와 탄탄이 수영복",DN("폴리에스터 100 탄탄이 수영복")],["헤이엄 공식몰",H+"hey-um.com/products/sh-sksk"],["쿠팡 센티 싱글백",H+"www.coupang.com/vp/products/8755651461"]],
-         offers:[
-           {k:"폴리에스터 100% 이월 단색 탄탄이 + 실리콘 수모",b:"비제휴 다나와 최저",bCls:"",sub:"동일 내염소성 원단 이월 신품(34,000원) + 단색 실리콘 수모(11,000원)",p:45000,pTxt:"45,000원",u:DN("탄탄이 실내 수영복"),cta:"다나와 조회"},
-           {k:"센티 팔레트 싱글백 수영복 (이프랑 주력)",b:"비제휴 판매처",bCls:"",sub:"확인 기준가 68,000원 · 한겹 싱글백 활동성 정석",p:68000,pTxt:"68,000원",u:H+"www.coupang.com/vp/products/8755651461",cta:"판매처 조회"},
-           {k:"헤이엄 실리콘 수모 단품 (이프랑 주 3일 원픽)",b:"비제휴 공식몰",bCls:"",sub:"확인 기준가 14,000원 · 얇고 부드러워 두통 없는 실리콘 수모",p:14000,pTxt:"14,000원",u:H+"hey-um.com/products/sh-sksk",cta:"공식몰"}
-         ]},
-        {id:"sw3",lbl:"Best 3 · 속건 타올 & 30초 샤워·보습",lblCls:"cond",src:"초록·오퐁·이프랑 Best 3",img:"swim-towel-phoenix.webp",
-         name:"피닉스 초극세사 건식타올(5,900원) & 메노킨 30초 버블 / 모레모 10초",
-         spec:"부피 1/3 초극세사 건식 스포츠타올 + 다이소 1,000원 꿀통 소분 + 30초 거품 스킨",
-         who:"누가·왜 추천하나요? (초록님 Best 3 · 오퐁님 Best 3 실물 일치)",
-         tip:"집 면 수건은 젖으면 벽돌처럼 무겁고 퇴근길 가방에서 냄새가 납니다. 초록님과 다나와 최저가(5,900원)가 일치한 ‘피닉스 초극세사 건식 스포츠타올’ 한 장이면 몸과 머리를 다 닦고도 손바닥만 하게 접힙니다. 탈의실 보습은 초록님 원픽 ‘메노킨 30초 퀵 버블 마스크(다나와 18,400원)’ 하나로 끝내세요.",
-         warn:"사기 전 체크: 첫 2주는 집에 있는 작은 수건 1장과 다이소 1,000원 꿀통에 덜어 간 집 샴푸·로션(0원)으로 먼저 시작하셔도 충분합니다.",
-         defOpt:0,
-         sum:"피닉스 건식타올 5,900원 · 다이소 꿀통 1,000원 · 메노킨 다나와 18,400원",
-         qlinks:[["다나와 피닉스 건식타올",H+"prod.danawa.com/info/?pcode=101113046"],["다나와 메노킨 30초 버블",H+"prod.danawa.com/info/?pcode=26571899"],["다이소몰 꿀통 소분용기",H+"www.daisomall.co.kr/pd/pdr/SCR_PDR_0001?pdNo=96286"]],
-         offers:[
-           {k:"피닉스 초극세사 건식 스포츠타올 (초록 Best 3)",b:"5,900원 · 제휴/다나와 동가",bCls:"aff",sub:"쿠팡·다나와 동일 최저가 5,900원 · 금방 마르고 컴팩트한 수영 타올",p:5900,pTxt:"5,900원",u:LC+"eEJrYD",cta:"쿠팡 현재가"},
-           {k:"메노킨 30초 퀵 버블 마스크 모이스트 95ml",b:"비제휴 다나와 최저",bCls:"",sub:"다나와 최저가 18,400원 (인포크 쿠팡가 19,940원보다 1,540원 저렴)",p:18400,pTxt:"18,400원",u:H+"prod.danawa.com/info/?pcode=26571899",cta:"다나와 조회"},
-           {k:"모레모 워터 트리트먼트 미라클10 (오퐁 Best 3)",b:"15,900원 · 제휴",bCls:"aff",sub:"오퐁 인포크 기준가 15,900원 · 샤워실 10초 물미역 머릿결 복구",p:15900,pTxt:"15,900원",u:LC+"c1TGbn",cta:"쿠팡 현재가"},
-           {k:"집 작은 수건 + 다이소 1,000원 꿀통 집 샴푸 소분",b:"0~1,000원 대안",bCls:"used",sub:"이프랑 꿀팁: 다이소 꿀통 2개입(1,000원)에 집 샴푸·로션 소분",p:1000,pTxt:"1,000원",u:H+"www.daisomall.co.kr/pd/pdr/SCR_PDR_0001?pdNo=96286",cta:"다이소몰"}
-         ]}
-      ],
-      notes:[
-        ["실제 수영 유튜버 5인 합본 가방 사진 & 3단 결정 보드 전체 보기","초록·이프랑·오퐁·워터양·물먹는오예 5인의 <em>한번에 모아진 실제 제품 가방 합본 사진 6종과 6칸 스토리 전체</em>는 <a href=\"v3/\">고수템 수영 3단 결정 보드 (v3 열기 ↗)</a>에서 핀 번호별로 크게 보실 수 있습니다."]
-      ]
-    },
     rtx:{
       title:"RTX 5060 Ti · 5070 고수 4인 교차검증 가방",
       sub:"테크 유튜버 고수 4인(신성조 · 잇섭 · 뻘짓연구소 · 마인드피씨)의 실측 리뷰와 엔비디아 공식 스펙을 교차 검증해, 돈 아까운 하급기·병목 함정은 빼고 모니터 해상도와 용도별 실패 없는 4종만 추렸습니다.",
@@ -280,14 +204,15 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
         ["사지 마세요 03 · 3만 원 아끼려고 팬·방열판이 부실한 '최하급 모델(벤투스 등)' 사기","유튜버 신성조(그래픽카드 등급표)·뻘짓연구소가 공통 지적했듯, 가장 싼 모델은 열을 식히는 금속판이 얇아 게임할 때 시끄러운 팬 소음이 마이크로 다 들어갑니다.","해결책: 3만 원만 보태 열과 소음을 잘 잡는 검증된 중상급 모델(ASUS DUAL · MSI 게이밍 · 갤럭시 BLACK)을 고르세요."]
       ],
       items:[
-        {id:"r1",lbl:"알짜템 · 일반 모니터(FHD) 실속 1위",lblCls:"",src:"마인드피씨·신성조 검증",img:"rtx-5060ti-8g.jpg",
+        {id:"r1",lbl:"알짜템 · FHD 실속 1위",lblCls:"",src:"마인드피씨·신성조 검증",img:"rtx-5060ti-8g.jpg",
          name:"ASUS DUAL 지포스 RTX 5060 Ti OC D7 8GB",
+         shortName:"ASUS DUAL RTX 5060 Ti 8GB",
          spec:"일반 모니터(FHD) 게임·방송용 · 메모리 8GB · 전력 180W (배그 교전 최저 108프레임 유지)",
          who:"누가·왜 추천하나요? (마인드피씨 · 신성조 · 잇섭 교차 검증)",
          tip:"유튜버 마인드피씨 실측 기준, 일반 모니터(FHD)에서 롤·배틀그라운드·오버워치를 방송과 함께 끊김 없이 돌리기에 가장 가성비가 좋은 입문 모델입니다. 특히 고성능 그래픽카드로 바꿀 때는 보통 컴퓨터 전원장치(파워)도 10만 원 넘게 주고 새로 교체해야 하지만, 이 제품은 전기를 적게 먹어서(180W) 집에 쓰던 일반 PC(정격 600W 파워)에 부품만 꽂으면 추가 비용 0원으로 바로 작동합니다.",
-         warn:"사기 전 체크: 산 지 4~5년 넘은 구형 컴퓨터(PCIe 3.0 메인보드)에 꽂아 초고화질 게임을 돌리면 데이터 통로가 좁아 성능이 10%가량 덜 나올 수 있습니다.",
+         warn:"사기 전 체크: 산 지 4~5년 넘은 구형 컴퓨터(PCIe 3.0 메인보드)에 꽂아 초고화질 게임을 돌리면 데이터 통로가 좁아 성능이 10%가량 덜 나올 수 있습니다. (ComputerBase 2025.05 실측)",
          refPrice:850000,defOpt:0,
-         sum:"다나와 73~80만 · 쿠팡 792,430원 · 중고 55~62만",
+         sum:"다나와 73~80만 · 쿠팡 79.2만 · 중고 55~62만",
          qlinks:[["다나와 실시간",DN("ASUS DUAL RTX 5060 Ti 8GB")],["에누리 최저가",EN("RTX 5060 Ti 8GB")],["퀘이사존 핫딜",QZ("5060 Ti")],["번개장터 중고",BJ("RTX 5060 Ti 8GB")]],
          offers:[
            {k:"다나와·에누리 신품 최저가 조회",b:"비제휴 실시간",bCls:"",sub:"오픈마켓·컴퓨존·현금몰 실시간 가격 비교 (참고 시세 73~80만)",p:760000,pTxt:"73~80만 원",u:DN("ASUS DUAL RTX 5060 Ti 8GB"),cta:"다나와 조회"},
@@ -295,14 +220,15 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
            {k:"퀘이사존 지름/할인정보 특가",b:"커뮤니티 핫딜",bCls:"alt",sub:"카드·토스/카카오페이 체감 특가 실시간 검색",p:730000,pTxt:"특가 조회",u:QZ("5060 Ti"),cta:"퀘이사존"},
            {k:"번개장터·당근 중고 매물",b:"중고 실시간",bCls:"used",sub:"무상 AS 2년+ 직거래 S급 참고 시세 55~62만 (신품 대비 -21만)",p:580000,pTxt:"55~62만 원",u:BJ("RTX 5060 Ti 8GB"),cta:"중고 매물"}
          ]},
-        {id:"r3",lbl:"알짜템 · +10만 원으로 성능 +30% 종결",lblCls:"",src:"잇섭·마인드피씨 만장일치",img:"rtx-5070-12g.jpg",
+        {id:"r3",lbl:"알짜템 · QHD 성능 종결",lblCls:"",src:"잇섭·마인드피씨 만장일치",img:"rtx-5070-12g.jpg",
          name:"MSI 지포스 RTX 5070 게이밍 트리오 OC D7 12GB",
+         shortName:"MSI RTX 5070 게이밍 트리오 12GB",
          spec:"고화질 모니터(QHD) 게임·원컴 방송용 · 메모리 12GB · 3팬 정숙 쿨링 (배그 교전 최저 135프레임)",
          who:"누가·왜 추천하나요? (잇섭 · 마인드피씨 · 신성조 만장일치)",
          tip:"유튜버 잇섭(3DMark 벤치마크)과 마인드피씨(배그·검은신화 오공 실측) 모두 입을 모아 추천한 주력 모델입니다. 바로 아래 등급인 5060 Ti 16GB(134.9만 원)에서 10만 원만 보태면, 화면을 그리는 두뇌(코어 6,144개)와 데이터 통로 폭이 훨씬 넓어져 실제 게임 속도가 30% 이상 더 빠르게 나옵니다. 메인보드 연결 통로(PCIe x16)도 꽉 채워 써서 구형 PC에 꽂아도 성능 손실이 없습니다.",
          warn:"사기 전 체크: 팬이 3개 달린 긴 모델이라 내 컴퓨터 케이스 안에 들어가는 크기인지, 컴퓨터 전원장치(파워)가 700~750W 이상인지 꼭 확인하세요.",
          refPrice:1520000,defOpt:0,
-         sum:"다나와 135~144만 · 쿠팡 1,449,000원 · 중고 110~130만",
+         sum:"다나와 135~144만 · 쿠팡 144.9만 · 중고 110~130만",
          qlinks:[["다나와 실시간",DN("MSI RTX 5070 게이밍 트리오 12GB")],["에누리 최저가",EN("RTX 5070 12GB")],["퀘이사존 핫딜",QZ("5070")],["번개장터 중고",BJ("RTX 5070 12GB")]],
          offers:[
            {k:"다나와·에누리 신품 최저가 조회",b:"비제휴 실시간",bCls:"",sub:"견적왕 현금몰 135만~ / 오픈마켓 140만대 실시간 비교",p:1350000,pTxt:"135~144만 원",u:DN("MSI RTX 5070 게이밍 트리오 12GB"),cta:"다나와 조회"},
@@ -311,28 +237,30 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
            {k:"번개장터·당근 중고 매물",b:"중고 실시간",bCls:"used",sub:"시리얼 무상보증 2년+ 확인 필수 · 참고 시세 110~130만",p:1200000,pTxt:"110~130만 원",u:BJ("RTX 5070"),cta:"중고 매물"},
            {k:"대체템 · 라데온 RX 9070 16GB",b:"순수게임 대체",bCls:"alt",sub:"OBS 방송(엔비디아 인코더) 안 켜고 게임만 할 때 가성비 대안",p:1098000,pTxt:"109.8만~",u:DN("라데온 RX 9070 16GB"),cta:"다나와 조회"}
          ]},
-        {id:"r2",lbl:"조건부 추천 · AI 그림·4K 영상 편집용",lblCls:"cond",src:"잇섭·뻘짓연구소 분석",img:"rtx-5060ti-16g.jpg",
+        {id:"r2",lbl:"조건부 · AI·4K 작업용",lblCls:"cond",src:"잇섭·뻘짓연구소 분석",img:"rtx-5060ti-16g.jpg",
          name:"MSI 지포스 RTX 5060 Ti 게이밍 OC D7 16GB",
+         shortName:"MSI RTX 5060 Ti 게이밍 16GB",
          spec:"대용량 메모리 16GB 탑재 · 최대 온도 62℃ / 소음 38.8dB 초정숙 (뻘짓연구소 실측)",
          who:"누가·왜 추천하나요? (잇섭 · 뻘짓연구소 용도 구분)",
          tip:"잇섭과 뻘짓연구소가 짚어준 핵심은 ‘79만 원짜리 8GB 모델과 기본 게임 두뇌(코어 4,608개)는 똑같고, 데이터를 담아두는 메모리 용량만 16GB로 2배 늘린 모델’이라는 점입니다. 따라서 내 컴퓨터에서 직접 AI 이미지 생성(스테이블 디퓨전 등)을 돌리거나 4K 고화질 영상을 편집해 메모리가 많이 필요한 분에게만 추천합니다.",
          warn:"사기 전 체크: AI 작업 없이 순수하게 게임·방송만 할 거라면, 134.9만 원에 이걸 사는 것보다 10만 원만 보태 위쪽 RTX 5070(144.9만 원)을 사는 게 게임 속도가 30% 더 빠릅니다.",
          refPrice:1450000,defOpt:0,
-         sum:"다나와 95~135만 · 쿠팡 1,349,000원 · 중고 65~80만",
+         sum:"다나와 95~135만 · 쿠팡 134.9만 · 중고 65~80만",
          qlinks:[["다나와 실시간",DN("MSI RTX 5060 Ti 게이밍 16GB")],["퀘이사존 핫딜",QZ("5060 Ti 16GB")],["번개장터 중고",BJ("RTX 5060 Ti 16GB")]],
          offers:[
            {k:"다나와·에누리 신품 최저가 조회",b:"비제휴 실시간",bCls:"",sub:"쇼핑몰별 재고·현금/카드 최저가 실시간 비교",p:1050000,pTxt:"95~135만 원",u:DN("MSI RTX 5060 Ti 게이밍 16GB"),cta:"다나와 조회"},
            {k:"쿠팡 로켓배송 (트윈프로져)",b:"제휴 · 로켓",bCls:"aff",sub:"확인 기준가 1,349,000원 · 상급 방열판 (클릭 시 현재가 확인)",p:1349000,pTxt:"1,349,000원",u:R2,cta:"쿠팡 현재가"},
            {k:"번개장터·당근 중고 매물",b:"중고 실시간",bCls:"used",sub:"주의: AI 24시간 작업장 매물 여부 확인 필수 (참고 65~80만)",p:720000,pTxt:"65~80만 원",u:BJ("RTX 5060 Ti 16GB"),cta:"중고 매물"}
          ]},
-        {id:"r4",lbl:"조건부 추천 · 4K 최고화질 방송·작업용",lblCls:"cond",src:"신성조 하이엔드 검증",img:"rtx-5070ti-16g.jpg",
+        {id:"r4",lbl:"조건부 · 4K 하이엔드",lblCls:"cond",src:"신성조 하이엔드 검증",img:"rtx-5070ti-16g.jpg",
          name:"갤럭시 GALAX 지포스 RTX 5070 Ti BLACK OC 16GB",
+         shortName:"갤럭시 RTX 5070 Ti BLACK 16GB",
          spec:"4K 초고화질 모니터용 · 메모리 16GB · 방송 송출 칩 2개(듀얼 인코더) · 전력 300W",
          who:"누가·왜 추천하나요? (신성조 · 퀘이사존 하이엔드 대안)",
          tip:"유튜버 신성조가 분석했듯, 윗등급인 RTX 5080 가격이 380만 원대로 폭등하면서 200만 원대 초반으로 4K 초고화질 게임과 다중 방송 송출(방송 처리 칩 2개 내장)을 타협 없이 돌릴 수 있는 현실적인 최상위 모델입니다.",
          warn:"사기 전 체크: 전기를 300W나 먹는 고성능 부품이라 최신 규격(ATX 3.1) 750~850W 이상 고급 파워가 필수입니다. 일반 모니터로 롤·배그만 하신다면 과투자이니 5060 Ti나 5070으로 80만 원 이상 아끼세요.",
          refPrice:2250000,defOpt:0,
-         sum:"다나와 210~225만 · 쿠팡 2,203,000원 · 퀘이사존 특가",
+         sum:"다나와 210~225만 · 쿠팡 220.3만 · 퀘이사존 특가",
          qlinks:[["다나와 실시간",DN("갤럭시 RTX 5070 Ti EX GAMER BLACK 16GB")],["퀘이사존 핫딜",QZ("5070 Ti")],["번개장터 중고",BJ("RTX 5070 Ti")]],
          offers:[
            {k:"다나와·에누리 신품 최저가 조회",b:"비제휴 실시간",bCls:"",sub:"오픈마켓·조립몰 전체 실시간 최저가 비교",p:2136000,pTxt:"210~225만 원",u:DN("갤럭시 RTX 5070 Ti EX GAMER BLACK 16GB"),cta:"다나와 조회"},
@@ -342,7 +270,7 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
       ],
       notes:[
         ["초보자를 위한 그래픽카드 용어 1분 통역","• <em>FHD / QHD / 4K</em> : 모니터 화질 등급(FHD=일반 모니터, QHD=고화질, 4K=초고화질 TV급). 화질이 높을수록 그래픽카드 메모리가 많이 필요합니다.<br>• <em>파워(전원공급장치, W)</em> : 컴퓨터에 전기를 보내는 부품입니다. 그래픽카드가 전기를 많이 먹으면 파워까지 새로 바꿔야 해서 10만 원 넘게 추가 비용이 듭니다.<br>• <em>PCIe 통로(레인)</em> : 메인보드와 그래픽카드가 데이터를 주고받는 도로 넓이입니다."],
-        ["2026.11 조립PC 시세 주의 (퀘이사존 견적 게시판 기준)","DDR5 32GB 램(66만 원)·SSD 1TB(35만 원) 급등으로 새 본체 풀구성은 307만 원에 달합니다. 기존 라이젠 5600X(DDR4) 컴퓨터를 쓰신다면 본체를 새로 사지 말고 <em>그래픽카드만 교체</em>하는 것이 200만 원 이상 아끼는 길입니다."]
+        ["고수 4인 리뷰 출처 및 2026.11 시세 기준일","• <em>성능·소음·병목 실측 출처</em> : 신성조(2025.04 티어표·7종 비교) · 잇섭(2025.05 5060 Ti 리뷰) · 뻘짓연구소(2025.03~05 5070·5060 Ti 쿨링 실측) · 마인드피씨(배그·검은신화 오공 프레임 실측) · ComputerBase/TechPowerUp(2025.05 PCIe 병목).<br>• <em>시세 변동 주의</em> : 영상 시점(2025 출시 초기)과 현재(2026.11 메모리·환율 인상 반영 시세)는 가격 차이가 있으며, DDR5 32GB 램(66만)·SSD 1TB(35만) 급등으로 구형 라이젠 5600X PC는 본체 대신 <em>그래픽카드만 교체</em>하는 것이 200만 원 이상 아끼는 길입니다."]
       ]
     },
     skin:{
@@ -357,7 +285,7 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
         ["다 사지 마세요 02 · 5종 화장품 풀세트 일괄 구매","집 화장대에 이미 쓰고 있는 스킨·수분크림·선크림이 있다면 5개를 전부 새로 살 필요가 없습니다.","고수 조합: 성분의 핵심인 2종(메디비티 모공 앰플 1.2만 + 약국 비판텐 1만 = 2.2만 원)으로만 먼저 시작해 51,000원을 아끼세요."]
       ],
       items:[
-        {id:"s1",lbl:"알짜템 · 핵심 01",lblCls:"",src:"1번 성분 갈락토미세스 60%",img:"skin-kits.jpg",
+        {id:"s1",lbl:"알짜템 · 핵심 01",lblCls:"",src:"갈락토미세스 60%",img:"skin-kits.jpg",
          name:"메디비티 멜라노 하이드라 모공 앰플 50ml",
          spec:"갈락토미세스 발효여과물 60% + 나이아신아마이드 10% + 바쿠치올",
          who:"왜 이 앰플이 핵심인가요? (차명진 1개월 내돈내산 성분 분석)",
@@ -389,14 +317,14 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
          tip:"세안 직후 얼굴이 찢어질 듯 당기는 속건조 건성 피부라면 앰플 바르기 전 1단계로 발랐을 때 속당김을 확실히 잡아줍니다. 반대로 이미 집에 보습 스킨이 있거나 유분이 많은 지성 피부라면 사지 않고 건너뛰셔도 됩니다.",
          warn:"사기 전 체크: 온라인 실구매 후기 다수에서 지성·여름철 피부에는 유분감이 무거워 좁쌀 여드름이나 화장 밀림이 생길 수 있다는 의견이 있습니다.",
          defOpt:0,
-         sum:"집 토너 0원 대체 · 다나와 2.4~2.8만 · 쿠팡 로켓",
+         sum:"집 토너 0원 · 다나와 2.4만~ · 쿠팡 27,000원",
          offers:[
            {k:"집에 있는 걸로 (보습 토너 보유/지성)",b:"0원 대안 · 추천",bCls:"",sub:"쓰던 토너가 있거나 지성 피부라면 0원으로 패스",p:0,pTxt:"0원",u:"",cta:"0원 선택"},
-           {k:"다나와·에누리 최저가 비교",b:"비제휴 실시간",bCls:"",sub:"오픈마켓·백화점몰 배송비 포함 실시간 최저가 비교",p:24500,pTxt:"다나와 최저가",u:DN("라네즈 크림스킨 세라펩타이드 170ml"),cta:"다나와 조회"},
-           {k:"쿠팡 로켓배송",b:"제휴 · 로켓",bCls:"aff",sub:"로켓배송 당일 실시간 판매가 확인",p:27000,pTxt:"쿠팡 현재가",u:LN,cta:"쿠팡 현재가"}
+           {k:"다나와·에누리 최저가 비교",b:"비제휴 실시간",bCls:"",sub:"오픈마켓·백화점몰 배송비 포함 실시간 최저가 비교 (2.4~2.8만)",p:24500,pTxt:"24,500원~",u:DN("라네즈 크림스킨 세라펩타이드 170ml"),cta:"다나와 조회"},
+           {k:"쿠팡 로켓배송 (170ml 본품)",b:"제휴 · 로켓",bCls:"aff",sub:"확인 기준가 27,000원 · 로켓배송 (클릭 시 현재가 확인)",p:27000,pTxt:"27,000원",u:LN,cta:"쿠팡 현재가"}
          ]},
-        {id:"s4",lbl:"선택템 · 잡티 STEP 03",lblCls:"cond",src:"세트 구매 시만 유리",img:"medibt-cream.jpg",
-         name:"메디비티 포어제로 멜라노 피테라 크림 50ml & 2종 세트",
+        {id:"s4",lbl:"선택템 · 잡티 STEP 03",lblCls:"cond",src:"세트 구매 시 유리",img:"medibt-cream.jpg",
+         name:"메디비티 포어제로 멜라노 피테라 크림 50ml (단품·세트)",
          spec:"앰플 위를 덮어 잡티·수분 증발을 막아주는 마무리 크림",
          who:"언제 사는 게 이득인가요? (단품 배송비 함정 피하기)",
          tip:"1번 모공 앰플을 바른 뒤 수분이 날아가지 않게 덮어주는 짝꿍 크림입니다. 단, 공식몰에서 크림 단품만 사면 배송비 3,500원이 붙어 15,500원이 되므로 비효율적입니다. 처음부터 앰플+크림을 같이 쓰실 분만 공식몰 2종 세트(23,500원 무료배송)로 구매하시고, 아니면 집에 있는 수분크림을 그대로 쓰세요.",
@@ -405,7 +333,7 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
          sum:"집 수분크림 0원 · 공식몰 2종세트 23,500원 · 단품 15,500원",
          offers:[
            {k:"집에 있는 걸로 (집 수분크림 사용)",b:"0원 대안 · 추천",bCls:"",sub:"핵심 01 앰플 위에 집에 있는 수분크림으로 마무리",p:0,pTxt:"0원",u:"",cta:"0원 선택"},
-           {k:"메디비티 공식몰 (앰플+크림 2종 세트)",b:"세트 무배 최저",bCls:"",sub:"2종 합계 23,500원 무료배송 (크림 추가분 +11,500원꼴)",p:11500,pTxt:"+11,500원(세트차액)",u:OF,cta:"공식몰 세트"},
+           {k:"메디비티 공식몰 (앰플+크림 2종 세트)",b:"세트 무배 최저",bCls:"",sub:"2종 합계 23,500원 무료배송 (크림 추가분 +11,500원꼴)",p:11500,pTxt:"+11,500원",u:OF,cta:"공식몰 세트"},
            {k:"메디비티 공식몰 (크림 단품)",b:"배송비 주의",bCls:"alt",sub:"상품 12,000원 + 배송비 3,500원 = 15,500원",p:15500,pTxt:"15,500원",u:OC,cta:"공식몰 단품"}
          ]},
         {id:"s5",lbl:"집에 있는 걸로 · STEP 05",lblCls:"zero",src:"야외 레포츠용",img:"hera.jpg",
@@ -415,11 +343,11 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
          tip:"발리 서핑이나 야외 러닝·골프처럼 땀과 물에 선크림이 쉽게 씻겨 내려가는 환경에서 주근깨를 막아준 방수 선크림입니다. 실내 위주 일상 출퇴근이라면 굳이 새로 사지 마시고 집에 있는 데일리 선크림을 그대로 쓰세요.",
          warn:"사기 전 체크: 물에 안 지워지는 워터프루프 제품이라 저녁 세안 시 클렌징오일이나 폼으로 꼼꼼히 씻어내야 모공이 막히지 않습니다.",
          defOpt:0,
-         sum:"집 선크림 0원 대체 · 다나와 2.2~2.6만 · 스마트스토어",
+         sum:"집 선크림 0원 · 다나와 2.3만~ · 스토어 24,000원",
          offers:[
            {k:"집에 있는 걸로 (기존 선크림 사용)",b:"0원 대안 · 고수추천",bCls:"",sub:"집에 잘 맞는 데일리 선크림이 있다면 새로 사지 마세요",p:0,pTxt:"0원",u:"",cta:"0원 선택"},
-           {k:"다나와 최저가 비교",b:"비제휴 실시간",bCls:"",sub:"오픈마켓 전체 실시간 최저가·배송비 비교",p:23000,pTxt:"다나와 최저가",u:DN("헤라 선메이트 레포츠 프로 워터프루프 70ml"),cta:"다나와 조회"},
-           {k:"네이버 스마트스토어",b:"비제휴 스토어",bCls:"",sub:"스마트스토어 실시간 판매가 확인",p:24000,pTxt:"스토어 현재가",u:HR,cta:"스토어 조회"}
+           {k:"다나와 최저가 비교",b:"비제휴 실시간",bCls:"",sub:"오픈마켓 전체 실시간 최저가·배송비 비교 (2.2~2.6만)",p:23000,pTxt:"23,000원~",u:DN("헤라 선메이트 레포츠 프로 워터프루프 70ml"),cta:"다나와 조회"},
+           {k:"네이버 스마트스토어",b:"비제휴 스토어",bCls:"",sub:"확인 기준가 24,000원 · 스마트스토어 현재가 확인",p:24000,pTxt:"24,000원",u:HR,cta:"스토어 조회"}
          ]}
       ],
       notes:[
@@ -444,10 +372,10 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
          tip:"물에 불리지 않아도 처음부터 말랑말랑한 반습식이라 이빨 약한 노령견이 편하게 씹어 먹습니다. 무엇보다 200g씩 32팩으로 개별 밀봉되어 있어 마지막 32번째 봉지를 뜯을 때까지 마르지 않고 촉촉하며, 1.2kg·3.2kg 소포장보다 6.4kg 대용량 박스가 100g당 단가(1,014원)가 가장 저렴합니다.",
          warn:"사기 전 체크: 사료를 처음 바꿀 때는 장이 놀라지 않게 3~4일간 기존 사료와 섞어 급여하고, 부드러운 반습식 특성상 치아에 끼기 쉬우니 식후 가벼운 양치를 함께 해주세요.",
          defOpt:0,
-         sum:"쿠팡 64,880원(100g당 1,014원 최저) · 다나와 비교 · 후기 원문",
+         sum:"쿠팡 64,880원(100g 1,014원) · 다나와 비교 · 후기 원문",
          offers:[
            {k:"쿠팡 6.4kg 대용량 (200g×32팩)",b:"100g당 1,014원 · 제휴",bCls:"aff",sub:"확인 기준가 64,880원 · 무료배송 (클릭 시 현재가 확인)",p:64880,pTxt:"64,880원",u:DG,cta:"쿠팡 현재가"},
-           {k:"다나와·에누리 용량별(1.2~6.4kg) 비교",b:"비제휴 실시간",bCls:"",sub:"타 오픈마켓 배송비 포함 총비용 실시간 비교",p:68500,pTxt:"다나와 최저가",u:DN("아침애 한우 수제사료 6.4kg"),cta:"다나와 조회"},
+           {k:"다나와·에누리 용량별(1.2~6.4kg) 비교",b:"비제휴 실시간",bCls:"",sub:"타 오픈마켓 배송비 포함 총비용 실시간 비교",p:68500,pTxt:"68,500원~",u:DN("아침애 한우 수제사료 6.4kg"),cta:"다나와 조회"},
            {k:"쿠팡 실구매 견주 후기 원문",b:"후기 먼저 검증",bCls:"used",sub:"구매 전 다른 노령견 견주들의 급여 후기 직접 확인",p:64880,pTxt:"후기 원문",u:DB,cta:"후기 보기"}
          ]},
         {id:"p2",lbl:"선택템 · 사료 토핑용",lblCls:"cond",src:"100g당 1,643원",img:"bowwow.jpg",
@@ -457,23 +385,23 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
          tip:"노령견이 컨디션이 떨어져 사료만 주면 안 먹으려 할 때, 이 혼합 간식을 3~4알만 손으로 작게 쪼개 사료 위에 고명(토핑)처럼 섞어 주면 냄새를 맡고 그릇을 깨끗이 비웁니다.",
          warn:"사기 전 체크: 쿠팡 판매처의 대표 썸네일 사진은 150g 포장지 공용 이미지로 등록되어 있으나, 실제 주문·발송되는 옵션은 350g×2봉(총 700g) 묶음입니다.",
          defOpt:0,
-         sum:"쿠팡 11,500원(100g당 1,643원) · 다나와 비교 · 0원 생략",
+         sum:"쿠팡 11,500원(100g 1,643원) · 다나와 비교 · 0원 생략",
          offers:[
            {k:"쿠팡 로켓배송 (350g×2봉 = 700g)",b:"100g당 1,643원 · 제휴",bCls:"aff",sub:"확인 기준가 11,500원 · 2봉 묶음 로켓배송",p:11500,pTxt:"11,500원",u:BW,cta:"쿠팡 현재가"},
-           {k:"다나와 판매처별 가격비교",b:"비제휴 실시간",bCls:"",sub:"낱봉·묶음 배송비 포함 실시간 가격 비교",p:12500,pTxt:"다나와 최저가",u:DN("바우와우 혼합간식 350g"),cta:"다나와 조회"},
+           {k:"다나와 판매처별 가격비교",b:"비제휴 실시간",bCls:"",sub:"낱봉·묶음 배송비 포함 실시간 가격 비교",p:12500,pTxt:"12,500원~",u:DN("바우와우 혼합간식 350g"),cta:"다나와 조회"},
            {k:"집에 있는 걸로 (사료만 급여 시)",b:"0원 대안",bCls:"used",sub:"사료를 잘 먹는 편이라면 토핑 간식은 생략 가능",p:0,pTxt:"0원",u:"",cta:"0원 선택"}
          ]},
-        {id:"p3",lbl:"선택템 · 노즈워크 대용량",lblCls:"cond",src:"100g당 1,335원",img:"meongsumugang.jpg",
+        {id:"p3",lbl:"선택템 · 노즈워크용",lblCls:"cond",src:"100g당 1,335원",img:"meongsumugang.jpg",
          name:"목우촌 펫9단 멍수무강 강아지 소고기 져키 1.1kg",
          spec:"국내산 소고기 · 노즈워크·칭찬 보상용 1.1kg 대용량 통",
          who:"언제 함께 주면 좋나요? (치매 예방 후각 놀이 · 노즈워크용)",
          tip:"노령견은 산책 시간이 줄어드는 대신 집 안에서 코로 냄새를 맡으며 간식을 찾는 ‘노즈워크’ 놀이가 치매 예방과 스트레스 해소에 중요합니다. 국내산 소고기 져키가 1.1kg 대용량(100g당 1,335원)으로 들어 있어 부담 없이 매트에 숨겨 주기 좋습니다.",
          warn:"사기 전 체크: 1.1kg 대용량 통이므로 개봉 후 공기가 통하지 않게 뚜껑을 꼭 닫아 보관하고, 강아지 체중별 하루 권장 급여량을 넘지 않게 조절해 주세요.",
          defOpt:0,
-         sum:"쿠팡 14,680원(100g당 1,335원) · 다나와 비교 · 0원 제외",
+         sum:"쿠팡 14,680원(100g 1,335원) · 다나와 비교 · 0원 제외",
          offers:[
            {k:"쿠팡 로켓배송 (1.1kg 대용량)",b:"100g당 1,335원 · 제휴",bCls:"aff",sub:"확인 기준가 14,680원 (26% 할인) · 로켓배송",p:14680,pTxt:"14,680원",u:MG,cta:"쿠팡 현재가"},
-           {k:"다나와 판매처별 가격비교",b:"비제휴 실시간",bCls:"",sub:"오픈마켓 전체 실시간 최저가 비교",p:16500,pTxt:"다나와 최저가",u:DN("목우촌 멍수무강 1.1kg"),cta:"다나와 조회"},
+           {k:"다나와 판매처별 가격비교",b:"비제휴 실시간",bCls:"",sub:"오픈마켓 전체 실시간 최저가 비교",p:16500,pTxt:"16,500원~",u:DN("목우촌 멍수무강 1.1kg"),cta:"다나와 조회"},
            {k:"집에 있는 걸로 (기존 간식 보유 시)",b:"0원 대안",bCls:"used",sub:"집에 노즈워크 간식이 이미 있다면 0원으로 제외",p:0,pTxt:"0원",u:"",cta:"0원 선택"}
          ]}
       ],
@@ -484,23 +412,22 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
   };
 
   var BAG_META={
-    swim:{short:"수영 유튜버 5인 실물가방",order:0},
     skin:{short:"아현동 피부짱 5종",order:1},
-    pet:{short:"16살 잭러셀 수제사료",order:2},
+    pet:{short:"16살 노령견 사료",order:2},
     rtx:{short:"선물용 RTX 5000",order:3}
   };
   var h=location.hash.slice(1);
-  var mode=(h==="swim"||h==="rtx"||h==="skin"||h==="pet")?"bag":"all";
-  var cur=DECKS[h]?h:"swim",q="",src=u=>u.indexOf("http")===0?u:"img/"+u;
+  var mode=(h==="rtx"||h==="skin"||h==="pet")?"bag":"all";
+  var cur=DECKS[h]?h:"skin",q="",src=u=>u.indexOf("http")===0?u:"img/"+u;
   /* 기본 열림: RTX 탭은 MSI 지포스(r3, r2)만 열림, 다른 카드는 접힘 */
-  var picks={swim:{sw0:0,sw1:0,sw2:0,sw3:0},rtx:{item:"r3",opt:0},skin:{s1:0,s2:0,s3:0,s4:0,s5:0},pet:{p1:0,p2:0,p3:0}};
-  var openMap={sw0:true,sw1:true,sw2:false,sw3:false,r1:false,r3:true,r2:true,r4:false,s1:true,s2:false,s3:false,s4:false,s5:false,p1:true,p2:false,p3:false};
+  var picks={rtx:{item:"r3",opt:0},skin:{s1:0,s2:0,s3:0,s4:0,s5:0},pet:{p1:0,p2:0,p3:0}};
+  var openMap={r1:false,r3:true,r2:true,r4:false,s1:true,s2:false,s3:false,s4:false,s5:false,p1:true,p2:false,p3:false};
 
   function calcBar(d){
     if(d.singlePick){
       var st=picks[cur],it=d.items.find(x=>x.id===st.item)||d.items[0],o=it.offers[st.opt]||it.offers[0];
       var diff=Math.max(0,(it.refPrice||o.p)-o.p);
-      return {tot:o.p,save:it.name.split(" ").slice(0,4).join(" ")+" · "+o.k+(diff>0?" (기준가 대비 -"+won(diff)+")":""),url:o.u||it.offers[0].u,cta:o.u?o.cta+" 열기 ↗":"다나와 시세 열기 ↗"};
+      return {tot:o.p,save:(it.shortName||it.name)+" · "+o.k+(diff>0?" (기준가 대비 -"+won(diff)+")":""),url:o.u||it.offers[0].u,cta:o.u?o.cta+" 열기 ↗":"다나와 시세 열기 ↗"};
     }
     var tot=0,firstUrl="";
     d.items.forEach(it=>{
@@ -513,13 +440,13 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
   }
 
   function renderAll(){
-    $("p-title").textContent="고수템 전체 큐레이션 · 2열 실물 사진 타일 (16종)";
-    $("p-sub").textContent="실제 수영 유튜버 5인 실물 가방·장비부터 아현동 피부짱·16살 잭러셀·선물용 RTX 5000까지, 2열 정사각 실물 사진 타일을 누르면 가방별 다채널 가격비교로 바로 이동합니다.";
-    $("p-pills").innerHTML='<span class="mpill hi">전체 4개 가방 · 16종 실물</span><span class="mpill">개별 [제휴] 투명 표기</span><span class="mpill">0원 대안·중고 시세 포함</span>';
+    $("p-title").textContent="고수템 전체 큐레이션 · 2열 실물 사진 타일 (12종)";
+    $("p-sub").textContent="아현동 피부짱 5종·16살 노령견 사료 3종·선물용 RTX 5000 4종까지, 1:1 정사각 실물 사진 타일을 누르면 가방별 다채널 가격비교로 바로 이동합니다.";
+    $("p-pills").innerHTML='<span class="mpill hi">전체 3개 가방 · 12종 실물</span><span class="mpill">개별 [제휴] 투명 표기</span><span class="mpill">0원 대안·중고 시세 포함</span>';
     $("anchor-box").innerHTML="";
     $("nobuy-box").innerHTML="";
     $("notes-box").innerHTML="";
-    var orderKeys=["swim","skin","pet","rtx"],tiles=[];
+    var orderKeys=["skin","pet","rtx"],tiles=[];
     orderKeys.forEach(k=>{
       var d=DECKS[k];
       d.items.forEach(it=>{
@@ -559,7 +486,7 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
     var cb=calcBar(d);
     if(d.singlePick){
       var st=picks[cur],it=d.items.find(x=>x.id===st.item)||d.items[0],o=it.offers[st.opt]||it.offers[0];
-      $("anchor-box").innerHTML='<div class="anchor"><div class="ac-col"><span>선택 모델 신품 기준가</span><s class="num">'+won(it.refPrice)+'</s><small>'+it.name.slice(0,22)+'</small></div><div class="ac-col"><span>내가 고른 경로 기준·예상가</span><b class="num">'+o.pTxt+'</b><small>'+o.k+'</small></div></div>';
+      $("anchor-box").innerHTML='<div class="anchor"><div class="ac-col"><span>선택 모델 신품 기준가</span><s class="num">'+won(it.refPrice)+'</s><small>'+(it.shortName||it.name)+'</small></div><div class="ac-col"><span>내가 고른 경로 기준·예상가</span><b class="num">'+o.pTxt+'</b><small>'+o.k+'</small></div></div>';
     }else{
       var sv=Math.max(0,(d.baseTotal||cb.tot)-cb.tot);
       $("anchor-box").innerHTML='<div class="anchor"><div class="ac-col"><span>'+d.baseLabel+'</span><s class="num">'+won(d.baseTotal)+'</s><small>무작정 단품 풀세트 구매 시</small></div><div class="ac-col"><span>지금 내 고수 조합 총비용</span><b class="num">'+won(cb.tot)+'</b><small>'+(sv>0?'불필요 지출 -'+won(sv)+' 절약':'최저가 경로 선택 중')+'</small></div></div>';
