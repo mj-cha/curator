@@ -23,9 +23,29 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
 .meta-pills{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
 .mpill{font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:5px;background:#EAE7E0;color:#48453F}
 .mpill.hi{background:#11110F;color:#D4FF34}
-.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:#E6E3DC;padding:4px;border-radius:11px}
-.tab{height:35px;border:0;border-radius:8px;background:none;font-size:12px;font-weight:800;color:#66635D}
-.tab[aria-selected="true"]{background:#FFF;color:#11110F;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.nav-stack{display:grid;gap:6px}
+.mode-tabs{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;background:#11110F;padding:4px;border-radius:11px}
+.mtab{height:35px;border:0;border-radius:8px;background:none;font-size:12.5px;font-weight:800;color:#A8A59E;display:inline-flex;align-items:center;justify-content:center;gap:5px}
+.mtab[aria-selected="true"]{background:#D4FF34;color:#11110F;box-shadow:0 1px 3px rgba(0,0,0,.18)}
+.sub-tabs{display:flex;gap:6px;overflow-x:auto;padding:2px 1px 4px;scrollbar-width:none;-ms-overflow-style:none}
+.sub-tabs::-webkit-scrollbar{display:none}
+.stab{flex:none;height:33px;padding:0 12px;border:1px solid #DDDAD3;border-radius:999px;background:#FFF;font-size:11.5px;font-weight:800;color:#5E5B55;white-space:nowrap;transition:all .12s}
+.stab[aria-selected="true"]{background:#11110F;color:#FFF;border-color:#11110F;box-shadow:0 2px 5px rgba(0,0,0,.1)}
+.all-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.atile{background:#FFF;border:1px solid #E2DFD7;border-radius:13px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 6px rgba(0,0,0,.03)}
+.at-img{position:relative;width:100%;aspect-ratio:1/1;background:#FFF;border-bottom:1px solid #F1EFEA;padding:10px;display:grid;place-items:center;overflow:hidden;cursor:pointer}
+.at-img img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .16s}
+.at-img:hover img{transform:scale(1.03)}
+.at-bag{position:absolute;top:7px;left:7px;font-size:9.5px;font-weight:800;padding:2px 6px;border-radius:5px;background:rgba(17,17,15,.84);color:#FFF;backdrop-filter:blur(4px)}
+.at-lbl{position:absolute;bottom:7px;left:7px;font-size:9.5px;font-weight:800;padding:2px 6px;border-radius:4px;background:#E6F2EC;color:#0F5132}
+.at-lbl.cond{background:#FEF3C7;color:#92400E}
+.at-lbl.zero{background:#EAE7E0;color:#48453F}
+.at-body{padding:9px 10px 10px;display:flex;flex-direction:column;gap:5px;flex:1;justify-content:space-between}
+.at-title{font-size:12px;font-weight:800;line-height:16px;color:#171717;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:32px;cursor:pointer}
+.at-price{display:flex;align-items:center;justify-content:space-between;gap:4px;flex-wrap:wrap;font-size:11.5px;font-weight:800;color:#0F5132}
+.at-actions{display:grid;grid-template-columns:1fr auto;gap:4px;margin-top:2px}
+.at-btn{height:27px;padding:0 7px;border-radius:7px;font-size:10.5px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;border:1px solid #DDDAD3;background:#F8F7F4;color:#262522}
+.at-btn.pri{background:#171717;color:#FFF;border-color:#171717}
 .anchor{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#11110F;color:#F2F1EC;border-radius:12px;padding:10px 12px}
 .ac-col span{display:block;font-size:10.5px;color:#A8A59E}
 .ac-col s{font-size:14px;color:#8E8B84;font-weight:700}
@@ -117,15 +137,21 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
         <button class="pbtn" id="sh">가방 링크 복사</button>
       </div>
     </div>
-    <div class="hdr">
+    <div class="nav-stack">
+      <div class="mode-tabs" role="tablist" aria-label="보기 방식 선택">
+        <button role="tab" class="mtab" data-mode="all" aria-selected="false">전체 (12종 타일)</button>
+        <button role="tab" class="mtab" data-mode="bag" aria-selected="true">가방별 보기</button>
+      </div>
+      <div class="sub-tabs" id="sub-tabs" role="tablist" aria-label="가방 선택">
+        <button role="tab" class="stab" data-d="skin">아현동 피부짱 5종</button>
+        <button role="tab" class="stab" data-d="pet">16살 잭러셀 수제사료</button>
+        <button role="tab" class="stab" data-d="rtx">남동생·남친·남편 선물용 RTX 5000</button>
+      </div>
+    </div>
+    <div id="hdr-wrap" class="hdr">
       <h1 id="p-title"></h1>
       <p id="p-sub"></p>
       <div class="meta-pills" id="p-pills"></div>
-    </div>
-    <div class="tabs" role="tablist">
-      <button role="tab" class="tab" data-d="rtx">RTX 5000</button>
-      <button role="tab" class="tab" data-d="skin">피부짱 5종</button>
-      <button role="tab" class="tab" data-d="pet">16살 노령견</button>
     </div>
     <div id="anchor-box"></div>
     <div id="nobuy-box"></div>
@@ -380,7 +406,14 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
     }
   };
 
-  var h=location.hash.slice(1),cur=DECKS[h]?h:"rtx",q="",src=u=>u.indexOf("http")===0?u:"img/"+u;
+  var BAG_META={
+    skin:{short:"아현동 피부짱 5종",order:1},
+    pet:{short:"16살 잭러셀 수제사료",order:2},
+    rtx:{short:"선물용 RTX 5000",order:3}
+  };
+  var h=location.hash.slice(1);
+  var mode=(h==="rtx"||h==="skin"||h==="pet")?"bag":"all";
+  var cur=DECKS[h]?h:"skin",q="",src=u=>u.indexOf("http")===0?u:"img/"+u;
   /* 기본 열림: RTX 탭은 MSI 지포스(r3, r2)만 열림, 다른 카드는 접힘 */
   var picks={rtx:{item:"r3",opt:0},skin:{s1:0,s2:0,s3:0,s4:0,s5:0},pet:{p1:0,p2:0,p3:0}};
   var openMap={r1:false,r3:true,r2:true,r4:false,s1:true,s2:false,s3:false,s4:false,s5:false,p1:true,p2:false,p3:false};
@@ -401,9 +434,48 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
     return {tot:tot,save:d.baseLabel+" 대비 "+(sv>0?won(sv)+" 절약":"최저가 경로 선택 중"),url:firstUrl||d.items[0].offers[0].u,cta:"선택 판매처 열기 ↗"};
   }
 
+  function renderAll(){
+    $("p-title").textContent="고수템 전체 큐레이션 · 2열 사진 타일 (12종)";
+    $("p-sub").textContent="인폭링크식 2열 정사각 타일로 전체 추천템을 한눈에 보고, 타일을 누르면 가방별 다채널(다나와·쿠팡·퀘이사존·중고·약국) 가격비교로 바로 이동합니다.";
+    $("p-pills").innerHTML='<span class="mpill hi">전체 3개 가방 · 12종</span><span class="mpill">개별 [제휴] 투명 표기</span><span class="mpill">0원 대안·중고 시세 포함</span>';
+    $("anchor-box").innerHTML="";
+    $("nobuy-box").innerHTML="";
+    $("notes-box").innerHTML="";
+    var orderKeys=["skin","pet","rtx"],tiles=[];
+    orderKeys.forEach(k=>{
+      var d=DECKS[k];
+      d.items.forEach(it=>{
+        if(q&&(it.name+it.spec+it.tip+BAG_META[k].short+it.offers.map(o=>o.k+o.sub).join("")).toLowerCase().indexOf(q.toLowerCase())===-1)return;
+        var primary=it.offers.find(o=>o.u)||it.offers[0];
+        var isAff=primary.bCls==="aff"||primary.b.indexOf("제휴")>-1;
+        tiles.push('<article class="atile"><div class="at-img" data-goto="'+k+':'+it.id+'"><span class="at-bag">'+BAG_META[k].short+'</span><img src="'+src(it.img)+'" alt="'+it.name+'"><span class="at-lbl'+(it.lblCls?' '+it.lblCls:'')+'">'+it.lbl.split("·")[0].trim()+'</span></div><div class="at-body"><h3 class="at-title" data-goto="'+k+':'+it.id+'">'+it.name+'</h3><div class="at-price"><span class="num">'+primary.pTxt+'</span>'+(isAff?'<span class="obadge aff">[제휴]</span>':'<span class="obadge">'+(primary.p===0?'0원 대안':'비제휴')+'</span>')+'</div><div class="at-actions"><button type="button" class="at-btn" data-goto="'+k+':'+it.id+'">가격비교 '+it.offers.length+'곳</button>'+(primary.u?'<a class="at-btn pri" href="'+primary.u+'" target="_blank" rel="noopener">'+primary.cta+' ↗</a>':'')+'</div></div></article>');
+      });
+    });
+    $("secs-box").className="all-grid";
+    $("secs-box").innerHTML=tiles.join("");
+    $("cb-tot").textContent="전체 3개 가방 · 12개 검증 품목";
+    $("cb-save").textContent="아래 가방 탭이나 타일의 [가격비교]를 눌러 최저가를 조합하세요";
+    $("cb-go").href="#bag";
+    $("cb-go").removeAttribute("target");
+    $("cb-go").textContent="가방별 가격비교 보기 →";
+    $("cb-go").onclick=e=>{e.preventDefault();mode="bag";render();};
+    qa("[data-goto]").forEach(el=>el.onclick=()=>{
+      var pts=el.getAttribute("data-goto").split(":"),k=pts[0],id=pts[1];
+      mode="bag";cur=k;openMap[id]=true;
+      if(history.replaceState)history.replaceState(null,"","#"+cur);
+      render();
+      setTimeout(()=>{var card=document.querySelector('[data-tog="'+id+'"]');if(card)card.scrollIntoView({behavior:"smooth",block:"center"});},60);
+    });
+  }
+
   function render(){
-    var d=DECKS[cur]||DECKS.rtx;
-    qa("[data-d]").forEach(x=>x.setAttribute("aria-selected",x.dataset.d===cur));
+    qa("[data-mode]").forEach(x=>x.setAttribute("aria-selected",x.dataset.mode===mode));
+    qa("[data-d]").forEach(x=>x.setAttribute("aria-selected",mode==="bag"&&x.dataset.d===cur));
+    if(mode==="all"){renderAll();return;}
+    $("secs-box").className="plist";
+    $("cb-go").setAttribute("target","_blank");
+    $("cb-go").onclick=null;
+    var d=DECKS[cur]||DECKS.skin;
     $("p-title").textContent=d.title;$("p-sub").textContent=d.sub;
     $("p-pills").innerHTML=d.pills.map((p,i)=>'<span class="mpill'+(i===0?' hi':'')+'">'+p+'</span>').join("");
     var cb=calcBar(d);
@@ -451,10 +523,23 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
     if(p&&p.updatedAt)$("sync-stamp").textContent=p.updatedAt;
   }).catch(()=>{});
 
-  qa("[data-d]").forEach(b=>b.onclick=()=>{cur=b.dataset.d;if(history.replaceState)history.replaceState(null,"","#"+cur);render();});
-  window.addEventListener("hashchange",()=>{var nh=location.hash.slice(1);if(DECKS[nh]&&nh!==cur){cur=nh;render();}});
+  qa("[data-mode]").forEach(b=>b.onclick=()=>{
+    mode=b.dataset.mode;
+    if(history.replaceState)history.replaceState(null,"",mode==="all"?"#all":"#"+cur);
+    render();
+  });
+  qa("[data-d]").forEach(b=>b.onclick=()=>{
+    mode="bag";cur=b.dataset.d;
+    if(history.replaceState)history.replaceState(null,"","#"+cur);
+    render();
+  });
+  window.addEventListener("hashchange",()=>{
+    var nh=location.hash.slice(1);
+    if(nh==="all"){mode="all";render();}
+    else if(DECKS[nh]){mode="bag";cur=nh;render();}
+  });
   $("qi").oninput=e=>{q=e.target.value.trim();render();};
-  $("sh").onclick=e=>{var b=e.currentTarget;if(navigator.clipboard)navigator.clipboard.writeText(location.origin+location.pathname+"#"+cur);b.textContent="복사 완료";setTimeout(()=>b.textContent="가방 링크 복사",1400);};
+  $("sh").onclick=e=>{var b=e.currentTarget;if(navigator.clipboard)navigator.clipboard.writeText(location.origin+location.pathname+"#"+(mode==="all"?"all":cur));b.textContent="복사 완료";setTimeout(()=>b.textContent="가방 링크 복사",1400);};
   render();
 })();</script>
 </body>
