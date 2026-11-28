@@ -1,25 +1,26 @@
 /* 고수하우스 전사 컨텐츠 스튜디오 — PPT·발표자료 템플릿 카탈로그 (Baze 5종 + 로컬PPT 엔진 3종 = 8종, 15KB 이하)
-   - 사업부(biz): gosutem(고수템), cea(CEA교육), blog(블로그·쿠팡), mkt(마케팅·SNS), lab(대학원·신사업BD) */
+   - 실제 슬라이드 PNG(thumbs/baze/baze_ppt_01~05.png, okr_slide_01~08.png) 1:1 매핑 */
 window.GOSU_CS_PPT = [
   {
     id: "baze-ppt-001",
     biz: "gosutem",
     source: "baze",
     type: "ppt_template",
-    title: "전략 컨설팅 IR 피치덱 (12장)",
+    title: "전략 컨설팅 피치덱",
     ratio: "16:9",
+    thumb: "thumbs/baze/baze_ppt_01.png",
     slideCount: 12,
-    tags: ["사업계획서", "IR피치덱", "표·차트", "고수템"],
-    note: "두괄식 결론 + 3단 KPI + 경쟁사 비교표 (고수템·신사업 IR 표준)",
+    tags: ["사업계획서", "IR피치덱", "표·차트", "전사공용"],
+    note: "두괄식 결론 + 3단 KPI + 경쟁사 비교표",
     slides: [
-      { index: 1, kind: "cover", label: "01 · 표지 및 핵심 슬로건" },
-      { index: 2, kind: "agenda", label: "02 · 목차 및 3줄 결론 요약" },
-      { index: 3, kind: "kpi", label: "03 · 시장 규모(TAM-SAM-SOM) 도식" },
-      { index: 4, kind: "content", label: "04 · 고객 핵심 문제 3축 실측" },
-      { index: 5, kind: "process", label: "05 · 3단 의사결정 해결 흐름도" },
-      { index: 6, kind: "table", label: "06 · 경쟁사 24개사 전수 비교표" },
-      { index: 7, kind: "kpi", label: "07 · 3개년 Bottom-Up 매출 추정" },
-      { index: 8, kind: "closing", label: "08 · 분기별 실행 로드맵" }
+      { index: 1, kind: "cover", label: "표지 · 핵심 슬로건", thumb: "thumbs/baze/baze_ppt_01.png" },
+      { index: 2, kind: "agenda", label: "목차 및 3줄 요약", thumb: "thumbs/baze/okr_slide_02.png" },
+      { index: 3, kind: "kpi", label: "시장 규모(TAM-SAM-SOM) 도식", thumb: "thumbs/baze/okr_slide_03.png" },
+      { index: 4, kind: "content", label: "핵심 문제 정의 3축", thumb: "thumbs/baze/okr_slide_04.png" },
+      { index: 5, kind: "process", label: "해결 아키텍처 흐름도", thumb: "thumbs/baze/okr_slide_05.png" },
+      { index: 6, kind: "table", label: "경쟁사 비교 매트릭스 표", thumb: "thumbs/baze/okr_slide_07.png" },
+      { index: 7, kind: "kpi", label: "3개년 매출 추정 및 BEP", thumb: "thumbs/baze/okr_slide_06.png" },
+      { index: 8, kind: "closing", label: "결론 및 실행 로드맵", thumb: "thumbs/baze/okr_slide_08.png" }
     ]
   },
   {
@@ -27,17 +28,18 @@ window.GOSU_CS_PPT = [
     biz: "gosutem",
     source: "baze",
     type: "ppt_template",
-    title: "정부지원 PSST 마스터 발표덱 (15장)",
+    title: "정부지원 PSST 발표덱",
     ratio: "16:9",
+    thumb: "thumbs/baze/baze_ppt_02.png",
     slideCount: 15,
-    tags: ["정부지원", "PSST", "사업계획서", "BD"],
-    note: "문제(P)-해결(S)-성장(S)-팀(T) 심사위원 평가표 1:1 매핑",
+    tags: ["사업계획서", "제안서", "정부지원", "전사공용"],
+    note: "문제(P)-해결(S)-성장(S)-팀(T) 심사표 1:1 매핑",
     slides: [
-      { index: 1, kind: "cover", label: "01 · PSST 발표 표지 · 핵심 수치" },
-      { index: 2, kind: "content", label: "02 · Problem · 탐색 145분 피로 실측" },
-      { index: 3, kind: "process", label: "03 · Solution · 사지 마+교차판정+3단가격" },
-      { index: 4, kind: "table", label: "04 · Scale-up · 건당 3.1만 절감 & BM" },
-      { index: 5, kind: "kpi", label: "05 · Team · 대표 역량 및 현직 자문단" }
+      { index: 1, kind: "cover", label: "PSST 사업계획 발표 표지", thumb: "thumbs/baze/baze_ppt_02.png" },
+      { index: 2, kind: "content", label: "Problem · 고객 인터뷰 실측 데이터", thumb: "thumbs/baze/okr_slide_04.png" },
+      { index: 3, kind: "process", label: "Solution · MVP 화면 및 작동 원리", thumb: "thumbs/baze/okr_slide_03.png" },
+      { index: 4, kind: "table", label: "Scale-up · 수익모델 및 단가 비교표", thumb: "thumbs/baze/okr_slide_07.png" },
+      { index: 5, kind: "kpi", label: "Team · 대표 역량 및 현직 자문단", thumb: "thumbs/baze/okr_slide_06.png" }
     ]
   },
   {
@@ -45,16 +47,17 @@ window.GOSU_CS_PPT = [
     biz: "blog",
     source: "baze",
     type: "ppt_template",
-    title: "명진단 3분 스펙·성분 비교덱 (10장)",
+    title: "명진단 3분 스펙 비교덱",
     ratio: "16:9",
+    thumb: "thumbs/baze/baze_ppt_03.png",
     slideCount: 10,
-    tags: ["제품비교", "성분해설", "쿠팡파트너스", "블로그"],
-    note: "좌 상품 실사 / 우 스펙·1회분 실단가 비교표 2단 (단백질·피부·RTX)",
+    tags: ["제품비교", "성분해설", "유튜브", "전사공용"],
+    note: "좌 상품 실사 / 우 스펙·단가 비교표 2단",
     slides: [
-      { index: 1, kind: "cover", label: "01 · 3초 결론 (권장 3 · 제외 1)" },
-      { index: 2, kind: "table", label: "02 · 전성분·1회 제공량(40g) 실단가 표" },
-      { index: 3, kind: "kpi", label: "03 · 전문가·유튜버 5인 교차 판정" },
-      { index: 4, kind: "closing", label: "04 · 똑소리 나게 가격 비교하기 보드" }
+      { index: 1, kind: "cover", label: "3초 결론 (추천3 · 비추1)", thumb: "thumbs/baze/baze_ppt_03.png" },
+      { index: 2, kind: "table", label: "전성분 · 1회 실단가 비교표", thumb: "thumbs/baze/okr_slide_07.png" },
+      { index: 3, kind: "kpi", label: "고수 5인 교차 의견", thumb: "thumbs/baze/okr_slide_05.png" },
+      { index: 4, kind: "closing", label: "주의사항 · 똑소리 나는 구매 기준", thumb: "thumbs/baze/okr_slide_08.png" }
     ]
   },
   {
@@ -62,16 +65,17 @@ window.GOSU_CS_PPT = [
     biz: "lab",
     source: "baze",
     type: "ppt_template",
-    title: "연세대 박사논문·SLR 학술 세미나덱 (18장)",
+    title: "학술 논문·SLR 세미나덱",
     ratio: "16:9",
+    thumb: "thumbs/baze/baze_ppt_04.png",
     slideCount: 18,
-    tags: ["박사논문", "SLR", "학술발표", "연구소"],
-    note: "PRISMA 2020 흐름도 + SPAR-4-SLR + TCCM 매트릭스 표준",
+    tags: ["박사논문", "SLR", "학술발표", "전사공용"],
+    note: "PRISMA 2020 흐름도 + TCCM 매트릭스",
     slides: [
-      { index: 1, kind: "cover", label: "01 · 연구 제목 · 연구질문(RQ 1~3)" },
-      { index: 2, kind: "process", label: "02 · PRISMA 2020 · SPAR-4-SLR 문헌 선별도" },
-      { index: 3, kind: "table", label: "03 · 최종 포함 문헌 163편 TCCM 매트릭스" },
-      { index: 4, kind: "closing", label: "04 · 이론적·실무적 기여 및 연구 모형" }
+      { index: 1, kind: "cover", label: "연구 제목 · RQ", thumb: "thumbs/baze/baze_ppt_04.png" },
+      { index: 2, kind: "process", label: "PRISMA 2020 선별도", thumb: "thumbs/baze/okr_slide_02.png" },
+      { index: 3, kind: "table", label: "TCCM 요약 매트릭스 (163편)", thumb: "thumbs/baze/okr_slide_07.png" },
+      { index: 4, kind: "closing", label: "학술 기여 · 연구 모형", thumb: "thumbs/baze/okr_slide_08.png" }
     ]
   },
   {
@@ -79,16 +83,16 @@ window.GOSU_CS_PPT = [
     biz: "cea",
     source: "baze",
     type: "ppt_template",
-    title: "CEA 기업교육·공급망 ESG 제안덱 (14장)",
+    title: "B2B 기업교육·ESG 제안덱",
     ratio: "16:9",
+    thumb: "thumbs/baze/baze_ppt_05.png",
     slideCount: 14,
-    tags: ["CEA교육", "ESG", "제안서", "현대차·EcoVadis"],
-    note: "2026 현대차 협력사·EcoVadis 필수 교육 12개 과정 커리큘럼·수료증",
+    tags: ["제안서", "기업교육", "ESG", "전사공용"],
+    note: "공급망 ESG 필수 교육 12과정 커리큘럼·로드맵",
     slides: [
-      { index: 1, kind: "cover", label: "01 · B2B 공급망 ESG 교육 제안 표지" },
-      { index: 2, kind: "table", label: "02 · 2026 필수 12개 과정 커리큘럼 매핑표" },
-      { index: 3, kind: "process", label: "03 · 온라인 강의실 수강·즉시 수료증 발급" },
-      { index: 4, kind: "kpi", label: "04 · 협력사 ESG 평가 점수 개선 효과" }
+      { index: 1, kind: "cover", label: "제안 표지 · 핵심 과제", thumb: "thumbs/baze/baze_ppt_05.png" },
+      { index: 2, kind: "table", label: "12개 교육 과정 표", thumb: "thumbs/baze/okr_slide_07.png" },
+      { index: 3, kind: "process", label: "수료 · 평가 프로세스", thumb: "thumbs/baze/okr_slide_03.png" }
     ]
   },
   {
@@ -96,16 +100,17 @@ window.GOSU_CS_PPT = [
     biz: "gosutem",
     source: "local_pptx",
     type: "ppt_template",
-    title: "비즈니스 마스터 57장 풀세트덱",
+    title: "비즈니스 마스터 57장덱",
     ratio: "16:9",
+    thumb: "thumbs/baze/okr_slide_02.png",
     slideCount: 57,
-    tags: ["로컬엔진", "57장풀세트", "사업계획서", "전사공용"],
-    note: "pptx-deck-plugin 내장 표지·목차·KPI·비교표·다이어그램 57종 자동 조립",
+    tags: ["사업계획서", "로컬엔진", "57장풀세트", "전사공용"],
+    note: "표지·목차·KPI·표·다이어그램 57종 자동 조립",
     slides: [
-      { index: 1, kind: "cover", label: "01 · 비즈니스 마스터 표준 표지" },
-      { index: 2, kind: "agenda", label: "02 · 6단 아젠다 목차 레이아웃" },
-      { index: 6, kind: "table", label: "06 · 3×2 핵심 비교 매트릭스" },
-      { index: 8, kind: "kpi", label: "08 · 핵심 성과 지표(KPI) 대시보드" }
+      { index: 1, kind: "cover", label: "비즈니스 표준 표지", thumb: "thumbs/baze/okr_slide_01.png" },
+      { index: 2, kind: "agenda", label: "6단 목차 레이아웃", thumb: "thumbs/baze/okr_slide_02.png" },
+      { index: 6, kind: "table", label: "3x2 비교 테이블", thumb: "thumbs/baze/okr_slide_07.png" },
+      { index: 8, kind: "kpi", label: "핵심 성과 지표(KPI)", thumb: "thumbs/baze/okr_slide_06.png" }
     ]
   },
   {
@@ -113,16 +118,21 @@ window.GOSU_CS_PPT = [
     biz: "mkt",
     source: "local_pptx",
     type: "ppt_template",
-    title: "고수하우스 7본부 주간 OKR 8장덱",
+    title: "Business OKR 8장덱",
     ratio: "16:9",
+    thumb: "thumbs/baze/okr_slide_01.png",
     slideCount: 8,
-    tags: ["로컬엔진", "OKR", "실물슬라이드", "전사공용"],
-    note: "Business OKR.pptx 실물 슬라이드 8종 1:1 렌더링 연동",
+    tags: ["OKR", "로컬엔진", "실물슬라이드", "전사공용"],
+    note: "실제 슬라이드 8종 PNG 1:1 렌더링 연동",
     slides: [
-      { index: 1, kind: "cover", label: "01 · 전사 OKR 표지" },
-      { index: 2, kind: "diagram", label: "02 · 7본부 전략 피라미드" },
-      { index: 3, kind: "process", label: "03 · 기획→제작→검증→배포 4단계 순환" },
-      { index: 4, kind: "table", label: "04 · 본부별 대기·진행·완료 현황표" }
+      { index: 1, kind: "cover", label: "01 · OKR 표지", thumb: "thumbs/baze/okr_slide_01.png" },
+      { index: 2, kind: "diagram", label: "02 · 피라미드 구조", thumb: "thumbs/baze/okr_slide_02.png" },
+      { index: 3, kind: "process", label: "03 · 4단계 원형 흐름", thumb: "thumbs/baze/okr_slide_03.png" },
+      { index: 4, kind: "content", label: "04 · 전사 목표", thumb: "thumbs/baze/okr_slide_04.png" },
+      { index: 5, kind: "content", label: "05 · 팀 핵심 지표", thumb: "thumbs/baze/okr_slide_05.png" },
+      { index: 6, kind: "content", label: "06 · 주간 리뷰", thumb: "thumbs/baze/okr_slide_06.png" },
+      { index: 7, kind: "table", label: "07 · 대기·진행·완료 표", thumb: "thumbs/baze/okr_slide_07.png" },
+      { index: 8, kind: "closing", label: "08 · 마무리", thumb: "thumbs/baze/okr_slide_08.png" }
     ]
   },
   {
@@ -130,15 +140,16 @@ window.GOSU_CS_PPT = [
     biz: "cea",
     source: "local_pptx",
     type: "ppt_template",
-    title: "표준 B2B 제안서·사업계획서 24장덱",
+    title: "표준 사업계획·제안서덱",
     ratio: "16:9",
+    thumb: "thumbs/baze/okr_slide_03.png",
     slideCount: 24,
-    tags: ["로컬엔진", "사업계획서", "제안서", "CEA교육"],
-    note: "마크다운·엑셀 데이터 입력 시 즉시 .pptx 파일로 자동 변환",
+    tags: ["사업계획서", "제안서", "로컬엔진", "전사공용"],
+    note: "마크다운·엑셀 입력 시 즉시 .pptx 조립",
     slides: [
-      { index: 1, kind: "cover", label: "01 · 표준 제안서 표지" },
-      { index: 2, kind: "diagram", label: "02 · 핵심 가치 및 커리큘럼 구조도" },
-      { index: 3, kind: "table", label: "03 · 예산·단가·일정 산출내역 표" }
+      { index: 1, kind: "cover", label: "사업계획서 표지", thumb: "thumbs/baze/okr_slide_01.png" },
+      { index: 2, kind: "diagram", label: "핵심 가치 다이어그램", thumb: "thumbs/baze/okr_slide_02.png" },
+      { index: 3, kind: "table", label: "예산·재무 추정 표", thumb: "thumbs/baze/okr_slide_07.png" }
     ]
   }
 ];

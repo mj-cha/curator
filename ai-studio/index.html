@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>고수하우스(GOSU-HOUSE) 전사 AI 솔루션 ERP 스튜디오 v2.0</title>
 <link rel="stylesheet" href="src/styles/studio.css" />
+<link rel="stylesheet" href="src/styles/erpModules.css" />
 </head>
 <body>
 <div class="app-shell">
@@ -93,27 +94,17 @@
 </section>
 
 <section data-menu-panel="cshub">
-<div class="panel-card">
-<div class="panel-head">
-<div><h2>컨텐츠 스튜디오 · 전사 템플릿 허브 (PPT 8 + 미리캔버스 47 + 로보엠디 47 = 102종)</h2><small>사업부 필터 + [카드 뷰 ↔ 표 뷰] + 속지 미리보기 + AI 스튜디오 직결</small></div>
-<div class="chip-row">
-<button class="chip-btn active" data-cs-view="card">카드 뷰</button>
-<button class="chip-btn" data-cs-view="table">표 뷰 (수정)</button>
-</div>
-</div>
-<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-bottom:14px">
-<div id="cs-folder-bar" class="chip-row"></div>
+<div class="panel-card" style="padding:14px 16px">
+<div class="panel-head" style="margin-bottom:10px">
+<div><h2>CONTENT STUDIO · PPT 갤러리 & 전사 템플릿 허브 (4:3 컴팩트 카드 + 마우스 폭 조절 세부 장표 뷰어)</h2><small>PPT(8) · 미리캔버스(47) · 로보엠디(47) = 총 102종 · 중앙 경계선(⋮) 마우스 드래그로 좌우 크기 조절</small></div>
 <div style="display:flex;gap:6px;flex-wrap:wrap">
-<input type="text" id="cs-search-in" placeholder="제목·태그·ID 검색…" style="min-width:170px" />
+<input type="text" id="cs-search-in" placeholder="제목·태그·ID 검색…" style="min-width:160px" />
 <select id="cs-new-src"><option value="baze">Baze PPT</option><option value="local_pptx">로컬 PPTX</option><option value="miricanvas">미리캔버스♥</option><option value="robomd">로보엠디</option></select>
-<input type="text" id="cs-new-title" placeholder="새 템플릿명" style="width:130px" />
+<input type="text" id="cs-new-title" placeholder="새 템플릿명" style="width:125px" />
 <button class="btn-pri" id="btn-cs-add">+ 추가</button>
 </div>
 </div>
-<div class="studio-workspace">
-<div id="cs-list-container"></div>
-<div id="cs-slide-drawer" class="panel-card" style="margin-bottom:0"></div>
-</div>
+<div id="cs-hub-mount"></div>
 </div>
 </section>
 
@@ -180,9 +171,8 @@
 </section>
 
 <section data-menu-panel="landing" hidden>
-<div class="studio-workspace">
-<div class="panel-card"><div class="panel-head"><h2>핸디핏 랜딩 기획 프리셋 10선</h2></div><div id="landing-preset-list" class="tpl-grid"></div></div>
-<div id="landing-preset-detail" class="panel-card"></div>
+<div class="panel-card" style="padding:14px 16px">
+<div id="hf-editor-mount"></div>
 </div>
 </section>
 
@@ -237,10 +227,13 @@
 <script defer src="src/data/robomdVideoTemplates.js"></script>
 <script defer src="src/data/robomdDesignTemplates.js"></script>
 <script defer src="src/data/handyfitLandings.js"></script>
+<script defer src="src/data/handyfitSectionsSeed.js"></script>
 <script defer src="src/data/handyfitMetricsCopy.js"></script>
 <script defer src="src/lib/studioEngine.js"></script>
 <script defer src="src/components/canvasRenderer.js"></script>
+<script defer src="src/components/csSlideDrawer.js"></script>
 <script defer src="src/components/contentStudioHub.js"></script>
+<script defer src="src/components/handyfitEditor.js"></script>
 <script defer src="src/screens/studioViews.js"></script>
 <script defer src="src/screens/studioApp.js"></script>
 </body>

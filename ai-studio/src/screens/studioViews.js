@@ -117,48 +117,9 @@ window.GOSU_STUDIO_VIEWS = (function () {
     });
   }
 
-  function renderLandingPanel(state, H, copyText) {
-    var cur = H.landingPresets10.find(function (l) { return l.id === state.selectedLandingId; }) || H.landingPresets10[0];
-    state.selectedLandingId = cur.id;
-
-    var listEl = $("landing-preset-list");
-    if (listEl) {
-      listEl.innerHTML = H.landingPresets10.map(function (l) {
-        var active = l.id === cur.id ? " active" : "";
-        return '<button type="button" class="tpl-card' + active + '" data-pick-landing="' + l.id + '">' +
-          '<div class="tpl-card-top"><span class="badge-accent">' + l.priority + '</span><span class="badge-sub">' + l.id + '</span></div>' +
-          '<strong>' + l.name + '</strong><small>' + l.headline + '</small></button>';
-      }).join("");
-    }
-
-    var detailEl = $("landing-preset-detail");
-    if (detailEl) {
-      var fullCopy = [
-        "[핸디핏 랜딩 입력 패키지 — " + cur.name + "]",
-        "• 타깃 고객: " + cur.target,
-        "• 검증 가설: " + cur.hypothesis,
-        "• 메인 헤드라인(3초 훅): " + cur.headline,
-        "• 서브 카피: " + cur.subcopy,
-        "• 1단 최상단 검수 배지: " + cur.trustBadge,
-        "• 1단(첫 화면 판매 링크 0개 · 사지 마): " + cur.sec1NoBuy,
-        "• 2단(무가입 1탭 고수 교차 판정): " + cur.sec2Cross,
-        "• 3단(배송비 포함 총비용 중립 비교): " + cur.sec3Price,
-        "• 사진·비주얼 지침(인물 0%): " + cur.photoPrompt,
-        "• 핵심 행동 버튼(CTA): " + cur.cta
-      ].join("\n");
-
-      detailEl.innerHTML =
-        '<div class="detail-head"><div><span class="badge-accent">' + cur.priority + '</span><h3>' + cur.name + '</h3><p>' + cur.target + ' · <b>' + cur.hypothesis + '</b></p></div>' +
-        '<button type="button" class="btn-pri" id="btn-copy-landing-pack">핸디핏 입력문 전체 복사</button></div>' +
-        '<div class="landing-3step-grid">' +
-        '<div class="step-box"><span>첫 화면 헤드라인 (3초 메시지)</span><strong>“' + cur.headline + '”</strong><p>' + cur.subcopy + '</p><div class="trust-bar">✓ ' + cur.trustBadge + '</div></div>' +
-        '<div class="step-box"><span>1단 · 안 사도 되는 것 (판매 링크 0개)</span><p>' + cur.sec1NoBuy + '</p></div>' +
-        '<div class="step-box"><span>2단 · 무가입 1탭 고수 교차 판정</span><p>' + cur.sec2Cross + '</p></div>' +
-        '<div class="step-box"><span>3단 · 총비용 중립 비교 & CTA</span><p>' + cur.sec3Price + '</p><div class="cta-preview">버튼: ' + cur.cta + '</div></div></div>' +
-        '<textarea id="landing-copy-area" class="code-box" rows="7" readonly>' + fullCopy + '</textarea>';
-
-      var copyBtn = $("btn-copy-landing-pack");
-      if (copyBtn) copyBtn.onclick = function () { copyText(fullCopy, cur.name + " 핸디핏 입력문"); };
+  function renderLandingPanel(state, H, copyText, toast) {
+    if (window.GOSU_HANDYFIT_EDITOR) {
+      window.GOSU_HANDYFIT_EDITOR.render(state, H, copyText, toast);
     }
   }
 
