@@ -1,32 +1,34 @@
-/* 고수하우스 전사 AI 솔루션 ERP 스튜디오 컨트롤러 (src/screens/studioApp.js · 15KB 이하) */
+/* 고수하우스 AI 업무 스튜디오 v3.0 컨트롤러 (src/screens/studioApp.js · 15KB 이하) */
 (function () {
-  var R = window.GOSU_ROBOMD_DATA;
-  var H = window.GOSU_HANDYFIT_DATA;
-  var E = window.GOSU_STUDIO_ENGINE;
-  var C = window.GOSU_CANVAS_RENDERER;
-  var V = window.GOSU_STUDIO_VIEWS;
-  var CS = window.GOSU_CS_HUB;
+  var R = window.GOSU_ROBOMD_DATA, H = window.GOSU_HANDYFIT_DATA, E = window.GOSU_STUDIO_ENGINE;
+  var C = window.GOSU_CANVAS_RENDERER, V = window.GOSU_STUDIO_VIEWS, CS = window.GOSU_CS_HUB;
+
+  var FLOW_META = {
+    landing: { t: "① 랜딩·설문 캠페인 (1→4단계 위저드)", d: "1단계(초안 선택) → 2단계(화면 클릭 수정) → 3단계(설문 폼 연결) → 4단계(게시 & 주소·QR 받기) 순서대로 진행하세요." },
+    studio: { t: "② 블로그·릴스·사진 제작 (1→3단계 위저드)", d: "1단계(원고·대본 금지어 정화) → 2단계(실물 정물 사진) → 3단계(9:16 릴스·배너 저장) 순서대로 진행하세요." },
+    cshub: { t: "③ PPT 발표자료 받기 (1→3단계 허브)", d: "1단계 왼쪽 템플릿 선택 → 2단계 오른쪽 세부 장표(#01~#08) 확인 → 3단계 주제 적고 [PPTX 파일 내려받기] 클릭." },
+    home: { t: "④ 고객 응답·성과 보기 & 고수템 #admin 직결", d: "고객 원장, 가설 검증(H1~H3) 실측치, 랜딩 이탈 구간, 사업계획서 요약문을 한곳에서 확인합니다." },
+    guide: { t: "처음 사용 가이드 & 4단 숏폼 촬영가이드 PDF", d: "단계별 사용법과 브랜드별 4단 숏폼 대본 및 촬영가이드 PDF를 출력합니다." },
+    utm: { t: "배포 채널별 단축 주소(UTM) & 오프라인 QR 발급", d: "인스타·블로그·카카오 배포용 추적 링크와 오프라인 QR 코드를 발급합니다." },
+    report: { t: "랜딩 구간별 이탈 분석 & 사업계획서용 요약문", d: "최대 이탈 구간을 확인하고 심사위원 제출용 요약문을 복사합니다." },
+    folders: { t: "전사 G드라이브 표준 폴더 트리 & 핸디핏 사진함", d: "G드라이브 표준 폴더 경로를 복사하거나 핸디핏 실물 정물 사진 8종을 열람합니다." }
+  };
 
   var state = {
-    bizUnit: "all", menu: "cshub", studioTab: "image",
+    bizUnit: "all", menu: "landing", studioTab: "copy",
     csItems: CS ? CS.loadCatalog() : [], csFolder: "ppt_all", csViewMode: "card", csTag: "", csQuery: "",
     csSelectedId: "baze-ppt-001", csTreeOpen: true, csLeftWidthPct: 45, csCardMinPx: 175, csSlideRatio: "4:3", csDrawerCols: 2, csSlideIdx: 0,
     imgFilter: "all", selectedImgId: "IMG-01", imgAngle: "탑뷰(Flat-lay)", imgRatio: "4:5", imgStyle: "실사 정물 Flat-lay", imgRefCount: 1, imgWebSearch: true,
     selectedVidId: "VID-01", vidCutIdx: 0, vidDuration: 15, vidSafeZone: true,
-    selectedTplId: "TPL-01", tplTheme: "dark-lime", selectedLandingId: "LND-01", selectedPersonaId: "PER-01", selectedPinId: "PIN-01", customCopyText: "", selectedQrUtmId: "UTM-01"
+    selectedTplId: "TPL-01", tplTheme: "dark-lime", selectedLandingId: "LND-04", selectedPersonaId: "PER-01", selectedPinId: "PIN-01", customCopyText: "", selectedQrUtmId: "UTM-01"
   };
 
   function $(id) { return document.getElementById(id); }
-
   function toast(msg) {
-    var el = $("st-toast");
-    if (!el) return;
-    el.textContent = msg;
-    el.classList.add("show");
-    clearTimeout(toast._t);
-    toast._t = setTimeout(function () { el.classList.remove("show"); }, 2600);
+    var el = $("st-toast"); if (!el) return;
+    el.textContent = msg; el.classList.add("show");
+    clearTimeout(toast._t); toast._t = setTimeout(function () { el.classList.remove("show"); }, 2600);
   }
-
   function copyText(txt, label) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(txt).then(function () { toast((label || "내용") + " 복사 완료"); });
@@ -36,47 +38,49 @@
       toast((label || "내용") + " 복사 완료");
     }
   }
-
   function downloadCanvas(canvasId, filename) {
-    var cv = $(canvasId);
-    if (!cv) return;
-    var a = document.createElement("a");
-    a.href = cv.toDataURL("image/png"); a.download = filename; a.click();
+    var cv = $(canvasId); if (!cv) return;
+    var a = document.createElement("a"); a.href = cv.toDataURL("image/png"); a.download = filename; a.click();
     toast(filename + " PNG 저장 완료");
   }
 
   function renderBizSwitcher() {
     var chips = document.querySelectorAll("[data-biz-unit]");
     for (var i = 0; i < chips.length; i++) chips[i].classList.toggle("active", chips[i].getAttribute("data-biz-unit") === state.bizUnit);
-    var units = window.GOSU_BIZ_UNITS || [];
-    var cur = units.find(function (u) { return u.id === state.bizUnit; }) || units[0];
-    if ($("erp-biz-desc") && cur) $("erp-biz-desc").textContent = "현재 워크스페이스: " + cur.name + " — " + cur.desc;
+    var meta = FLOW_META[state.menu] || FLOW_META.landing;
+    if ($("erp-active-flow-title")) $("erp-active-flow-title").textContent = meta.t;
+    if ($("erp-biz-desc")) $("erp-biz-desc").textContent = meta.d;
   }
 
   function renderStudioPanel() {
     var tabBtns = document.querySelectorAll("[data-studio-tab]");
-    for (var i = 0; i < tabBtns.length; i++) tabBtns[i].classList.toggle("active", tabBtns[i].getAttribute("data-studio-tab") === state.studioTab);
+    for (var i = 0; i < tabBtns.length; i++) {
+      var isAct = tabBtns[i].getAttribute("data-studio-tab") === state.studioTab;
+      tabBtns[i].classList.toggle("active", isAct); tabBtns[i].classList.toggle("current", isAct);
+    }
     var subPanels = document.querySelectorAll("[data-studio-view]");
     for (var j = 0; j < subPanels.length; j++) subPanels[j].hidden = subPanels[j].getAttribute("data-studio-view") !== state.studioTab;
-    if (state.studioTab === "image") V.renderImageStudio(state, R, E, C);
+    if (state.studioTab === "copy") V.renderCopyPanel(state, H, E);
+    else if (state.studioTab === "image") V.renderImageStudio(state, R, E, C);
     else if (state.studioTab === "video") V.renderVideoStudio(state, R, C);
     else if (state.studioTab === "design") V.renderDesignStudio(state, R, C);
   }
 
   function renderActivePanel() {
     renderBizSwitcher();
-    if (state.menu === "home" || state.menu === "report") V.renderReportPanel(H, E);
+    if (state.menu === "home" || state.menu === "report") V.renderReportPanel(H, E, state);
+    else if (state.menu === "guide" && window.GOSU_GUIDE_CONTENT) window.GOSU_GUIDE_CONTENT.render(state, H);
     else if (state.menu === "cshub" && CS) CS.renderHub(state);
     else if (state.menu === "studio") renderStudioPanel();
     else if (state.menu === "landing") V.renderLandingPanel(state, H, copyText, toast);
-    else if (state.menu === "copy") V.renderCopyPanel(state, H, E);
     else if (state.menu === "utm") V.renderUtmPanel(state, H, E);
+    else if (state.menu === "folders" && window.GOSU_FOLDER_TREE) window.GOSU_FOLDER_TREE.render(state, H);
   }
 
   function setMenu(m, subTab) {
-    state.menu = m;
-    if (subTab) state.studioTab = subTab;
-    var navBtns = document.querySelectorAll("[data-menu-btn]");
+    if (m === "copy") { m = "studio"; subTab = "copy"; }
+    state.menu = m; if (subTab) state.studioTab = subTab;
+    var navBtns = document.querySelectorAll(".sidebar [data-menu-btn]");
     for (var i = 0; i < navBtns.length; i++) navBtns[i].classList.toggle("active", navBtns[i].getAttribute("data-menu-btn") === m);
     var panels = document.querySelectorAll("[data-menu-panel]");
     for (var j = 0; j < panels.length; j++) panels[j].hidden = panels[j].getAttribute("data-menu-panel") !== m;
@@ -85,76 +89,26 @@
 
   function bindEvents() {
     document.addEventListener("click", function (e) {
-      var t = e.target;
-      var bizBtn = t.closest("[data-biz-unit]");
+      var t = e.target, bizBtn = t.closest("[data-biz-unit]");
       if (bizBtn) {
         state.bizUnit = bizBtn.getAttribute("data-biz-unit");
-        if (state.bizUnit === "cea") { state.selectedPersonaId = "PER-02"; state.selectedPinId = "PIN-02"; state.selectedTplId = "TPL-08"; }
-        else if (state.bizUnit === "blog") { state.selectedPersonaId = "PER-03"; state.selectedPinId = "PIN-03"; state.selectedTplId = "TPL-06"; }
-        else if (state.bizUnit === "gosutem") { state.selectedPersonaId = "PER-01"; state.selectedPinId = "PIN-01"; state.selectedTplId = "TPL-01"; }
-        renderActivePanel(); toast("사업부 워크스페이스를 전환했어요."); return;
+        if (state.bizUnit === "cea") { state.selectedPersonaId = "PER-02"; state.selectedPinId = "PIN-02"; state.selectedTplId = "TPL-08"; state.hfActiveSiteId = "site-cea"; state.gcActiveBrandId = "BRD-CEA"; }
+        else if (state.bizUnit === "blog") { state.selectedPersonaId = "PER-03"; state.selectedPinId = "PIN-03"; state.selectedTplId = "TPL-06"; state.hfActiveSiteId = "site-curator"; state.gcActiveBrandId = "BRD-CURATOR"; }
+        else if (state.bizUnit === "gosutem") { state.selectedPersonaId = "PER-01"; state.selectedPinId = "PIN-01"; state.selectedTplId = "TPL-01"; state.hfActiveSiteId = "site-gosutem"; state.gcActiveBrandId = "BRD-GOSU"; }
+        renderActivePanel(); toast("사업부 필터 전환 완료"); return;
       }
-
       var menuBtn = t.closest("[data-menu-btn]");
-      if (menuBtn) { setMenu(menuBtn.getAttribute("data-menu-btn"), menuBtn.getAttribute("data-sub-tab")); return; }
+      if (menuBtn) {
+        if (menuBtn.getAttribute("data-guide-mode")) state.gcMode = menuBtn.getAttribute("data-guide-mode");
+        setMenu(menuBtn.getAttribute("data-menu-btn"), menuBtn.getAttribute("data-sub-tab")); return;
+      }
       var stTab = t.closest("[data-studio-tab]");
       if (stTab) { setMenu("studio", stTab.getAttribute("data-studio-tab")); return; }
-
-      /* 컨텐츠 스튜디오 액션 */
-      var csFolderBtn = t.closest("[data-cs-folder]");
-      if (csFolderBtn) { state.csFolder = csFolderBtn.getAttribute("data-cs-folder"); state.csSlideIdx = 0; CS.renderHub(state); return; }
-      if (t.closest("[data-cs-toggle-tree]")) { state.csTreeOpen = !state.csTreeOpen; CS.renderHub(state); return; }
-      var csTagBtn = t.closest("[data-cs-tag]");
-      if (csTagBtn) { var nt = csTagBtn.getAttribute("data-cs-tag"); state.csTag = state.csTag === nt ? "" : nt; CS.renderHub(state); return; }
-      var csSplitBtn = t.closest("[data-cs-split]");
-      if (csSplitBtn) { state.csLeftWidthPct = Number(csSplitBtn.getAttribute("data-cs-split")); CS.renderHub(state); return; }
-      var csRatioBtn = t.closest("[data-cs-ratio]");
-      if (csRatioBtn) { state.csSlideRatio = csRatioBtn.getAttribute("data-cs-ratio"); CS.renderHub(state); return; }
-      var csColsBtn = t.closest("[data-cs-cols]");
-      if (csColsBtn) { state.csDrawerCols = Number(csColsBtn.getAttribute("data-cs-cols")); CS.renderHub(state); return; }
-      var csSlideCard = t.closest("[data-cs-slide-idx]");
-      if (csSlideCard) { state.csSlideIdx = Number(csSlideCard.getAttribute("data-cs-slide-idx")); CS.renderHub(state); return; }
-      var csSlideNav = t.closest("[data-cs-slide-nav]");
-      if (csSlideNav) {
-        var dir = Number(csSlideNav.getAttribute("data-cs-slide-nav"));
-        var curIt = state.csItems.find(function (x) { return x.id === state.csSelectedId; });
-        var len = (curIt && curIt.slides && curIt.slides.length) ? curIt.slides.length : 6;
-        state.csSlideIdx = (state.csSlideIdx + dir + len) % len; CS.renderHub(state); return;
-      }
-      var csViewBtn = t.closest("[data-cs-view]");
-      if (csViewBtn) { state.csViewMode = csViewBtn.getAttribute("data-cs-view"); CS.renderHub(state); return; }
-
-      var csSend = t.closest("[data-cs-send-studio]");
-      if (csSend) {
-        var item = state.csItems.find(function (x) { return x.id === csSend.getAttribute("data-cs-send-studio"); });
-        if (item) {
-          setMenu("studio", "design");
-          if ($("design-headline-in")) $("design-headline-in").value = item.title;
-          if ($("design-subhead-in")) $("design-subhead-in").value = "[" + item.source.toUpperCase() + " · " + item.id + "] " + (item.note || "");
-          V.renderDesignStudio(state, R, C); toast("'" + item.title + "' 템플릿을 AI 디자인 캔버스로 불러왔어요.");
-        }
-        return;
-      }
-
-      var csBrief = t.closest("[data-cs-copy-brief]");
-      if (csBrief) {
-        var bItem = state.csItems.find(function (x) { return x.id === csBrief.getAttribute("data-cs-copy-brief"); });
-        if (bItem) {
-          var topic = ($("cs-brief-topic") && $("cs-brief-topic").value) || "고수템 2R 발표안";
-          copyText("[제작 브리프] " + topic + " | " + bItem.title + " (" + bItem.id + ") | " + (bItem.note || ""), "브리프");
-        }
-        return;
-      }
-
-      var csDel = t.closest("[data-cs-del]");
-      if (csDel) {
-        var delId = csDel.getAttribute("data-cs-del");
-        state.csItems = state.csItems.filter(function (x) { return x.id !== delId; });
-        CS.saveCatalog(state.csItems); CS.renderHub(state); toast(delId + " 삭제 완료"); return;
-      }
-
-      var csPick = t.closest("[data-cs-pick]");
-      if (csPick && !t.closest("input")) { state.csSelectedId = csPick.getAttribute("data-cs-pick"); state.csSlideIdx = 0; CS.renderHub(state); return; }
+      if (CS && CS.handleClick(t, state, R, C, V, setMenu, copyText, toast)) return;
+      if (window.GOSU_GUIDE_CONTENT && window.GOSU_GUIDE_CONTENT.handleClick(t, state, R, H, E, setMenu, copyText, toast)) return;
+      if (window.GOSU_LANDING_BUILDER && window.GOSU_LANDING_BUILDER.handleClick(t, state, H, copyText, toast)) return;
+      if (window.GOSU_FOLDER_TREE && window.GOSU_FOLDER_TREE.handleClick(t, state, H, setMenu, copyText, toast)) return;
+      if (window.GOSU_ERP_DB && window.GOSU_ERP_DB.handleAction(t, state, H, copyText, toast, renderActivePanel)) return;
 
       var imgFilterBtn = t.closest("[data-img-filter]");
       if (imgFilterBtn) {
@@ -171,25 +125,23 @@
       if (pickCut) { state.vidCutIdx = Number(pickCut.getAttribute("data-pick-cut")) || 0; V.renderVideoStudio(state, R, C); return; }
       var pickDesign = t.closest("[data-pick-design]");
       if (pickDesign) { state.selectedTplId = pickDesign.getAttribute("data-pick-design"); V.renderDesignStudio(state, R, C); return; }
-      if (window.GOSU_HANDYFIT_EDITOR && window.GOSU_HANDYFIT_EDITOR.handleClick(t, state, H, copyText, toast)) return;
       var pickLanding = t.closest("[data-pick-landing]");
       if (pickLanding) { state.selectedLandingId = pickLanding.getAttribute("data-pick-landing"); V.renderLandingPanel(state, H, copyText, toast); return; }
       var copyUtm = t.closest("[data-copy-utm]");
-      if (copyUtm) { copyText(copyUtm.getAttribute("data-copy-utm"), "UTM 단축링크"); return; }
+      if (copyUtm) { copyText(copyUtm.getAttribute("data-copy-utm"), "단축 주소"); return; }
       var qrUtm = t.closest("[data-qr-utm]");
       if (qrUtm) { state.selectedQrUtmId = qrUtm.getAttribute("data-qr-utm"); V.renderUtmPanel(state, H, E); return; }
     });
 
     document.addEventListener("change", function (e) {
-      var t = e.target;
-      var targetId = t.getAttribute("data-cs-edit-title") || t.getAttribute("data-cs-edit-tags") || t.getAttribute("data-cs-edit-note");
+      var t = e.target, targetId = t.getAttribute("data-cs-edit-title") || t.getAttribute("data-cs-edit-tags") || t.getAttribute("data-cs-edit-note");
       if (targetId) {
         var found = state.csItems.find(function (x) { return x.id === targetId; });
         if (found) {
           if (t.getAttribute("data-cs-edit-title")) found.title = t.value.trim();
           if (t.getAttribute("data-cs-edit-tags")) found.tags = t.value.split(",").map(function (s) { return s.trim(); }).filter(Boolean);
           if (t.getAttribute("data-cs-edit-note")) found.note = t.value.trim();
-          CS.saveCatalog(state.csItems); toast(targetId + " 항목을 저장했어요.");
+          CS.saveCatalog(state.csItems); toast(targetId + " 저장 완료");
         }
       }
     });
@@ -211,28 +163,27 @@
 
     var onBtn = function (id, fn) { var el = $(id); if (el) el.onclick = fn; };
     onBtn("btn-cs-add", function () {
-      var titleEl = $("cs-new-title"), srcEl = $("cs-new-src");
-      var title = (titleEl && titleEl.value.trim()) || "새 전사 템플릿", src = (srcEl && srcEl.value) || "baze";
-      var isPpt = src === "baze" || src === "local_pptx";
-      var newItem = { id: src.slice(0, 3) + "-" + Date.now().toString(36).slice(-4), biz: state.bizUnit === "all" ? "gosutem" : state.bizUnit, source: src, type: isPpt ? "ppt_template" : "sns_template", title: title, ratio: isPpt ? "16:9" : "4:5", slideCount: isPpt ? 12 : 5, tags: ["사업계획서", "전사공용"], note: "ERP 스튜디오 직접 등록" };
-      state.csItems.unshift(newItem); state.csSelectedId = newItem.id;
-      if (titleEl) titleEl.value = "";
+      var titleEl = $("cs-new-title"), srcEl = $("cs-new-src"), title = (titleEl && titleEl.value.trim()) || "새 전사 템플릿", src = (srcEl && srcEl.value) || "baze", isPpt = src === "baze" || src === "local_pptx";
+      var newItem = { id: src.slice(0, 3) + "-" + Date.now().toString(36).slice(-4), biz: state.bizUnit === "all" ? "gosutem" : state.bizUnit, source: src, type: isPpt ? "ppt_template" : "sns_template", title: title, ratio: isPpt ? "16:9" : "4:5", slideCount: isPpt ? 12 : 5, tags: ["사업계획서", "전사공용"], note: "직접 등록" };
+      state.csItems.unshift(newItem); state.csSelectedId = newItem.id; if (titleEl) titleEl.value = "";
       CS.saveCatalog(state.csItems); CS.renderHub(state); toast("'" + title + "' 추가 완료");
     });
-    onBtn("btn-dl-image", function () { downloadCanvas("cv-image-studio", "gosu-erp-image-" + state.selectedImgId + "_v1.png"); });
-    onBtn("btn-copy-img-prompt", function () { copyText($("img-prompt-output").value, "프롬프트"); });
-    onBtn("btn-dl-video-frame", function () { downloadCanvas("cv-video-studio", "gosu-erp-reels-" + state.selectedVidId + "-cut" + (state.vidCutIdx + 1) + "_v1.png"); });
-    onBtn("btn-dl-design", function () { downloadCanvas("cv-design-studio", "gosu-erp-template-" + state.selectedTplId + "_v1.png"); });
-    onBtn("btn-copy-clean-text", function () { copyText($("copy-result-box").value, "원고"); });
-    onBtn("btn-add-utm", function () {
-      var ch = $("utm-new-ch").value, camp = $("utm-new-camp").value || "2611_erp";
-      var entry = E.createUtmEntry(ch, ch, "social", camp, "swim");
-      entry.biz = state.bizUnit === "all" ? "gosutem" : state.bizUnit;
-      H.utmLinks.unshift(entry); state.selectedQrUtmId = entry.id;
-      V.renderUtmPanel(state, H, E); toast("UTM & QR 발급 완료");
+    onBtn("btn-gen-api-image", function () {
+      var cur = R.imageTemplates.find(function (t) { return t.id === state.selectedImgId; }) || R.imageTemplates[0];
+      if (window.GOSU_PPTX_API) window.GOSU_PPTX_API.generateOfficialImage({ provider: ($("img-api-provider") || {}).value || "local_flatlay", apiKey: ($("img-api-key") || {}).value || "", angle: state.imgAngle, ratio: state.imgRatio, style: state.imgStyle, chainText: ($("img-chain-input") || {}).value }, cur, ($("img-prompt-output") || {}).value || cur.prompt, $("cv-image-studio"), C, toast);
     });
-    onBtn("btn-copy-bp-report", function () { copyText($("report-bp-summary").value, "AI 시장검증 요약"); });
+    onBtn("btn-dl-image", function () { downloadCanvas("cv-image-studio", "gosu-studio-image-" + state.selectedImgId + "_v1.png"); });
+    onBtn("btn-copy-img-prompt", function () { copyText($("img-prompt-output").value, "지시문"); });
+    onBtn("btn-dl-video-frame", function () { downloadCanvas("cv-video-studio", "gosu-studio-reels-" + state.selectedVidId + "-cut" + (state.vidCutIdx + 1) + "_v1.png"); });
+    onBtn("btn-dl-design", function () { downloadCanvas("cv-design-studio", "gosu-studio-banner-" + state.selectedTplId + "_v1.png"); });
+    onBtn("btn-copy-clean-text", function () { copyText($("copy-result-box").value, "완성 원고"); });
+    onBtn("btn-add-utm", function () {
+      var ch = $("utm-new-ch").value, camp = $("utm-new-camp").value || "2611_studio", entry = E.createUtmEntry(ch, ch, "social", camp, "swim");
+      entry.biz = state.bizUnit === "all" ? "gosutem" : state.bizUnit;
+      H.utmLinks.unshift(entry); state.selectedQrUtmId = entry.id; V.renderUtmPanel(state, H, E); toast("단축 주소 & QR 발급 완료");
+    });
+    onBtn("btn-copy-bp-report", function () { copyText($("report-bp-summary").value, "시장검증 요약문"); });
   }
 
-  window.addEventListener("DOMContentLoaded", function () { bindEvents(); setMenu("cshub"); });
+  window.addEventListener("DOMContentLoaded", function () { bindEvents(); setMenu("landing"); });
 })();

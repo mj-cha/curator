@@ -182,26 +182,39 @@ window.GOSU_STUDIO_VIEWS = (function () {
     }
   }
 
-  function renderReportPanel(H, E) {
+  function renderReportPanel(H, E, state) {
     var homeEl = $("home-erp-grid");
     if (homeEl && !homeEl.innerHTML) {
       homeEl.innerHTML =
-        '<div class="step-box"><span>엔진 1 · 컨텐츠 스튜디오 (102종 허브)</span><strong>PPT 덱 · 미리캔버스♥(47) · 로보엠디(39)</strong><p>고수템 IR·정부지원 PSST·CEA 교육 제안서·박사논문 SLR·블로그 카드뉴스를 카드/표 뷰로 통합.</p></div>' +
-        '<div class="step-box"><span>엔진 2 · 로보엠디 제작 스튜디오 (3모드)</span><strong>AI 이미지(12) · 동영상(6) · 디자인(9) · 카피(5)</strong><p>실물 정물·성분표·CEA 커리큘럼·영수증 비교표와 금지어 자동 정화 탑재.</p></div>' +
-        '<div class="step-box"><span>엔진 3 · 핸디핏 시장검증 (6대 메뉴)</span><strong>랜딩 10선 ➔ 설문 이탈(B-02) ➔ 섹션 도달률(B-03)</strong><p>사업부별 UTM 단축링크·QR 발급 및 문항/섹션 최대 이탈 병목 자동 진단.</p></div>' +
-        '<div class="step-box"><span>엔진 4 · 매니패스트 기획 (2년 유효)</span><strong>PRD 13문항 ➔ 요구사항(R) ➔ 기능(F-ID)</strong><p>고수템·CEA 프로젝트를 F-ID로 추적하며 구매 크레딧 100,812는 2028년까지 유효.</p></div>';
+        '<div class="step-box"><span>업무 ① · 랜딩·설문 캠페인</span><strong>홈페이지 선택 ➔ 화면 클릭 편집 ➔ 20문항 설문 ➔ 게시·QR</strong><p>고수템·CEA·신규 홈페이지의 랜딩페이지와 설문을 1~4단계 순서대로 만들고 배포합니다.</p></div>' +
+        '<div class="step-box"><span>업무 ② · 블로그·릴스·사진 제작</span><strong>원고·4단 대본 정화 ➔ 실물 정물 사진 ➔ 9:16 릴스·배너</strong><p>금지어 18종 자동 교정 원고부터 인물 0% 실물 정물 사진과 촬영가이드 PDF까지 3단계로 제작합니다.</p></div>' +
+        '<div class="step-box"><span>업무 ③ · PPT 발표자료 허브</span><strong>PPT 8종(.pptx 조립) · 미리캔버스 47종 · 로보엠디 47종</strong><p>세부 장표(#01~#08)를 미리 보고 발표 주제를 넣어 실제 파워포인트(.pptx) 파일을 즉시 내려받습니다.</p></div>' +
+        '<div class="step-box"><span>업무 ④ · 고수템 #admin 실시간 직결</span><strong>고객 원장(#admin/customers) · 가설 판정표(#admin/verify)</strong><p>설문 응답과 방문 이벤트가 고수템 본체 관리자 화면 및 Supabase 실서버와 실시간 동기화됩니다.</p></div>';
     }
-    var funnelEl = $("report-funnel-bars");
-    if (funnelEl) {
-      funnelEl.innerHTML = H.sectionFunnel.map(function (f) {
-        var cls = f.isMaxDrop ? "funnel-row max-drop" : "funnel-row";
-        return '<div class="' + cls + '"><div class="funnel-label"><strong>' + f.sec + '</strong><span>' + f.reachPct + '% (' + f.visitors + '명)</span></div>' +
-          '<div class="funnel-track"><div class="funnel-fill" style="width:' + f.reachPct + '%"></div></div>' +
-          (f.alertText ? '<div class="funnel-alert">' + f.alertText + '</div>' : '') + '</div>';
-      }).join("");
-    }
+    if (window.GOSU_ERP_DB) window.GOSU_ERP_DB.renderErpDbPanel(state, H);
+    var funnelHtml = H.sectionFunnel.map(function (f) {
+      var cls = f.isMaxDrop ? "funnel-row max-drop" : "funnel-row";
+      return '<div class="' + cls + '"><div class="funnel-label"><strong>' + f.sec + '</strong><span>' + f.reachPct + '% (' + f.visitors + '명 도달)</span></div>' +
+        '<div class="funnel-track"><div class="funnel-fill" style="width:' + f.reachPct + '%"></div></div>' +
+        (f.alertText ? '<div class="funnel-alert">' + f.alertText + '</div>' : '') + '</div>';
+    }).join("");
+    if ($("report-funnel-bars")) $("report-funnel-bars").innerHTML = funnelHtml;
+    if ($("home-funnel-mount")) $("home-funnel-mount").innerHTML = funnelHtml;
     var summaryBox = $("report-bp-summary");
     if (summaryBox) summaryBox.value = E.buildValidationSummary(H.utmLinks, H.surveyDropoff, H.sectionFunnel);
+  }
+
+  function buildErpDbHtml(db, state, lCnt, fCnt, uCnt, sbCfg, sbOn) {
+    return '<div class="panel-card"><div class="panel-head"><div><h2>🔗 고수템 본체(#admin) ↔ 업무 스튜디오 실시간 단일 DB 관제판</h2>' +
+      '<small>고객원장(#admin/customers) · 가설판정표(#admin/verify) 연동 (' + db.syncedAt + ' · ' + (sbOn ? "Supabase 실서버 직결" : "이 기기 실시간 공유") + ')</small></div>' +
+      '<div class="btn-row"><button class="btn-sm" data-db-act="toggle-sb-cfg">⚙️ Supabase 설정</button><button class="btn-sm" data-db-act="sim-track">⚡ 방문 기록 추가</button><button class="btn-sm cs-btn-green" data-db-act="export-csv">📥 고객원장 CSV</button><button class="btn-pri" data-db-act="export-json">📥 전체 DB JSON</button></div></div>' +
+      (state && state.showSbConfig ? '<div class="form-grid"><label>Supabase URL<input type="text" id="db-sb-url" value="' + (sbCfg.url || "") + '" /></label><label>Anon Key<input type="password" id="db-sb-key" value="' + (sbCfg.anonKey || "") + '" /></label><div><button class="btn-pri" data-db-act="save-sb-cfg">저장</button></div></div>' : '') +
+      '<div class="form-grid"><div class="step-box"><span>1. 랜딩</span><strong>' + lCnt + '종</strong></div><div class="step-box"><span>2. 설문 폼</span><strong>' + fCnt + '종</strong></div><div class="step-box"><span>3. 고객 응답</span><strong>' + db.customers.length + '건</strong></div><div class="step-box"><span>4. 배포 링크</span><strong>' + uCnt + '종</strong></div><div class="step-box"><span>5. 행동 기록</span><strong>' + db.events.length + '건</strong></div></div>' +
+      '<div class="studio-workspace"><div><h3>📊 가설 검증 현황 (#admin/verify)</h3><div class="table-wrap"><table><thead><tr><th>가설</th><th>항목</th><th>목표</th><th>실측치</th><th>판정</th></tr></thead><tbody>' +
+      db.hypotheses.map(function (h) { return '<tr><td><b>' + h.id + '</b></td><td>' + h.title + '</td><td>' + h.target + '</td><td><b>' + h.actual + '</b></td><td><span class="badge-accent">' + h.status + '</span></td></tr>'; }).join("") +
+      '</tbody></table></div></div><div><h3>👥 고객 응답 원장 (#admin/customers)</h3><div class="table-wrap"><table><thead><tr><th>ID·구분</th><th>연락처</th><th>응답 요약</th><th class="num">절감액</th></tr></thead><tbody>' +
+      db.customers.slice(0, 5).map(function (c) { return '<tr><td><b>' + c.id + '</b> (' + (c.kind || c.role) + ')</td><td>' + c.contact + '</td><td>' + c.summary + '</td><td class="num"><b>' + Number(c.savedAmount || 0).toLocaleString() + '원</b></td></tr>'; }).join("") +
+      '</tbody></table></div></div></div></div>';
   }
 
   return {
@@ -211,6 +224,7 @@ window.GOSU_STUDIO_VIEWS = (function () {
     renderLandingPanel: renderLandingPanel,
     renderCopyPanel: renderCopyPanel,
     renderUtmPanel: renderUtmPanel,
-    renderReportPanel: renderReportPanel
+    renderReportPanel: renderReportPanel,
+    buildErpDbHtml: buildErpDbHtml
   };
 })();

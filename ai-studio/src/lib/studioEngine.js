@@ -175,6 +175,18 @@ window.GOSU_STUDIO_ENGINE = (function () {
     ].join("\n");
   }
 
+  function exportShootingGuidePdf(curBrand, sc, toast) {
+    var rows = (sc.cuts || []).map(function (c) { return "<tr><td><b>CUT " + c.no + "</b><br>" + c.block + "</td><td><b>" + c.sub + "</b></td><td>" + c.loc + "</td><td>" + c.scene + "</td><td>" + c.intent + "</td></tr>"; }).join("");
+    var doc = "<!doctype html><html lang='ko'><head><meta charset='utf-8'><title>촬영가이드_" + curBrand.name + "</title></head><body><h1>🎬 촬영가이드 (" + curBrand.name + ")</h1><table border='1'><tbody>" + rows + "</tbody></table><script>window.onload=function(){if(window.print)window.print();};<\/script></body></html>";
+    if (typeof Blob !== "undefined" && typeof URL !== "undefined" && URL.createObjectURL) {
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(new Blob([doc], { type: "text/html;charset=utf-8" }));
+      a.download = "shooting-guide-" + curBrand.id.toLowerCase() + ".html"; a.click();
+    }
+    if (toast) toast("촬영가이드 PDF 저장 완료");
+    return doc;
+  }
+
   return {
     FORBIDDEN_MAP: FORBIDDEN_MAP,
     inspectText: inspectText,
@@ -182,6 +194,7 @@ window.GOSU_STUDIO_ENGINE = (function () {
     composeCopy: composeCopy,
     createUtmEntry: createUtmEntry,
     buildQrSvg: buildQrSvg,
-    buildValidationSummary: buildValidationSummary
+    buildValidationSummary: buildValidationSummary,
+    exportShootingGuidePdf: exportShootingGuidePdf
   };
 })();

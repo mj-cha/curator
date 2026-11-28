@@ -72,9 +72,10 @@ window.GOSU_CS_DRAWER = (function () {
           '<div class="cs-mini-title">' + s.label + '</div></div>';
       }).join("") + '</div></div>' +
       '<div class="cs-drawer-foot">' +
-      '<input type="text" id="cs-brief-topic" value="고수템 2R 발표안" placeholder="발표 주제 입력" style="flex:1;min-width:130px"/>' +
-      '<button class="btn-sm cs-btn-green" style="height:32px;padding:0 12px" data-cs-copy-brief="' + sel.id + '">이 템플릿으로 만들기</button>' +
-      '<button class="btn-sm" style="height:32px;background:#0F4C81;color:#FFF" data-cs-send-studio="' + sel.id + '">AI 캔버스 연동 ↗</button>' +
+      '<input type="text" id="cs-brief-topic" value="고수템 2R 발표안" placeholder="발표 주제 입력" style="flex:1;min-width:120px"/>' +
+      '<button class="btn-sm cs-btn-green" style="height:32px;padding:0 10px" data-cs-dl-pptx="' + sel.id + '">📊 PPTX 파일 내려받기</button>' +
+      '<button class="btn-sm" style="height:32px;padding:0 10px" data-cs-copy-brief="' + sel.id + '">브리프 복사</button>' +
+      '<button class="btn-sm" style="height:32px;background:#0F4C81;color:#FFF" data-cs-send-studio="' + sel.id + '">AI 캔버스 ↗</button>' +
       '</div></aside>';
   }
 

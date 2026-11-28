@@ -1,82 +1,90 @@
-/* 핸디핏 랜딩페이지 시각 편집기 11개 섹션 기본 데이터 & 실물 정물 플랫레이 SVG (src/data/handyfitSectionsSeed.js · 15KB 이하) */
+/* 핸디핏 시각 랜딩 빌더 10개 섹션 초기 시드 & 배치 카테고리 데이터 (src/data/handyfitSectionsSeed.js · 15KB 이하) */
 window.GOSU_HF_SEED = (function () {
+  var LAYOUT_GROUPS = [
+    { group: "고객의 고민에 맞는 모양", items: [
+      { id: "말풍선", icon: "💬" }, { id: "체크 리스트", icon: "☑️" }, { id: "2열 (제목·본문)", icon: "◫" }, { id: "한 문장 강조", icon: "❝" }
+    ]},
+    { group: "소개하기", items: [
+      { id: "기본 쌓기", icon: "☰" }, { id: "이미지 위 글", icon: "▣" }, { id: "사진 + 글", icon: "◧" }, { id: "비주얼 우측", icon: "◨" }
+    ]},
+    { group: "강조하기", items: [
+      { id: "강조", icon: "⬛" }, { id: "밴드", icon: "▬" }, { id: "얇은 띠", icon: "─" }
+    ]},
+    { group: "여러 항목 늘어놓기", items: [
+      { id: "배지 한 줄", icon: "⋯" }, { id: "카드 3열", icon: "▤" }, { id: "지그재그", icon: "⇄" }, { id: "세로 스택", icon: "▤" },
+      { id: "번호 스텝", icon: "①②③" }, { id: "목록", icon: "≡" }, { id: "사진 슬라이드", icon: "🖼️" }
+    ]},
+    { group: "비교·가격", items: [
+      { id: "숫자 강조 띠", icon: "123" }, { id: "신청 버튼 띠", icon: "🔘" }
+    ]}
+  ];
+
+  var AI_DIRECTIONS = [
+    { id: "scene", label: "고객 장면으로", sampleHead: "안경 벗으면 강사님 손도 안 보여 수영장 가기가 망설여졌죠", sampleDesc: "레인 끝에 서서 강사님 손짓을 놓칠까 봐 불안했던 첫 달의 실제 장면을 담았습니다.", layout: "한 문장 강조" },
+    { id: "number", label: "숫자로 보여 주기", sampleHead: "초보 평균 탐색 145분 ➔ 7분 단축 · 첫 달 실패 지출 31,000원 방어", sampleDesc: "사지 마 3종 회피(25,000원) + 미개봉 중고·0원 대안(6,000원) 실측 데이터를 숫자로 비교합니다.", layout: "숫자 강조 띠" },
+    { id: "list", label: "항목별로 정리", sampleHead: "내 눈에 맞는 첫 달 준비물, 3가지 기준으로 7분 만에 확정해요", sampleDesc: "① 클리어 vs 미러 실내 조도 비교 ② 좌우 도수 분리 조립법 ③ 다이소·소분 공병 별도 지출 0원 관리", layout: "번호 스텝" },
+    { id: "punch", label: "더 짧고 세게", sampleHead: "매장에서 산 18만 원 풀세트, 세 가지만 빼면 5만 원에 끝납니다", sampleDesc: "첫 화면 판매 링크 0개. 현직 강사 5명이 먼저 뺀 과잉 장비부터 확인하세요.", layout: "강조" }
+  ];
+
   function buildFlatlaySvg(mode) {
     if (mode === "skip") {
       return "data:image/svg+xml;utf8," + encodeURIComponent(
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380">' +
-        '<rect width="640" height="380" fill="#B8B9BE"/>' +
-        '<rect x="70" y="60" width="90" height="260" rx="36" fill="#17191C" stroke="#2D4A9C" stroke-width="8"/>' +
-        '<rect x="175" y="65" width="90" height="255" rx="36" fill="#17191C" stroke="#2D4A9C" stroke-width="8"/>' +
-        '<ellipse cx="360" cy="110" rx="55" ry="24" fill="#0E3B43" stroke="#222" stroke-width="5"/>' +
-        '<ellipse cx="475" cy="125" rx="55" ry="24" fill="#1E4E8C" stroke="#222" stroke-width="5"/>' +
-        '<rect x="470" y="190" width="120" height="140" rx="38" fill="#18191B" stroke="#F59E0B" stroke-width="5"/>' +
-        '<rect x="300" y="220" width="150" height="86" rx="12" fill="#FBBF24"/>' +
-        '<text x="375" y="258" text-anchor="end" fill="#0F3568" font-family="Pretendard,sans-serif" font-size="24" font-weight="900">첫 달</text>' +
-        '<text x="435" y="292" text-anchor="end" fill="#0F3568" font-family="Pretendard,sans-serif" font-size="28" font-weight="900">사지 마!</text></svg>'
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360"><rect width="640" height="360" fill="#B8B9BE"/>' +
+        '<rect x="65" y="55" width="88" height="250" rx="34" fill="#17191C" stroke="#2D4A9C" stroke-width="8"/>' +
+        '<rect x="170" y="60" width="88" height="245" rx="34" fill="#17191C" stroke="#2D4A9C" stroke-width="8"/>' +
+        '<ellipse cx="355" cy="105" rx="54" ry="23" fill="#0E3B43" stroke="#222" stroke-width="5"/>' +
+        '<ellipse cx="470" cy="120" rx="54" ry="23" fill="#1E4E8C" stroke="#222" stroke-width="5"/>' +
+        '<rect x="295" y="205" width="160" height="86" rx="12" fill="#FBBF24"/>' +
+        '<text x="375" y="243" text-anchor="middle" fill="#0F3568" font-family="Pretendard,sans-serif" font-size="22" font-weight="900">첫 달 사지 마!</text>' +
+        '<text x="375" y="274" text-anchor="middle" fill="#0F3568" font-family="Pretendard,sans-serif" font-size="20" font-weight="900">-25,000원 방어</text></svg>'
       );
     }
     return "data:image/svg+xml;utf8," + encodeURIComponent(
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440">' +
-      '<rect width="640" height="440" fill="#B6B5B3"/>' +
-      '<rect x="52" y="110" width="185" height="225" rx="44" fill="#0066CC" stroke="#18191C" stroke-width="8"/>' +
-      '<ellipse cx="145" cy="210" rx="55" ry="65" fill="#3B3D42"/>' +
-      '<path d="M275,145 C295,120 355,120 375,145 L390,335 C365,375 285,375 260,335 Z" fill="#0A2E5C" stroke="#F59E0B" stroke-width="4"/>' +
-      '<ellipse cx="505" cy="160" rx="64" ry="52" fill="#0066CC"/>' +
-      '<ellipse cx="330" cy="110" rx="62" ry="20" fill="#E2E8F0" stroke="#94A3B8" stroke-width="4"/>' +
-      '<rect x="442" y="225" width="48" height="125" rx="10" fill="rgba(255,255,255,0.45)" stroke="#475569" stroke-width="3"/>' +
-      '<g transform="rotate(-14 190 95)"><rect x="115" y="72" width="145" height="38" rx="6" fill="#FCD34D"/><text x="187" y="97" text-anchor="middle" fill="#1E293B" font-family="Pretendard,sans-serif" font-size="16" font-weight="900">첫 달 사지 마</text></g>' +
-      '<g transform="rotate(-4 360 55)"><rect x="305" y="36" width="115" height="36" rx="6" fill="#38BDF8"/><text x="362" y="60" text-anchor="middle" fill="#0F172A" font-family="Pretendard,sans-serif" font-size="16" font-weight="900">필수 알짜</text></g>' +
-      '<g transform="rotate(2 560 255)"><rect x="505" y="236" width="110" height="36" rx="6" fill="#FCD34D"/><text x="560" y="260" text-anchor="middle" fill="#1E293B" font-family="Pretendard,sans-serif" font-size="16" font-weight="900">중고 충분</text></g></svg>'
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400"><rect width="640" height="400" fill="#B6B5B3"/>' +
+      '<rect x="52" y="95" width="180" height="215" rx="42" fill="#0066CC" stroke="#18191C" stroke-width="8"/>' +
+      '<path d="M275,130 C295,105 355,105 375,130 L390,315 C365,355 285,355 260,315 Z" fill="#0A2E5C" stroke="#F59E0B" stroke-width="4"/>' +
+      '<ellipse cx="505" cy="150" rx="62" ry="50" fill="#0066CC"/><ellipse cx="330" cy="95" rx="60" ry="19" fill="#E2E8F0" stroke="#94A3B8" stroke-width="4"/>' +
+      '<rect x="115" y="55" width="145" height="36" rx="6" fill="#FCD34D"/><text x="187" y="79" text-anchor="middle" fill="#1E293B" font-family="Pretendard,sans-serif" font-size="15" font-weight="900">첫 달 사지 마</text>' +
+      '<rect x="305" y="30" width="115" height="34" rx="6" fill="#38BDF8"/><text x="362" y="53" text-anchor="middle" fill="#0F172A" font-family="Pretendard,sans-serif" font-size="15" font-weight="900">고수 교차통과</text>' +
+      '<rect x="495" y="230" width="115" height="34" rx="6" fill="#FCD34D"/><text x="552" y="253" text-anchor="middle" fill="#1E293B" font-family="Pretendard,sans-serif" font-size="15" font-weight="900">중고·0원 대안</text></svg>'
     );
   }
 
   function createSections(p) {
     return [
-      { id: "sec-hero", name: "첫 화면", layout: "비주얼 우측", imgPos: "right", imgRatio: "기본", padY: 44, bg: "#0C3C78", fg: "#FFFFFF", headSize: "크게", headColor: "#FFFFFF", headBold: true, showDesc: true, badge: p.trustBadge || "김민정 현직 수영강사(생활스포츠지도사 2급·라이프가드) 외 4명 검수", headline: p.headline || "매달 같은 장비 질문, 가방 링크 하나로 끝내세요", desc: p.subcopy || "수영강사·모임장을 위한 큐레이션 도구. 가방 사진 1장과 음성 3문장이면 10분 만에 내 기준 고유 링크가 나옵니다.", cta: p.cta || "창립 고수 무료 등록", imgType: "main" },
-      { id: "sec-pain", name: "고객 고민", layout: "비주얼 좌측", imgPos: "left", imgRatio: "기본", padY: 38, bg: "#FFFFFF", fg: "#141413", headSize: "보통", headColor: "#0C3C78", headBold: true, showDesc: true, badge: "PROBLEM · 반복되는 탐색 피로", headline: "새 회원이 들어올 때마다 같은 답장을 다시 씁니다.", desc: p.sec1NoBuy || "수영복은 뭘로, 수경은 어떤 걸로, 오리발은 언제. 단톡방과 커뮤니티에 같은 준비물 설명을 매달 손으로 타이핑합니다. 첫 달 오리발·미러 수경·대용량 메시는 빼라는 안내까지.", cta: "안 사도 되는 장비 3종 보기", imgType: "skip" },
-      { id: "sec-empathy", name: "공감", layout: "강조 박스", imgPos: "right", imgRatio: "와이드", padY: 32, bg: "#F4F6FA", fg: "#141413", headSize: "보통", headColor: "#141413", headBold: true, showDesc: true, badge: "EMPATHY · 현직 고수 5인 실측", headline: "초보자 평균 탐색 시간 145분, 실패 지출 건당 3.1만 원", desc: "광고성 협찬 후기와 바이럴 링크 사이에서 입문자는 첫 달에 필요 없는 장비부터 결제합니다.", cta: "", imgType: "none" },
-      { id: "sec-sol", name: "해결책", layout: "카드 3열", imgPos: "right", imgRatio: "기본", padY: 36, bg: "#FFFFFF", fg: "#141413", headSize: "보통", headColor: "#0C3C78", headBold: true, showDesc: true, badge: "SOLUTION · 3단 의사결정 구조", headline: "① 첫 달 사지 마 ➔ ② 고수 5인 교차 판정 ➔ ③ 총비용 비교", desc: p.sec2Cross || "첫 화면에는 판매 링크를 단 하나도 두지 않습니다. 무가입 1탭으로 고수 5인의 찬반 근거를 먼저 확인합니다.", cta: "", imgType: "none" },
-      { id: "sec-srv1", name: "서비스 소개", layout: "비주얼 좌측", imgPos: "left", imgRatio: "정사각", padY: 36, bg: "#FAF9F5", fg: "#141413", headSize: "보통", headColor: "#141413", headBold: true, showDesc: true, badge: "FEATURE 01 · 무가입 1탭 비교", headline: "가방 속 실물 장비 3~5개만 딱 골라 이유와 함께 보여줍니다", desc: "한국인 모델 화보 대신 실제 가방에 들어가는 실물 장비 탑뷰 사진과 한 줄 판정 라벨만 제공합니다.", cta: "", imgType: "main" },
-      { id: "sec-srv2", name: "서비스 소개 2", layout: "비주얼 우측", imgPos: "right", imgRatio: "기본", padY: 36, bg: "#FFFFFF", fg: "#141413", headSize: "보통", headColor: "#0C3C78", headBold: true, showDesc: true, badge: "FEATURE 02 · 똑소리 나게 가격 비교하기", headline: "배송비·멤버십 포함 최종 결제 총비용을 중립 비교합니다", desc: p.sec3Price || "쿠팡 로켓와우 · 네이버 공식몰 · 오프라인 매장 3곳의 배송비 포함 실제 결제 금액을 한눈에 대조합니다.", cta: "", imgType: "none" },
-      { id: "sec-trust", name: "신뢰·후기", layout: "숫자 강조 띠", imgPos: "right", imgRatio: "와이드", padY: 30, bg: "#0C3C78", fg: "#FFFFFF", headSize: "보통", headColor: "#D4FF34", headBold: true, showDesc: true, badge: "VERIFIED · 실측 검증 데이터", headline: "유튜버·현직 강사 5인 실사 가방 117개 품목 교차 검수 완료", desc: "물먹는오예 · 초록 · 이프랑 · 오퐁 · 워터양 실제 소개 장비 및 현직 강사 기준 일치율 94%", cta: "", imgType: "none" },
-      { id: "sec-target", name: "추천 대상", layout: "신청 버튼 띠", imgPos: "right", imgRatio: "기본", padY: 32, bg: "#F4F6FA", fg: "#141413", headSize: "보통", headColor: "#141413", headBold: true, showDesc: true, badge: "FOR WHOM · 핵심 타깃", headline: p.target || "이번 달 새로 등록한 입문자 및 매달 같은 장비 질문에 답하는 강사·모임장", desc: "복잡한 회원가입 없이 링크 하나로 준비물 리스트와 실패 없는 구매 기준을 공유하세요.", cta: p.cta || "창립 고수 무료 등록", imgType: "none" },
-      { id: "sec-benefit", name: "혜택·가격", layout: "체크 리스트", imgPos: "right", imgRatio: "기본", padY: 32, bg: "#FFFFFF", fg: "#141413", headSize: "보통", headColor: "#0F5132", headBold: true, showDesc: true, badge: "BENEFIT · 창립 멤버 혜택", headline: "첫 달 무료 · 내 가방 고유 단축링크 & 오프라인 QR 즉시 발급", desc: "✓ 가방 사진 1장 + 음성 메모 3문장으로 10분 제작 / ✓ 종목별 금지 장비 경고 카드 자동 삽입", cta: "", imgType: "none" },
-      { id: "sec-close", name: "마감 안내", layout: "얇은 띠", imgPos: "right", imgRatio: "와이드", padY: 24, bg: "#141413", fg: "#D4FF34", headSize: "작게", headColor: "#D4FF34", headBold: true, showDesc: true, badge: "NOTICE", headline: "이번 달 창립 고수 컨시어지 무료 제작 잔여 12자리", desc: "신청 순서대로 전담 에이전트가 가방 누끼 플랫레이와 고유 링크를 무료로 세팅해 드립니다.", cta: p.cta || "무료 등록 신청하기", imgType: "none" },
-      { id: "sec-faq", name: "자주 묻는 질문", layout: "체크 리스트", imgPos: "right", imgRatio: "기본", padY: 32, bg: "#FAF9F5", fg: "#141413", headSize: "보통", headColor: "#141413", headBold: true, showDesc: true, badge: "FAQ", headline: "Q. 특정 브랜드 광고나 협찬이 섞여 있나요?", desc: "A. 첫 화면에는 구매 링크를 일절 두지 않으며, 복수 고수의 교차 판정과 배송비 포함 총비용 비교만 제공합니다.", cta: "", imgType: "none" }
+      { id: "sec-hero", name: "첫 화면", layout: "비주얼 우측", titlePos: "위", imgPos: "right", imgRatio: "기본", slideShape: "한 장씩", slideAuto: "3초", padY: 44, bg: "#0C3C78", fg: "#FFFFFF", headSize: "크게", headColor: "#FFFFFF", headBold: true, showDesc: true, inTopNav: false, enabled: true, badge: p.trustBadge || "김민정 현직 수영강사(생활스포츠지도사 2급·라이프가드) 외 4명 검수", headline: p.headline || "수영 첫 달 준비물, 세 가지만 빼도 2만 5천 원 아낍니다", desc: p.subcopy || "신규 등록 직후 가장 많이 후회하는 과잉 장비부터 먼저 뺐습니다. 첫 화면에는 구매 링크가 단 하나도 없습니다.", cta: p.cta || "내 준비물 체크리스트 1초 저장", imgType: "main", cards: [
+        { t: "첫 화면 링크 0개", d: "3초 비광고 신뢰 88.9%" }, { t: "사지 마 3종 선제 제외", d: "과잉장비 25,000원 방어" }, { t: "중고·0원 대안 비교", d: "건당 총 31,000원 절감" }
+      ]},
+      { id: "sec-pain", name: "고객 고민", layout: "숫자 강조 띠", titlePos: "위", imgPos: "left", imgRatio: "기본", slideShape: "한 장씩", slideAuto: "끄기", padY: 38, bg: "#E0F2FE", fg: "#0F172A", headSize: "보통", headColor: "#0C3C78", headBold: true, showDesc: true, inTopNav: true, enabled: true, badge: "PROBLEM · 입문자가 가장 많이 겪는 시행착오", headline: "매장에서 산 수영 장비, 왜 첫 달에 후회할까요?", desc: p.sec1NoBuy || "초급반 첫 두 달 안 쓰는 오리발, 실내에서 어두운 진한 미러 수경, 김서림방지액 중복 구매까지.", cta: "", imgType: "skip", cards: [
+        { t: "일체형 미러 도수 수경", d: "양안 시력이 다른데 같은 도수 일체형을 사면 어지럼증이 생겨요" },
+        { t: "실내수영장 진한 미러", d: "실내 조도에서는 시야가 어두워 레인 바닥선과 강사님 손이 안 보여요" },
+        { t: "초급반 첫 달 오리발", d: "자유형·배영 기초 두 달 동안은 오리발을 쓰지 않아 짐만 됩니다" }
+      ]},
+      { id: "sec-empathy", name: "공감", layout: "한 문장 강조", titlePos: "위", imgPos: "right", imgRatio: "와이드", slideShape: "한 장씩", slideAuto: "끄기", padY: 34, bg: "#FFFFFF", fg: "#141413", headSize: "크게", headColor: "#141413", headBold: true, showDesc: true, inTopNav: false, enabled: true, badge: "EMPATHY · 현직 고수 5인 실측", headline: "나만 못 따라가는 것 같아서 수영장 가기가 망설여졌죠", desc: "레인 끝에서 강사님 손짓을 놓치고 헤매던 그 시간, 장비 탓이 아니라 기준을 몰랐기 때문입니다.", cta: "", imgType: "none", cards: [] },
+      { id: "sec-sol", name: "해결책", layout: "카드 3열", titlePos: "위", imgPos: "right", imgRatio: "기본", slideShape: "한 장씩", slideAuto: "끄기", padY: 38, bg: "#F1F5F9", fg: "#141413", headSize: "보통", headColor: "#0C3C78", headBold: true, showDesc: true, inTopNav: true, enabled: true, badge: "SOLUTION · 3단 의사결정 구조", headline: "내 상황에 맞는 기준 하나로 첫 달부터 달라집니다", desc: p.sec2Cross || "첫 화면에는 판매 링크를 두지 않고, 고수 5인의 찬반 근거와 총비용만 투명하게 대조합니다.", cta: "", imgType: "none", cards: [
+        { t: "강사님 손이 또렷이 보여요", d: "실내 수영장 조도에 맞춘 투명 패킹·도수 분리 기준으로 시야가 밝아져요." },
+        { t: "두통 없이 50분 완주해요", d: "물속 굴절 보정(-0.5단계)과 압박 없는 실리콘 패킹만 선별했어요." },
+        { t: "건당 31,000원을 아껴요", d: "첫 달 사지 마 3종 회피(2.5만) + 다이소·소분 공병 대안(0.6만) 조합." }
+      ]},
+      { id: "sec-srv1", name: "서비스 소개", layout: "번호 스텝", titlePos: "위", imgPos: "left", imgRatio: "정사각", slideShape: "한 장씩", slideAuto: "3초", padY: 38, bg: "#FFFFFF", fg: "#141413", headSize: "보통", headColor: "#0C3C78", headBold: true, showDesc: true, inTopNav: true, enabled: true, badge: "PROCESS · 무가입 1탭 비교", headline: "내 상황에 맞는 조합, 7분 만에 확정해요", desc: "광고 순위가 아니라 실제로 써본 현직 강사와 3년 차 고수 5명의 기준만 정리했어요.", cta: "", imgType: "none", cards: [
+        { t: "클리어 vs 미러 조도 비교", d: "실내 새벽반(비추천) vs 야외 바다수영(추천) 조건별 찬반을 1탭으로 봐요." },
+        { t: "원단·조립 3대 기준 확인", d: "폴리에스터 100% 내염소성 원단과 좌우 분리 도수 조립법을 체크해요." },
+        { t: "배송비 포함 총비용 비교", d: "쿠팡·네이버·미개봉 중고·0원 대안을 제휴 가중치 0%로 중립 비교해요." }
+      ]},
+      { id: "sec-trust", name: "신뢰·후기", layout: "숫자 강조 띠", titlePos: "위", imgPos: "right", imgRatio: "와이드", slideShape: "한 장씩", slideAuto: "끄기", padY: 36, bg: "#E0F2FE", fg: "#0F172A", headSize: "보통", headColor: "#0C3C78", headBold: true, showDesc: true, inTopNav: false, enabled: true, badge: "VERIFIED · 실측 검증 데이터", headline: "현직 강사와 고수 5인이 직접 정착한 조합이에요", desc: "물먹는오예 · 초록 · 이프랑 · 오퐁 · 워터양 실제 소개 장비 117개 품목 및 현직 강사 기준 교차 검수 완료", cta: "", imgType: "none", cards: [
+        { t: "4.6 / 5.0점", d: "첫 화면 링크 0개 · 비광고 신뢰도 긍정 응답 88.9%" },
+        { t: "5인 교차 검수", d: "생활스포츠지도사 2급 현직 강사 및 실사 가방 117품목" },
+        { t: "31,000원 절감", d: "입문자 1인당 첫 달 평균 직접 현금 절감액" }
+      ]},
+      { id: "sec-target", name: "추천 대상", layout: "신청 버튼 띠", titlePos: "위", imgPos: "right", imgRatio: "기본", slideShape: "한 장씩", slideAuto: "끄기", padY: 34, bg: "#FFFFFF", fg: "#141413", headSize: "보통", headColor: "#141413", headBold: true, showDesc: true, inTopNav: false, enabled: true, badge: "FOR WHOM · 핵심 타깃", headline: "나도 과소비 없이 첫 달을 시작하고 싶다면", desc: p.target || "이번 달 새로 등록한 입문자 및 매달 같은 장비 질문에 답하는 강사·모임장에게 무료로 열려 있습니다.", cta: p.cta || "무료 부품표·체크리스트 받기", imgType: "none", cards: [] },
+      { id: "sec-benefit", name: "혜택·가격", layout: "체크 리스트", titlePos: "위", imgPos: "right", imgRatio: "기본", slideShape: "한 장씩", slideAuto: "끄기", padY: 32, bg: "#FAF9F5", fg: "#141413", headSize: "보통", headColor: "#0F5132", headBold: true, showDesc: true, inTopNav: true, enabled: true, badge: "BENEFIT · 창립 멤버 혜택", headline: "첫 달 무료 · 내 가방 고유 단축링크 & 오프라인 QR 즉시 발급", desc: "✓ 가방 사진 1장 + 음성 메모 3문장으로 10분 제작 / ✓ 종목별 금지 장비 경고 카드 자동 삽입", cta: "", imgType: "none", cards: [
+        { t: "무가입 체크리스트 1초 저장", d: "연락처 입력 강요 없이 첫 달 사지 마 3종과 알짜 리스트를 바로 저장합니다." },
+        { t: "창립 고수 #001~#100 배지", d: "팔로워 수가 아니라 초보자가 아낀 누적 절감 기여액으로 레벨이 올라갑니다." }
+      ]},
+      { id: "sec-close", name: "신청", layout: "신청 버튼 띠", titlePos: "옆", imgPos: "right", imgRatio: "와이드", slideShape: "한 장씩", slideAuto: "끄기", padY: 28, bg: "#0C3C78", fg: "#FFFFFF", headSize: "보통", headColor: "#D4FF34", headBold: true, showDesc: true, inTopNav: false, enabled: true, badge: "APPLY NOW", headline: "지금 1초 만에 첫 달 체크리스트를 저장하세요", desc: "사전예약만 해두면 오픈 알림과 고수 5인 비교표를 무료로 보내드려요.", cta: p.cta || "무료 체크리스트 받기", imgType: "none", cards: [] },
+      { id: "sec-faq", name: "맨 아래 정보", layout: "기본 쌓기", titlePos: "위", imgPos: "right", imgRatio: "기본", slideShape: "한 장씩", slideAuto: "끄기", padY: 28, bg: "#F8FAFC", fg: "#475569", headSize: "작게", headColor: "#1E293B", headBold: true, showDesc: true, inTopNav: false, enabled: true, badge: "FAQ & 공정위 고지", headline: "Q. 특정 브랜드 광고나 협찬이 섞여 있나요?", desc: "A. 첫 화면에는 구매 링크를 일절 두지 않으며, 3단 최하단 [광고] 제휴 링크 클릭 시 수수료를 제공받을 수 있으나 추천 순위와 가격 정렬에는 가중치 0% 원칙을 지킵니다.", cta: "", imgType: "none", cards: [] }
     ];
   }
 
-  function renderInspector(activeSec, ed) {
-    return '<aside class="hf-inspector"><div class="hf-insp-card">' +
-      '<div class="hf-insp-title">&lt; 페이지 설정 &nbsp;/&nbsp; <b>' + activeSec.name + '</b></div>' +
-      '<div class="hf-insp-row"><span>배치</span><select id="hf-layout-sel">' +
-      ["비주얼 우측", "비주얼 좌측", "강조 박스", "카드 3열", "숫자 강조 띠", "신청 버튼 띠", "체크 리스트", "얇은 띠"].map(function (ly) { return '<option value="' + ly + '" ' + (activeSec.layout === ly ? "selected" : "") + '>' + ly + '</option>'; }).join("") + '</select></div>' +
-      '<div class="hf-insp-row"><span>사진 위치</span><div class="cs-seg">' +
-      '<button type="button" class="' + (activeSec.imgPos === "left" ? "active" : "") + '" data-hf-act="img-pos" data-val="left">왼쪽</button>' +
-      '<button type="button" class="' + (activeSec.imgPos === "right" ? "active" : "") + '" data-hf-act="img-pos" data-val="right">오른쪽</button>' +
-      '<button type="button" class="' + (activeSec.imgType === "none" ? "active" : "") + '" data-hf-act="img-toggle">' + (activeSec.imgType === "none" ? "사진 켜기" : "사진 끄기") + '</button></div></div>' +
-      '<div class="hf-insp-row"><span>사진 비율</span><div class="cs-seg">' +
-      ["와이드", "기본", "정사각", "세로"].map(function (rt) { return '<button type="button" class="' + (activeSec.imgRatio === rt ? "active" : "") + '" data-hf-act="img-ratio" data-val="' + rt + '">' + rt + '</button>'; }).join("") + '</div></div>' +
-      '<div class="hf-insp-row"><span>위아래 여백</span><div class="cs-seg">' +
-      [{ l: "좁게", v: 24 }, { l: "보통", v: 40 }, { l: "넓게", v: 64 }].map(function (pd) { return '<button type="button" class="' + (Math.abs(activeSec.padY - pd.v) < 8 ? "active" : "") + '" data-hf-act="pad-y" data-val="' + pd.v + '">' + pd.l + '</button>'; }).join("") + '</div></div>' +
-      '<div class="hf-insp-row"><span>배경 · 자동</span><div style="display:flex;gap:6px">' +
-      [{ bg: "#0C3C78", fg: "#FFFFFF", l: "네이비" }, { bg: "#FFFFFF", fg: "#141413", l: "화이트" }, { bg: "#FAF9F5", fg: "#141413", l: "웜페이퍼" }, { bg: "#141413", fg: "#D4FF34", l: "다크" }, { bg: "#0F5132", fg: "#FFFFFF", l: "그린" }].map(function (c) {
-        return '<button type="button" class="hf-bg-swatch ' + (activeSec.bg === c.bg ? "active" : "") + '" style="background:' + c.bg + '" title="' + c.l + '" data-hf-act="sec-bg" data-bg="' + c.bg + '" data-fg="' + c.fg + '"></button>';
-      }).join("") + '</div></div>' +
-      '<button type="button" class="hf-ai-rewrite-btn" data-hf-act="ai-rewrite">✨ AI로 다시 쓰기 (금지어 0건 윤문) &nbsp;·&nbsp; 무료 10회 ⌄</button></div>' +
-      '<div class="hf-insp-card" style="margin-top:12px">' +
-      '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><strong style="font-size:13px">페이지 순서</strong><span style="font-size:11.5px;color:#64748B">끌어서 순서 바꾸기 (▲▼)</span></div>' +
-      '<div class="hf-order-item muted"><div><b>상단 메뉴</b><br><small>켜짐 · 메뉴 0개</small></div></div>' +
-      '<div class="hf-order-list">' +
-      ed.sections.map(function (s, idx) {
-        var isAct = s.id === ed.activeSecId;
-        return '<div class="hf-order-item ' + (isAct ? "active" : "") + '" draggable="true" data-hf-drag-idx="' + idx + '" data-hf-pick-sec="' + s.id + '">' +
-          '<div style="display:flex;align-items:center;gap:8px"><span class="hf-drag-handle">⋮⋮</span><div><b>' + s.name + '</b><br><small>' + s.layout + '</small></div></div>' +
-          '<div style="display:flex;gap:3px" onclick="event.stopPropagation()">' +
-          '<button type="button" class="btn-sm" style="padding:2px 6px" data-hf-act="move-sec" data-idx="' + idx + '" data-dir="-1">▲</button>' +
-          '<button type="button" class="btn-sm" style="padding:2px 6px" data-hf-act="move-sec" data-idx="' + idx + '" data-dir="1">▼</button></div></div>';
-      }).join("") + '</div></div></aside>';
-  }
-
-  return { buildFlatlaySvg: buildFlatlaySvg, createSections: createSections, renderInspector: renderInspector };
+  return { LAYOUT_GROUPS: LAYOUT_GROUPS, AI_DIRECTIONS: AI_DIRECTIONS, buildFlatlaySvg: buildFlatlaySvg, createSections: createSections };
 })();

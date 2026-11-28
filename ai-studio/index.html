@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>고수하우스(GOSU-HOUSE) 전사 AI 솔루션 ERP 스튜디오 v2.0</title>
+<title>고수하우스 AI 업무 스튜디오 v3.0</title>
 <link rel="stylesheet" href="src/styles/studio.css" />
 <link rel="stylesheet" href="src/styles/erpModules.css" />
 </head>
@@ -11,230 +11,123 @@
 <div class="app-shell">
 <aside class="sidebar">
 <div class="brand-box">
-<div class="brand-top"><span class="brand-logo">GOSU-HOUSE ERP</span><span class="brand-tag">전사 v2.0</span></div>
-<p class="brand-sub">컨텐츠 스튜디오 × 로보엠디 × 핸디핏</p>
+<div class="brand-top"><span class="brand-logo">고수하우스 스튜디오</span><span class="brand-tag">v3.0</span></div>
+<p class="brand-sub">매니패스트 기반 단계별 업무 도구</p>
 </div>
 <div>
-<div class="nav-group-label">고수하우스 ERP 7대 메뉴</div>
+<div class="nav-group-label">오늘 할 업무 (4대 업무)</div>
 <nav class="nav-list">
-<button class="nav-btn" data-menu-btn="home"><span>1. 전사 ERP 홈 · 7본부</span><span class="nav-pill">관제</span></button>
-<button class="nav-btn active" data-menu-btn="cshub"><span>2. 컨텐츠 스튜디오 (102종)</span><span class="nav-pill">PPT·찜</span></button>
-<button class="nav-btn" data-menu-btn="studio" data-sub-tab="image"><span>3. AI 스튜디오 (3모드)</span><span class="nav-pill">로보MD</span></button>
-<button class="nav-btn" data-menu-btn="landing"><span>4. AI 기획·랜딩 (핸디핏)</span><span class="nav-pill">10선</span></button>
-<button class="nav-btn" data-menu-btn="copy"><span>5. AI 카피라이터·말투</span><span class="nav-pill">5사업부</span></button>
-<button class="nav-btn" data-menu-btn="utm"><span>6. UTM·QR & 설문 이탈</span><span class="nav-pill">B-02</span></button>
-<button class="nav-btn" data-menu-btn="report"><span>7. 성과 퍼널 & AI 리포트</span><span class="nav-pill">B-03</span></button>
+<button class="nav-btn active" data-menu-btn="landing"><span>① 랜딩·설문 캠페인</span><span class="nav-pill">1→4단계</span></button>
+<button class="nav-btn" data-menu-btn="studio" data-sub-tab="copy"><span>② 블로그·릴스·사진 제작</span><span class="nav-pill">1→3단계</span></button>
+<button class="nav-btn" data-menu-btn="cshub"><span>③ PPT 발표자료 받기</span><span class="nav-pill">1→3단계</span></button>
+<button class="nav-btn" data-menu-btn="home"><span>④ 고객 응답·성과 보기</span><span class="nav-pill">통합관제</span></button>
 </nav>
 </div>
 <div>
-<div class="nav-group-label">AI 스튜디오 3대 모드</div>
+<div class="nav-group-label">세부 도구</div>
 <nav class="nav-list">
-<button class="nav-btn" data-studio-tab="image"><span>↳ AI 이미지 만들기</span><span class="nav-pill">12+30종</span></button>
-<button class="nav-btn" data-studio-tab="video"><span>↳ AI 동영상 만들기</span><span class="nav-pill">4단 29컷</span></button>
-<button class="nav-btn" data-studio-tab="design"><span>↳ 템플릿 디자인 만들기</span><span class="nav-pill">9종 PNG</span></button>
+<button class="nav-btn" data-studio-tab="image"><span>· 정물 사진 만들기</span><span class="nav-pill">사진</span></button>
+<button class="nav-btn" data-studio-tab="video"><span>· 9:16 릴스 만들기</span><span class="nav-pill">영상</span></button>
+<button class="nav-btn" data-studio-tab="design"><span>· 카드뉴스 배너</span><span class="nav-pill">배너</span></button>
+<button class="nav-btn" data-menu-btn="utm"><span>· 배포 주소(UTM)·QR</span><span class="nav-pill">링크</span></button>
+<button class="nav-btn" data-menu-btn="folders"><span>· G드라이브 폴더함</span><span class="nav-pill">폴더</span></button>
+<button class="nav-btn" data-menu-btn="guide"><span>· 가이드·촬영표</span><span class="nav-pill">도움말</span></button>
 </nav>
 </div>
 <div class="credit-widget">
-<h4>구독툴 크레딧</h4>
-<div class="credit-row"><span>컨텐츠 스튜디오</span><b>102종</b></div>
-<div class="credit-row"><span>핸디핏(검증)</span><b>1,035</b></div>
-<div class="credit-row"><span>로보엠디(이미지)</span><b>28/30</b></div>
-<div class="credit-row"><span>로보엠디(검색)</span><b>60/60</b></div>
-<div class="credit-row"><span>매니패스트</span><b>100,812</b></div>
+<h4>3단계 사용법</h4>
+<div class="credit-row"><span>1단계</span><b>왼쪽 업무 클릭</b></div>
+<div class="credit-row"><span>2단계</span><b>상단 [1→2→3] 진행</b></div>
+<div class="credit-row"><span>3단계</span><b>하단 [다음 →] 클릭</b></div>
 </div>
 </aside>
-
 <main class="main-stage">
 <section class="erp-biz-bar">
-<div>
-<div class="erp-biz-title"><span>🏢 고수하우스(GOSU-HOUSE) 전사 ERP 사업부 전환</span></div>
-<small id="erp-biz-desc" style="color:#A8AAA1;font-size:11.5px">현재 워크스페이스: 전체 (고수하우스 전사 ERP)</small>
-</div>
+<div><div class="erp-biz-title"><span id="erp-active-flow-title">① 랜딩·설문 캠페인 (1→4단계 위저드)</span></div><small id="erp-biz-desc">1단계부터 4단계까지 순서대로 누르면 끝납니다.</small></div>
 <div class="erp-biz-chips">
-<button class="biz-chip active" data-biz-unit="all">전체 통합(102)</button>
-<button class="biz-chip" data-biz-unit="gosutem">① 고수템</button>
-<button class="biz-chip" data-biz-unit="cea">② CEA 교육(ESG)</button>
-<button class="biz-chip" data-biz-unit="blog">③ 블로그·쿠팡</button>
-<button class="biz-chip" data-biz-unit="mkt">④ 마케팅·SNS</button>
-<button class="biz-chip" data-biz-unit="lab">⑤ 대학원·신사업BD</button>
+<button class="biz-chip active" data-biz-unit="all">전체</button><button class="biz-chip" data-biz-unit="gosutem">고수템</button><button class="biz-chip" data-biz-unit="cea">CEA 교육</button><button class="biz-chip" data-biz-unit="blog">블로그·쿠팡</button><button class="biz-chip" data-biz-unit="mkt">마케팅·SNS</button><button class="biz-chip" data-biz-unit="lab">대학원·연구</button>
 </div>
 </section>
-
-<header class="topbar">
-<div class="topbar-title">
-<h1>고수하우스 AI 솔루션 ERP (컨텐츠 스튜디오 × 로보엠디 × 핸디핏)</h1>
-<p>고수템 · CEA 교육 · 블로그/쿠팡 · 마케팅/릴스 · 박사논문/BD 전 사업부 통합 기획·템플릿·제작·검증</p>
-</div>
-<div class="btn-row" style="margin-top:0">
-<button class="btn-sec" data-menu-btn="cshub">컨텐츠 스튜디오 102종</button>
-<button class="btn-pri" data-menu-btn="report">검증 요약 복사</button>
-</div>
-</header>
-
-<section class="core-3tabs">
-<button class="core-tab-btn" data-studio-tab="image">
-<div class="ct-head"><span>① AI 이미지 만들기</span><span>전사 12선 · 30종 ↗</span></div>
-<small>고수템 정물 · CEA ESG · 블로그 성분표 · 체이닝(인물 0%)</small>
-</button>
-<button class="core-tab-btn" data-studio-tab="video">
-<div class="ct-head"><span>② AI 동영상 만들기</span><span>4단 대본 연동 ↗</span></div>
-<small>12·15·30초 + 무빙 12종 + 9:16 세이프존 + 촬영표</small>
-</button>
-<button class="core-tab-btn" data-studio-tab="design">
-<div class="ct-head"><span>③ 템플릿 디자인 만들기</span><span>한글 깨짐 0% PNG ↗</span></div>
-<small>고수템 A/B·1~3단 · CEA 12과정 · 블로그 탭 · 리포트</small>
-</button>
-</section>
-
-<section data-menu-panel="home" hidden>
-<div class="panel-card">
-<div class="panel-head"><h2>고수하우스 5대 사업부 × 4대 AI 엔진 전사 ERP 관제판</h2></div>
-<div id="home-erp-grid" class="landing-3step-grid"></div>
-</div>
-</section>
-
-<section data-menu-panel="cshub">
-<div class="panel-card" style="padding:14px 16px">
-<div class="panel-head" style="margin-bottom:10px">
-<div><h2>CONTENT STUDIO · PPT 갤러리 & 전사 템플릿 허브 (4:3 컴팩트 카드 + 마우스 폭 조절 세부 장표 뷰어)</h2><small>PPT(8) · 미리캔버스(47) · 로보엠디(47) = 총 102종 · 중앙 경계선(⋮) 마우스 드래그로 좌우 크기 조절</small></div>
-<div style="display:flex;gap:6px;flex-wrap:wrap">
-<input type="text" id="cs-search-in" placeholder="제목·태그·ID 검색…" style="min-width:160px" />
-<select id="cs-new-src"><option value="baze">Baze PPT</option><option value="local_pptx">로컬 PPTX</option><option value="miricanvas">미리캔버스♥</option><option value="robomd">로보엠디</option></select>
-<input type="text" id="cs-new-title" placeholder="새 템플릿명" style="width:125px" />
-<button class="btn-pri" id="btn-cs-add">+ 추가</button>
-</div>
-</div>
-<div id="cs-hub-mount"></div>
-</div>
-</section>
-
+<section data-menu-panel="landing"><div class="panel-card"><div id="hf-editor-mount"></div></div></section>
 <section data-menu-panel="studio" hidden>
-<div data-studio-view="image" class="studio-workspace">
-<div>
-<div class="panel-card">
-<div class="panel-head">
-<div><h2>AI 이미지 스타일 갤러리 (전사 12선)</h2></div>
-<div class="chip-row">
-<button class="chip-btn active" data-img-filter="all">전체(12)</button>
-<button class="chip-btn" data-img-filter="gosutem">고수템(7)</button>
-<button class="chip-btn" data-img-filter="beauty">뷰티·단백질(2)</button>
-<button class="chip-btn" data-img-filter="tech">CEA·테크·논문(3)</button>
+<div class="panel-card"><div class="hf-top-header"><strong>② 블로그·릴스·사진 3단계 제작 위저드</strong>
+<div class="hf-stepper">
+<button class="hf-step-item active" data-studio-tab="copy"><span class="hf-step-dot done">1</span><span>1단계: 원고·대본</span></button><span class="hf-step-line"></span>
+<button class="hf-step-item" data-studio-tab="image"><span class="hf-step-dot">2</span><span>2단계: 정물 사진</span></button><span class="hf-step-line"></span>
+<button class="hf-step-item" data-studio-tab="video"><span class="hf-step-dot">3</span><span>3단계: 9:16 릴스</span></button><span class="hf-step-line"></span>
+<button class="hf-step-item" data-studio-tab="design"><span class="hf-step-dot">+</span><span>배너(9종)</span></button>
+</div></div></div>
+<div data-studio-view="copy">
+<div class="panel-card"><div class="panel-head"><h2>1단계 · 원고·대본 작성 (금지어 자동 정화)</h2></div>
+<div class="form-grid"><label>말투 선택<select id="copy-persona-sel"></select></label><label>하단 고정 안내문<select id="copy-pin-sel"></select></label></div>
+<label class="field-label">초안 입력·수정<textarea id="copy-custom-in" rows="4"></textarea></label><div id="copy-guard-status"></div>
+<label class="field-label">교정 완료 원고<textarea id="copy-result-box" class="code-box" rows="7" readonly></textarea></label>
+<div class="btn-row"><button class="btn-pri" id="btn-copy-clean-text">📋 완성 원고 복사</button><button class="btn-sec" data-menu-btn="guide" data-guide-mode="content">🎬 4단 대본 & 촬영표 PDF →</button></div></div>
+<div class="hf-bottom-bar"><span>원고 작성 후 정물 사진을 만드세요.</span><button class="hf-next-pill-btn" data-studio-tab="image">다음: 2단계 정물 사진 →</button></div>
 </div>
-</div>
-<div id="img-tpl-grid" class="tpl-grid"></div>
-</div>
-<div class="panel-card">
-<div class="panel-head"><h2>로보엠디 제어 옵션 & 다단계 체이닝</h2></div>
+<div data-studio-view="image" hidden>
+<div class="studio-workspace"><div>
+<div class="panel-card"><div class="panel-head"><h2>2단계 · 실물 정물 사진 (인물 0%)</h2>
+<div class="chip-row"><button class="chip-btn active" data-img-filter="all">전체(12)</button><button class="chip-btn" data-img-filter="gosutem">고수템(7)</button><button class="chip-btn" data-img-filter="beauty">뷰티(2)</button><button class="chip-btn" data-img-filter="tech">CEA·테크(3)</button></div></div><div id="img-tpl-grid" class="tpl-grid"></div></div>
+<div class="panel-card"><div class="panel-head"><h2>구도 · 비율 · 옵션</h2></div>
 <div class="form-grid">
-<label>카메라 구도<select id="img-angle-sel"><option value="탑뷰(Flat-lay)">탑뷰 (Flat-lay)</option><option value="라벨 초접사">라벨·성분표 초접사</option><option value="정면 분할">정면 좌우 분할</option><option value="측면 45°">측면 45° 정물</option></select></label>
-<label>이미지 비율<select id="img-ratio-sel"><option value="4:5">4:5 피드 (1080×1350)</option><option value="1:1">1:1 정방형 (1080×1080)</option><option value="3:4">3:4 상세컷 (1080×1440)</option><option value="9:16">9:16 릴스 (1080×1920)</option><option value="16:9">16:9 와이드 (1600×900)</option></select></label>
-<label>비주얼 스타일<select id="img-style-sel"><option value="실사 정물 Flat-lay">실사 정물 Flat-lay</option><option value="성분·라벨 매크로 접사">성분·라벨 매크로 접사</option><option value="영수증·가격표 대조">영수증·총비용 대조</option><option value="직각 에디토리얼 2×2">직각 에디토리얼 2×2</option><option value="플랫 인포그래픽">플랫 비교 인포그래픽</option><option value="다크 테크 스튜디오">다크 테크·번호 핀</option></select></label>
+<label>구도<select id="img-angle-sel"><option value="탑뷰(Flat-lay)">탑뷰 (Flat-lay)</option><option value="라벨 초접사">라벨 접사</option><option value="정면 분할">좌우 분할</option><option value="측면 45°">측면 45°</option></select></label>
+<label>비율<select id="img-ratio-sel"><option value="4:5">4:5 피드</option><option value="1:1">1:1 정사각</option><option value="3:4">3:4 상세</option><option value="9:16">9:16 릴스</option><option value="16:9">16:9 와이드</option></select></label>
+<label>스타일<select id="img-style-sel"><option value="실사 정물 Flat-lay">실사 정물 Flat-lay</option><option value="성분·라벨 매크로 접사">성분·라벨 접사</option><option value="영수증·가격표 대조">영수증·총비용 대조</option><option value="플랫 인포그래픽">인포그래픽</option></select></label>
 </div>
-<label class="field-label">+ 다음 명령단계 추가<input type="text" id="img-chain-input" /></label>
-<label class="field-label" style="margin-top:8px">자동 합성 프롬프트<textarea id="img-prompt-output" class="code-box" rows="5" readonly></textarea></label>
-<div class="btn-row"><button class="btn-pri" id="btn-copy-img-prompt">프롬프트 복사</button><button class="btn-sec" id="btn-dl-image">PNG 내려받기</button></div>
+<label class="field-label">강조 문구<input type="text" id="img-chain-input" /></label>
+<div class="form-grid"><label>엔진<select id="img-api-provider"><option value="local_flatlay">무료 정물 캔버스</option><option value="gemini_imagen">Gemini Imagen 3</option><option value="openai_gpt_image">OpenAI gpt-image-1</option></select></label><label>API 키<input type="password" id="img-api-key" /></label></div>
+<label class="field-label">지시문<textarea id="img-prompt-output" class="code-box" rows="2" readonly></textarea></label>
+<div class="btn-row"><button class="btn-pri" id="btn-gen-api-image">✨ 사진 그리기</button><button class="btn-sec" id="btn-dl-image">📥 PNG 저장</button><button class="btn-sec" id="btn-copy-img-prompt">복사</button></div>
+</div></div><div class="panel-card"><div class="panel-head"><h2>미리보기</h2></div><div class="canvas-box"><canvas id="cv-image-studio" class="preview-cv" width="1080" height="1350"></canvas></div></div></div>
+<div class="hf-bottom-bar"><button class="btn-sec" data-studio-tab="copy">← 1단계 원고</button><button class="hf-next-pill-btn" data-studio-tab="video">다음: 3단계 9:16 릴스 →</button></div>
 </div>
+<div data-studio-view="video" hidden>
+<div class="studio-workspace"><div>
+<div class="panel-card"><div class="panel-head"><h2>3단계 · 9:16 릴스 6선</h2></div><div id="vid-tpl-list" class="tpl-grid"></div></div>
+<div class="panel-card"><div class="panel-head"><h2>컷별 자막</h2>
+<div class="form-grid"><label>길이<select id="vid-dur-sel"><option value="12">12초</option><option value="15" selected>15초</option><option value="30">30초</option></select></label><label><span><input type="checkbox" id="vid-safe-chk" checked /> 안전영역</span></label></div></div>
+<div class="table-wrap"><table><thead><tr><th>단계</th><th>장면</th><th>자막</th><th>의도</th><th>선택</th></tr></thead><tbody id="vid-cuts-table"></tbody></table></div></div></div>
+<div class="panel-card"><div class="panel-head"><h2>미리보기</h2><button class="btn-pri" id="btn-dl-video-frame">📥 PNG 저장</button></div><div class="canvas-box"><canvas id="cv-video-studio" class="preview-cv" width="1080" height="1920"></canvas></div></div></div>
+<div class="hf-bottom-bar"><button class="btn-sec" data-studio-tab="image">← 2단계 사진</button><button class="hf-next-pill-btn" data-studio-tab="design">배너 만들기 →</button></div>
 </div>
-<div class="panel-card"><div class="panel-head"><h2>AI 이미지 결과 캔버스</h2></div><div class="canvas-box"><canvas id="cv-image-studio" class="preview-cv" width="1080" height="1350"></canvas></div></div>
-</div>
-
-<div data-studio-view="video" class="studio-workspace" hidden>
-<div>
-<div class="panel-card"><div class="panel-head"><h2>AI 동영상 템플릿 6선</h2></div><div id="vid-tpl-list" class="tpl-grid"></div></div>
-<div class="panel-card">
-<div class="panel-head">
-<h2>컷별 촬영·편집 가이드 표</h2>
-<div class="form-grid" style="margin-bottom:0">
-<label>길이<select id="vid-dur-sel"><option value="12">12초</option><option value="15" selected>15초</option><option value="30">30초</option></select></label>
-<label style="justify-content:center"><span><input type="checkbox" id="vid-safe-chk" checked /> 9:16 세이프존</span></label>
-</div>
-</div>
-<div class="table-wrap"><table><thead><tr><th>단계</th><th>장면·구도</th><th>자막</th><th>의도</th><th>보기</th></tr></thead><tbody id="vid-cuts-table"></tbody></table></div>
-</div>
-</div>
-<div class="panel-card"><div class="panel-head"><h2>9:16 릴스 캔버스</h2><button type="button" class="btn-pri" id="btn-dl-video-frame">현재 컷 PNG 저장</button></div><div class="canvas-box"><canvas id="cv-video-studio" class="preview-cv" width="1080" height="1920"></canvas></div></div>
-</div>
-
-<div data-studio-view="design" class="studio-workspace" hidden>
-<div>
-<div class="panel-card"><div class="panel-head"><h2>템플릿 디자인 갤러리 9선</h2></div><div id="design-tpl-list" class="tpl-grid"></div></div>
-<div class="panel-card">
-<div class="panel-head"><h2>문구·테마 커스터마이징</h2></div>
+<div data-studio-view="design" hidden>
+<div class="studio-workspace"><div>
+<div class="panel-card"><div class="panel-head"><h2>카드뉴스 배너 9선</h2></div><div id="design-tpl-list" class="tpl-grid"></div></div>
+<div class="panel-card"><div class="panel-head"><h2>제목 · 테마</h2></div>
 <div class="form-grid"><label>테마<select id="design-theme-sel"><option value="dark-lime">다크 & 라임</option><option value="paper-ink">웜페이퍼 & 먹색</option><option value="ocean-gold">오션블루 & 골드</option></select></label></div>
-<label class="field-label">메인 헤드라인<textarea id="design-headline-in" rows="2"></textarea></label>
-<label class="field-label" style="margin-top:8px">서브 카피<input type="text" id="design-subhead-in" /></label>
-<div class="btn-row"><button type="button" class="btn-pri" id="btn-dl-design">고해상도 PNG 내려받기</button></div>
-</div>
-</div>
-<div class="panel-card"><div class="panel-head"><h2>템플릿 디자인 캔버스</h2></div><div class="canvas-box"><canvas id="cv-design-studio" class="preview-cv" width="1080" height="1350"></canvas></div></div>
+<label class="field-label">제목<textarea id="design-headline-in" rows="2"></textarea></label><label class="field-label">설명<input type="text" id="design-subhead-in" /></label>
+<div class="btn-row"><button class="btn-pri" id="btn-dl-design">📥 PNG 저장</button></div></div></div>
+<div class="panel-card"><div class="panel-head"><h2>미리보기</h2></div><div class="canvas-box"><canvas id="cv-design-studio" class="preview-cv" width="1080" height="1350"></canvas></div></div></div>
+<div class="hf-bottom-bar"><button class="btn-sec" data-studio-tab="video">← 9:16 릴스</button><button class="hf-next-pill-btn" data-menu-btn="landing">완료: ① 캠페인 →</button></div>
 </div>
 </section>
-
-<section data-menu-panel="landing" hidden>
-<div class="panel-card" style="padding:14px 16px">
-<div id="hf-editor-mount"></div>
-</div>
+<section data-menu-panel="cshub" hidden>
+<div class="panel-card"><div class="hf-top-header"><h2>③ PPT 발표자료 & 디자인 허브 (PPT 8종 · 미리캔버스 47종 · 로보엠디 47종)</h2>
+<div class="chip-row"><input type="text" id="cs-search-in" placeholder="검색…" /><select id="cs-new-src"><option value="baze">Baze PPT</option><option value="local_pptx">로컬 PPTX</option><option value="miricanvas">미리캔버스♥</option><option value="robomd">로보엠디</option></select><input type="text" id="cs-new-title" placeholder="이름" /><button class="btn-pri" id="btn-cs-add">+ 등록</button></div>
+</div><div id="cs-hub-mount"></div></div>
 </section>
-
-<section data-menu-panel="copy" hidden>
-<div class="panel-card">
-<div class="panel-head"><h2>전사 5대 사업부 AI 카피라이터</h2></div>
-<div class="form-grid">
-<label>1단계 · 사업부별 말투 페르소나<select id="copy-persona-sel"></select></label>
-<label>2단계 · 하단 고정 문구<select id="copy-pin-sel"></select></label>
-</div>
-<label class="field-label">본문 직접 입력·수정<textarea id="copy-custom-in" rows="4"></textarea></label>
-<div id="copy-guard-status" style="margin:10px 0"></div>
-<label class="field-label">최종 검수 통과 원고<textarea id="copy-result-box" class="code-box" rows="8" readonly></textarea></label>
-<div class="btn-row"><button type="button" class="btn-pri" id="btn-copy-clean-text">전체 복사</button></div>
-</div>
+<section data-menu-panel="home" hidden>
+<div id="erp-db-bridge-mount"></div>
+<div class="studio-workspace"><div class="panel-card"><div class="panel-head"><h2>랜딩 구간별 도달률 & 이탈 경고</h2></div><div id="home-funnel-mount"></div></div><div class="panel-card"><div class="panel-head"><h2>4대 업무 요약</h2></div><div id="home-erp-grid" class="landing-3step-grid"></div></div></div>
 </section>
-
+<section data-menu-panel="guide" hidden><div class="panel-card"><div id="hf-guide-content-mount"></div></div></section>
 <section data-menu-panel="utm" hidden>
 <div class="studio-workspace">
-<div class="panel-card">
-<div class="panel-head"><h2>전사 UTM 단축링크 & QR 관리</h2></div>
-<div class="form-grid">
-<label>채널<select id="utm-new-ch"><option value="instagram">인스타 릴스</option><option value="threads">스레드/메타</option><option value="naver">네이버 블로그</option><option value="kakao">카카오 단톡방</option><option value="qr">제안서·오프라인 QR</option></select></label>
-<label>캠페인명<input type="text" id="utm-new-camp" placeholder="예: 2611_cea_esg12" /></label>
-<div style="display:flex;align-items:flex-end"><button type="button" class="btn-pri" id="btn-add-utm" style="width:100%">+ 발급</button></div>
-</div>
-<div class="table-wrap"><table><thead><tr><th>채널</th><th>단축 링크 & UTM</th><th class="num">방문</th><th class="num">신청</th><th class="num">전환</th><th>작업</th></tr></thead><tbody id="utm-table-body"></tbody></table></div>
-</div>
-<div>
-<div class="panel-card"><div class="panel-head"><h2>오프라인·제안서 QR</h2></div><div id="utm-qr-box" class="qr-wrap"></div></div>
-<div class="panel-card"><div class="panel-head"><h2>설문 문항별 이탈 분석 (B-02)</h2></div><div class="table-wrap"><table><thead><tr><th>문항</th><th>질문·개선 팁</th><th class="num">이탈</th><th class="num">비율</th></tr></thead><tbody id="survey-dropoff-body"></tbody></table></div></div>
-</div>
+<div class="panel-card"><div class="panel-head"><h2>단축 주소(UTM) & QR 발급</h2></div>
+<div class="form-grid"><label>채널<select id="utm-new-ch"><option value="instagram">인스타 릴스</option><option value="threads">스레드/메타</option><option value="naver">네이버 블로그</option><option value="kakao">카카오 단톡방</option><option value="qr">오프라인 QR</option></select></label><label>캠페인<input type="text" id="utm-new-camp" placeholder="2611_cea_esg12" /></label><div><button class="btn-pri" id="btn-add-utm">+ 발급</button></div></div>
+<div class="table-wrap"><table><thead><tr><th>채널</th><th>주소</th><th class="num">방문</th><th class="num">신청</th><th class="num">전환</th><th>작업</th></tr></thead><tbody id="utm-table-body"></tbody></table></div></div>
+<div><div class="panel-card"><div class="panel-head"><h2>QR 코드</h2></div><div id="utm-qr-box" class="qr-wrap"></div></div>
+<div class="panel-card"><div class="panel-head"><h2>설문 포기 분석</h2></div><div class="table-wrap"><table><thead><tr><th>문항</th><th>질문·팁</th><th class="num">포기</th><th class="num">비율</th></tr></thead><tbody id="survey-dropoff-body"></tbody></table></div></div></div>
 </div>
 </section>
-
 <section data-menu-panel="report" hidden>
-<div class="studio-workspace">
-<div class="panel-card"><div class="panel-head"><h2>랜딩 섹션별 노출률 & 이탈 경고 (B-03)</h2></div><div id="report-funnel-bars"></div></div>
-<div class="panel-card">
-<div class="panel-head"><h2>AI 시장검증 리포트 요약</h2><button type="button" class="btn-pri" id="btn-copy-bp-report">요약 복사</button></div>
-<textarea id="report-bp-summary" class="code-box" rows="16" readonly></textarea>
-</div>
-</div>
+<div class="studio-workspace"><div class="panel-card"><div class="panel-head"><h2>랜딩 도달률 & 이탈 경고</h2></div><div id="report-funnel-bars"></div></div><div class="panel-card"><div class="panel-head"><h2>사업계획서 요약문</h2><button class="btn-pri" id="btn-copy-bp-report">📋 복사</button></div><textarea id="report-bp-summary" class="code-box" rows="16" readonly></textarea></div></div>
 </section>
+<section data-menu-panel="folders" hidden><div id="erp-folder-tree-mount"></div></section>
 </main>
 </div>
 <div id="st-toast" role="status" aria-live="polite"></div>
-<script defer src="src/data/contentStudioPpt.js"></script>
-<script defer src="src/data/contentStudioMiri.js"></script>
-<script defer src="src/data/contentStudioRobo.js"></script>
-<script defer src="src/data/robomdImageTemplates.js"></script>
-<script defer src="src/data/robomdVideoTemplates.js"></script>
-<script defer src="src/data/robomdDesignTemplates.js"></script>
-<script defer src="src/data/handyfitLandings.js"></script>
-<script defer src="src/data/handyfitSectionsSeed.js"></script>
-<script defer src="src/data/handyfitMetricsCopy.js"></script>
-<script defer src="src/lib/studioEngine.js"></script>
-<script defer src="src/components/canvasRenderer.js"></script>
-<script defer src="src/components/csSlideDrawer.js"></script>
-<script defer src="src/components/contentStudioHub.js"></script>
-<script defer src="src/components/handyfitEditor.js"></script>
-<script defer src="src/screens/studioViews.js"></script>
-<script defer src="src/screens/studioApp.js"></script>
+<script defer src="src/data/contentStudioPpt.js"></script><script defer src="src/data/contentStudioMiri.js"></script><script defer src="src/data/contentStudioRobo.js"></script><script defer src="src/data/robomdImageTemplates.js"></script><script defer src="src/data/robomdVideoTemplates.js"></script><script defer src="src/data/robomdDesignTemplates.js"></script><script defer src="src/data/handyfitLandings.js"></script><script defer src="src/data/handyfitSectionsSeed.js"></script><script defer src="src/data/handyfitFormsSeed.js"></script><script defer src="src/data/handyfitGuideSeed.js"></script><script defer src="src/data/handyfitBrandScripts.js"></script><script defer src="src/data/handyfitMetricsCopy.js"></script><script defer src="src/data/erpFolderTreeSeed.js"></script><script defer src="src/data/erpFolderTreeExtra.js"></script><script defer src="src/lib/studioEngine.js"></script><script defer src="src/lib/pptxAndApiEngine.js"></script><script defer src="src/lib/erpDbBridge.js"></script><script defer src="src/components/canvasRenderer.js"></script><script defer src="src/components/csSlideDrawer.js"></script><script defer src="src/components/contentStudioHub.js"></script><script defer src="src/components/formBuilder.js"></script><script defer src="src/components/landingInspector.js"></script><script defer src="src/components/landingShapes.js"></script><script defer src="src/components/landingBuilder.js"></script><script defer src="src/components/guideAndContent.js"></script><script defer src="src/components/erpFolderTree.js"></script><script defer src="src/screens/studioViews.js"></script><script defer src="src/screens/studioApp.js"></script>
 </body>
 </html>
