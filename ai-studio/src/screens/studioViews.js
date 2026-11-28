@@ -1,12 +1,21 @@
-/* AI 솔루션 스튜디오 각 메뉴 뷰 렌더링 모듈 (src/screens/studioViews.js · 15KB 이하 분리) */
+/* 고수하우스 전사 AI 솔루션 ERP 스튜디오 뷰 렌더링 모듈 (src/screens/studioViews.js · 15KB 이하) */
 window.GOSU_STUDIO_VIEWS = (function () {
   function $(id) { return document.getElementById(id); }
 
+  function matchBiz(item, bizUnit) {
+    if (!bizUnit || bizUnit === "all") return true;
+    if (!item.biz) return true;
+    return item.biz === bizUnit;
+  }
+
   function renderImageStudio(state, R, E, C) {
     var list = R.imageTemplates.filter(function (t) {
-      return state.imgFilter === "all" || t.group === state.imgFilter;
+      var okGroup = state.imgFilter === "all" || t.group === state.imgFilter;
+      var okBiz = matchBiz(t, state.bizUnit);
+      return okGroup && okBiz;
     });
-    var cur = R.imageTemplates.find(function (t) { return t.id === state.selectedImgId; }) || list[0] || R.imageTemplates[0];
+    if (!list.length) list = R.imageTemplates;
+    var cur = list.find(function (t) { return t.id === state.selectedImgId; }) || list[0];
     state.selectedImgId = cur.id;
 
     var gridEl = $("img-tpl-grid");
@@ -72,15 +81,17 @@ window.GOSU_STUDIO_VIEWS = (function () {
   }
 
   function renderDesignStudio(state, R, C) {
-    var cur = R.designTemplates.find(function (d) { return d.id === state.selectedTplId; }) || R.designTemplates[0];
+    var list = R.designTemplates.filter(function (d) { return matchBiz(d, state.bizUnit); });
+    if (!list.length) list = R.designTemplates;
+    var cur = list.find(function (d) { return d.id === state.selectedTplId; }) || R.designTemplates.find(function (d) { return d.id === state.selectedTplId; }) || list[0];
     state.selectedTplId = cur.id;
 
     var listEl = $("design-tpl-list");
     if (listEl) {
-      listEl.innerHTML = R.designTemplates.map(function (d) {
+      listEl.innerHTML = list.map(function (d) {
         var active = d.id === cur.id ? " active" : "";
         return '<button type="button" class="tpl-card' + active + '" data-pick-design="' + d.id + '">' +
-          '<div class="tpl-card-top"><span class="badge-accent">' + d.id + ' · ' + d.ratio + '</span><span class="badge-sub">' + d.width + '×' + d.height + '</span></div>' +
+          '<div class="tpl-card-top"><span class="badge-accent">' + d.id + ' · ' + (d.biz || "all").toUpperCase() + '</span><span class="badge-sub">' + d.width + '×' + d.height + '</span></div>' +
           '<strong>' + d.name + '</strong><small>' + d.tag + '</small></button>';
       }).join("");
     }
@@ -178,9 +189,11 @@ window.GOSU_STUDIO_VIEWS = (function () {
   }
 
   function renderUtmPanel(state, H, E) {
+    var list = H.utmLinks.filter(function (u) { return matchBiz(u, state.bizUnit); });
+    if (!list.length) list = H.utmLinks;
     var tbody = $("utm-table-body");
     if (tbody) {
-      tbody.innerHTML = H.utmLinks.map(function (u) {
+      tbody.innerHTML = list.map(function (u) {
         return '<tr><td><b>' + u.channel + '</b><br><small>' + u.campaign + '</small></td>' +
           '<td><code>' + u.shortUrl + '</code><br><small class="muted-url">' + u.gosutemUtm + '</small></td>' +
           '<td class="num">' + u.visits + '</td><td class="num">' + u.applies + '</td><td class="num"><b>' + u.convPct + '%</b></td>' +
@@ -189,7 +202,7 @@ window.GOSU_STUDIO_VIEWS = (function () {
       }).join("");
     }
 
-    var qrTarget = H.utmLinks.find(function (u) { return u.id === state.selectedQrUtmId; }) || H.utmLinks[0];
+    var qrTarget = list.find(function (u) { return u.id === state.selectedQrUtmId; }) || list[0];
     var qrBox = $("utm-qr-box");
     if (qrBox && qrTarget) {
       qrBox.innerHTML = E.buildQrSvg(qrTarget.shortUrl, 168) +

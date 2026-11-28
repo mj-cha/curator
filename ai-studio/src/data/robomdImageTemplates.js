@@ -1,10 +1,11 @@
-/* 로보엠디(RoboMD) AI 이미지 만들기 — 고수템·핸디핏 재조정 10대 정물 템플릿 & 30종 매핑 (15KB 이하 분리) */
+/* 로보엠디(RoboMD) AI 이미지 만들기 — 고수하우스 전사(고수템·CEA·블로그·마케팅) 12대 정물·인포그래픽 템플릿 (15KB 이하) */
 window.GOSU_ROBOMD_IMAGES = {
   imageTemplates: [
     {
       id: "IMG-01",
+      biz: "gosutem",
       group: "gosutem",
-      badge: "핸디핏 랜딩 1호 연동",
+      badge: "[고수템] 핸디핏 랜딩 1호",
       title: "첫 달 '사지 마 3가지' 스탬프 탑뷰 정물",
       origName: "19. 파스텔 비교 체크 카드 (로보엠디 재조정)",
       angle: "탑뷰(Flat-lay)",
@@ -18,8 +19,9 @@ window.GOSU_ROBOMD_IMAGES = {
     },
     {
       id: "IMG-02",
+      biz: "gosutem",
       group: "gosutem",
-      badge: "핸디핏 랜딩 2호 연동",
+      badge: "[고수템] 핸디핏 랜딩 2호",
       title: "열어 둔 탭 20개 피로 vs 고수 5명 교차 판정 카드",
       origName: "01. 정보형 카드뉴스 (로보엠디 재조정)",
       angle: "정면 분할",
@@ -33,8 +35,9 @@ window.GOSU_ROBOMD_IMAGES = {
     },
     {
       id: "IMG-03",
+      biz: "gosutem",
       group: "gosutem",
-      badge: "특허 A 예산 슬라이더",
+      badge: "[고수템] 특허 A 예산 슬라이더",
       title: "18만 원 매장 풀세트 vs 5만 원대 고수 조합 영수증 대조",
       origName: "14. 3포인트 아이콘 카드뉴스 (로보엠디 재조정)",
       angle: "탑뷰(Flat-lay)",
@@ -48,8 +51,9 @@ window.GOSU_ROBOMD_IMAGES = {
     },
     {
       id: "IMG-04",
+      biz: "gosutem",
       group: "gosutem",
-      badge: "가려움 1호 · 짝눈 도수",
+      badge: "[고수템] 가려움 1호 · 도수 수경",
       title: "좌·우 분리형 클리어 도수 수경 & 스틱 안티포그 접사",
       origName: "05. 프리미엄 광고컷 (로보엠디 재조정)",
       angle: "라벨 초접사",
@@ -63,8 +67,9 @@ window.GOSU_ROBOMD_IMAGES = {
     },
     {
       id: "IMG-05",
+      biz: "gosutem",
       group: "gosutem",
-      badge: "가려움 2호 · 새벽반 출근",
+      badge: "[고수템] 가려움 2호 · 새벽반",
       title: "출근용 노트북 백팩 옆 초경량 배수 메쉬백 & 습식 타월",
       origName: "07. 단상 연출 (로보엠디 재조정)",
       angle: "측면 45°",
@@ -78,8 +83,9 @@ window.GOSU_ROBOMD_IMAGES = {
     },
     {
       id: "IMG-06",
+      biz: "gosutem",
       group: "gosutem",
-      badge: "가려움 3호 · 원단 기준",
+      badge: "[고수템] 가려움 3호 · 원단 기준",
       title: "인물 0% · 폴리에스터 100% 케어라벨 접사 & 탄탄이 5부 정물",
       origName: "27. 매거진 에디토리얼 질문 화보 (로보엠디 재조정)",
       angle: "라벨 초접사",
@@ -93,8 +99,9 @@ window.GOSU_ROBOMD_IMAGES = {
     },
     {
       id: "IMG-07",
+      biz: "blog",
       group: "beauty",
-      badge: "가려움 4호 · 뷰티 브릿지",
+      badge: "[블로그·쿠팡] 스킨케어 2종",
       title: "물방울 맺힌 비타민C 염소중화 워시 & 2종 스킨케어 정물",
       origName: "08. 몰디브 물방울 (로보엠디 재조정)",
       angle: "측면 45°",
@@ -108,8 +115,9 @@ window.GOSU_ROBOMD_IMAGES = {
     },
     {
       id: "IMG-08",
+      biz: "blog",
       group: "beauty",
-      badge: "황금배합 · 단백질",
+      badge: "[블로그·쿠팡] 황금배합 단백질",
       title: "당류 0g·단백질 24g 실물 영양성분표 접사 & 1잔 862원 스푼",
       origName: "26. 클로즈업 컬러 헤드라인 (로보엠디 재조정)",
       angle: "라벨 초접사",
@@ -123,8 +131,9 @@ window.GOSU_ROBOMD_IMAGES = {
     },
     {
       id: "IMG-09",
+      biz: "blog",
       group: "tech",
-      badge: "삶의 4대 영역 · 테크",
+      badge: "[블로그·테크] 4대 영역 · RTX",
       title: "2×2 직각 에디토리얼 4대 시작 가방(수영·새내기 노트북·자취·선물)",
       origName: "02. 인쇄물 콜라주 타이포 오버레이 (로보엠디 재조정)",
       angle: "탑뷰(Flat-lay)",
@@ -138,8 +147,9 @@ window.GOSU_ROBOMD_IMAGES = {
     },
     {
       id: "IMG-10",
+      biz: "mkt",
       group: "gosutem",
-      badge: "핸디핏 랜딩 10호 · 고수 섭외",
+      badge: "[마케팅·섭외] 창립 고수 100인",
       title: "가방 사진 1장 자동 번호 핀(①~⑥) & 창립 고수 절감 기여 리포트",
       origName: "16. 미드나잇 클래스 정보카드 (로보엠디 재조정)",
       angle: "정면 분할",
@@ -150,6 +160,38 @@ window.GOSU_ROBOMD_IMAGES = {
       items: ["① 양안 분리 수경", "② 내염소성 5부", "③ 스틱 안티포그", "창립 고수 #012 배지", "누적 도움 42명 · 130만 원 절감 기여"],
       prompt: "인물 모델 0%. 좌측은 바닥에 펼쳐진 수영 가방 정물 위 ①~⑥ 번호 핀 자동 인식 목업, 우측은 [창립 고수 #012 · 생활스포츠지도사 2급 확인] 및 [42명이 1,302,000원 아낌] 리포트 카드.",
       chainStep: "하단에 '음성 3문항 10분 등록 · 근거 없는 숫자 자동 삭제(특허 B)' 안내 추가"
+    },
+    {
+      id: "IMG-11",
+      biz: "cea",
+      group: "tech",
+      badge: "[CEA 교육] 현대차·EcoVadis",
+      title: "2026 공급망 ESG 필수 12개 교육과정 4대 영역 커리큘럼 보드",
+      origName: "04. 브랜드 컬러 그라데이션 강연 포스터 (로보엠디 재조정)",
+      angle: "정면 분할",
+      ratio: "4:5",
+      style: "플랫 인포그래픽",
+      avoidedWon: 120000,
+      totalSavedWon: 350000,
+      items: ["01 인권·노동(강제노동·차별 금지 3과정)", "02 안전보건(중대재해·위험성평가 3과정)", "03 환경·탄소(Scope 3·전과정평가 3과정)", "04 윤리·공급망(반부패·실사 대응 3과정)"],
+      prompt: "인물 모델 0%. CEA 교육 브랜드 네이비(#0F4C81) 배경 위에 2026 현대자동차 협력사 및 EcoVadis 공급망 ESG 평가 대응 필수 12개 교육과정이 2x2 4대 영역 카드로 정리된 B2B 에디토리얼 인포그래픽.",
+      chainStep: "하단에 '온라인 강의실 즉시 수강 · 평가 증빙용 공식 수료증 PDF 자동 발급' 배지 추가"
+    },
+    {
+      id: "IMG-12",
+      biz: "lab",
+      group: "tech",
+      badge: "[대학원·BD] 박사논문 SLR · PSST",
+      title: "PRISMA 2020 · SPAR-4-SLR 문헌 선별 & TCCM 매트릭스 도식",
+      origName: "17. 어스톤 단계별 체크리스트 (로보엠디 재조정)",
+      angle: "정면 분할",
+      ratio: "16:9",
+      style: "플랫 인포그래픽",
+      avoidedWon: 0,
+      totalSavedWon: 0,
+      items: ["식별(Scopus·WoS 교차 검색)", "선별(ASReview + 포함/배제 기준)", "적격(최종 학술문헌 163편 확정)", "분석(TCCM 이론·맥락·특성·방법론 매트릭스)"],
+      prompt: "인물 모델 0%. 학술 논문 및 정부지원 사업계획서 삽입용 고대비 다이어그램. 좌측 PRISMA 2020 4단계 선별 흐름도, 우측 TCCM(Theory-Context-Characteristics-Methodology) 4분면 요약 표.",
+      chainStep: "맑은 고딕·이모지·컬러 배너를 배제하고 Pretendard 및 먹색·회색 학술 출판 표준 톤 유지"
     }
   ]
 };

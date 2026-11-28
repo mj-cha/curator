@@ -1,8 +1,9 @@
-/* 로보엠디 × 핸디핏 × 미리캔버스 통합 템플릿 디자인 8선 데이터 (15KB 이하 분리) */
+/* 로보엠디 × 핸디핏 × 미리캔버스 통합 템플릿 디자인 9선 (고수템·CEA·블로그·마케팅·BD 전사 공용, 15KB 이하) */
 window.GOSU_ROBOMD_DESIGNS = [
   {
     id: "TPL-01",
-    name: "[A/B 실험 A] 고수 가방 카드 (사지 마 2.5만 방어 + 강사 검수)",
+    biz: "gosutem",
+    name: "[고수템 A/B 실험 A] 고수 가방 카드 (사지 마 2.5만 방어 + 강사 검수)",
     ratio: "4:5",
     width: 1080,
     height: 1350,
@@ -22,7 +23,8 @@ window.GOSU_ROBOMD_DESIGNS = [
   },
   {
     id: "TPL-02",
-    name: "[A/B 실험 B] 일반 추천 대조 카드 (라벨·사지 마 제외 대조군)",
+    biz: "gosutem",
+    name: "[고수템 A/B 실험 B] 일반 추천 대조 카드 (라벨·사지 마 제외 대조군)",
     ratio: "4:5",
     width: 1080,
     height: 1350,
@@ -42,6 +44,7 @@ window.GOSU_ROBOMD_DESIGNS = [
   },
   {
     id: "TPL-03",
+    biz: "gosutem",
     name: "[고수템 1단] 첫 달 '사지 마 3가지' & 0원 대체안 경고 카드",
     ratio: "4:5",
     width: 1080,
@@ -61,6 +64,7 @@ window.GOSU_ROBOMD_DESIGNS = [
   },
   {
     id: "TPL-04",
+    biz: "gosutem",
     name: "[고수템 2단] 고수 5명 찬반 교차 판정 ('갓픽' vs '의견 갈림')",
     ratio: "4:5",
     width: 1080,
@@ -80,6 +84,7 @@ window.GOSU_ROBOMD_DESIGNS = [
   },
   {
     id: "TPL-05",
+    biz: "gosutem",
     name: "[고수템 3단] 똑소리 나게 가격 비교하기 (신품·중고·0원 대안 총비용표)",
     ratio: "4:5",
     width: 1080,
@@ -99,7 +104,8 @@ window.GOSU_ROBOMD_DESIGNS = [
   },
   {
     id: "TPL-06",
-    name: "[미리캔버스 에디토리얼] 투톤 탭 [카테고리][주제] 2단 추천 조합",
+    biz: "blog",
+    name: "[블로그·쿠팡] 미리캔버스 투톤 탭 [카테고리][주제] 2단 추천 조합",
     ratio: "4:5",
     width: 1080,
     height: 1350,
@@ -118,7 +124,8 @@ window.GOSU_ROBOMD_DESIGNS = [
   },
   {
     id: "TPL-07",
-    name: "[창립 고수 #012] 내 가방 공개 & 누적 절감 기여 인증 카드",
+    biz: "mkt",
+    name: "[마케팅·섭외] 창립 고수 #012 내 가방 공개 & 누적 절감 기여 카드",
     ratio: "4:5",
     width: 1080,
     height: 1350,
@@ -136,17 +143,38 @@ window.GOSU_ROBOMD_DESIGNS = [
   },
   {
     id: "TPL-08",
-    name: "[핸디핏 검증 리포트] 사업계획서·활동보고서 삽입용 퍼널 요약 카드",
+    biz: "cea",
+    name: "[CEA 교육] 현대차·EcoVadis 2026 공급망 ESG 필수 12과정 안내 카드",
+    ratio: "4:5",
+    width: 1080,
+    height: 1350,
+    theme: "ocean-gold",
+    tag: "CEA B2B ESG ACADEMY · 2026 협력사 실사 대응",
+    headline: "2026 현대차 협력사·EcoVadis 평가\n필수 ESG 교육 12개 과정 온라인 개원",
+    subhead: "인권·안전보건·탄소중립·윤리경영 4대 영역 수강 즉시 공식 수료증 발급",
+    rows: [
+      { label: "영역 01", color: "#0F4C81", item: "인권·노동 (강제노동 금지·다양성·고충처리 3과정)", note: "공급망 인권 실사 지침 및 글로벌 노동 기준 핵심 체크리스트" },
+      { label: "영역 02", color: "#0F4C81", item: "안전보건 (중대재해 예방·위험성평가·비상대응 3과정)", note: "현장 작업자 안전보건 관리체계 구축 및 법정 증빙 대응" },
+      { label: "영역 03", color: "#15803D", item: "환경·탄소 (Scope 1·2·3 산정·LCA·순환경제 3과정)", note: "EU CBAM·완성차 공급망 탄소배출 데이터 산정 실무" },
+      { label: "영역 04", color: "#D97706", item: "윤리·공급망 (반부패·정보보호·지속가능 조달 3과정)", note: "진도율 100% 달성 즉시 평가 제출용 수료증(PDF) 원클릭 출력" }
+    ],
+    footerCta: "CEA 교육 홈페이지 강의실 바로가기 & 단체 수강 문의 →",
+    footerSub: "CEA 기업교육원 · 현대차 협력사 및 EcoVadis 평가 기준 1:1 매핑"
+  },
+  {
+    id: "TPL-09",
+    biz: "lab",
+    name: "[신사업 BD·검증] 사업계획서·활동보고서 삽입용 퍼널 요약 카드",
     ratio: "16:9",
     width: 1600,
     height: 900,
     theme: "ocean-gold",
-    tag: "HANDYFIT × GOSUTEM · 1R 시장검증 AI 리포트 요약",
-    headline: "고수템 1차 거점(수영 입문) 시장검증 퍼널 & 가설 판정 리포트",
+    tag: "HANDYFIT × GOSU-HOUSE · 시장검증 AI 리포트 요약",
+    headline: "고수하우스 전사 시장검증 퍼널 & 가설 판정 리포트",
     subhead: "기획(매니패스트 F-ID) ➔ 검증(핸디핏 랜딩·UTM·이탈) ➔ 콘텐츠(로보엠디) 순환 증빙",
     rows: [
       { label: "H1 수요", color: "#0F4C81", item: "랜딩 전환 퍼널 & A/B 카드 저장률 비교", note: "1단 사지 마 선노출(A안)이 일반 추천 목록(B안) 대비 3초 광고 의심 해제 및 저장률 우위" },
-      { label: "B-02 이탈", color: "#D97706", item: "설문 4문항 응답률 & 문항별 이탈 병목 진단", note: "객관식 1~3문항 이탈 최소 · 연락처 문항에 '베타 알림+고수 참여 선택' 명시로 전환 보강" },
+      { label: "B-02 이탈", color: "#D97706", item: "설문 4문항 응답률 & 문항별 이탈 병목 진단", note: "객관식 1~3문항 이탈 최소 · 연락처 문항에 '무가입 1초 저장' 선제 제공으로 전환 보강" },
       { label: "B-03 섹션", color: "#15803D", item: "1단(사지마) → 2단(무가입 1탭) → 3단(총비용) 도달률", note: "2단 가입 장벽을 제거하고 무가입 1탭 열람으로 개편해 중도 이탈 구간 해소" }
     ],
     footerCta: "모두의 창업 1R 활동보고서 Q3 & 2R 사업계획서 실증 데이터",
