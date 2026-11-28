@@ -116,18 +116,31 @@ function scrollToChoice(id){
 
 function openBagDrawer(bagId){
   const b = SEED_BAGS.find(x=>x.id===bagId) || SEED_BAGS[0];
-  document.getElementById('drawerTitle').textContent = `${b.pill} · 6칸 고수 스토리`;
-  document.getElementById('drawerBody').innerHTML = `
-    <div style="display:flex;gap:14px;align-items:center;margin-bottom:16px">
-      <img src="${b.img}" alt="${b.title}" style="width:88px;height:88px;border-radius:12px;object-fit:cover;border:1px solid var(--line)">
-      <div>
-        <div style="font-size:12px;font-weight:800;color:var(--ok)">${b.pill} · ${b.save}</div>
-        <h2 style="margin:4px 0;font-size:18px;font-weight:900;line-height:1.3">${b.title}</h2>
-        <div style="font-size:12px;color:var(--sub)">${b.who}</div>
+  document.getElementById('drawerTitle').textContent = `${b.pill} · 실제 유튜버 제품 실사 & 6칸 스토리`;
+  const itemsHtml = (b.realItems || []).map((it, idx)=>`
+    <div style="display:flex;gap:10px;padding:10px;background:#FFF;border:1px solid var(--line);border-radius:10px;align-items:center">
+      <img src="${it.img}" alt="${it.name}" style="width:64px;height:64px;border-radius:8px;object-fit:contain;background:#FFF;border:1px solid #EEE;flex:none">
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px">
+          <span style="font-size:10.5px;font-weight:800;color:var(--ok);background:var(--ok-bg);padding:2px 6px;border-radius:4px">0${idx+1} · ${it.badge}</span>
+          <strong style="font-size:12.5px;color:var(--ink)">${it.price}</strong>
+        </div>
+        <div style="font-size:13px;font-weight:900;margin:3px 0 2px;color:var(--ink)">${it.name}</div>
+        <div style="font-size:11.5px;color:var(--sub);line-height:1.4">${it.tip}</div>
+        ${it.url ? `<a href="${it.url}" target="_blank" rel="noopener" style="display:inline-block;margin-top:4px;font-size:11px;font-weight:800;color:#0F4C81;text-decoration:underline">실제 제품 판매처·시세 확인 ↗</a>` : ''}
       </div>
+    </div>`).join('');
+  document.getElementById('drawerBody').innerHTML = `
+    <div style="margin-bottom:14px">
+      <img src="${b.img}" alt="${b.title}" style="width:100%;border-radius:14px;border:1px solid var(--line);display:block;margin-bottom:10px">
+      <div style="font-size:12px;font-weight:800;color:var(--ok)">${b.pill} · ${b.save}</div>
+      <h2 style="margin:4px 0;font-size:17.5px;font-weight:900;line-height:1.3">${b.title}</h2>
+      <div style="font-size:12px;color:var(--sub)">${b.who} ${b.ytUrl ? `· <a href="${b.ytUrl}" target="_blank" rel="noopener" style="color:#0F4C81;font-weight:800;text-decoration:underline">원본 유튜브 영상 보기 ↗</a>` : ''}</div>
     </div>
-    <div class="seed-avoid" style="margin-bottom:16px;font-size:12.5px">${b.avoid}</div>
-    <h3 style="font-size:14px;font-weight:900;margin:0 0 10px">고수의 6칸 시행착오 스토리 (말한 내용만 기록 · 할루시네이션 삭제 검증)</h3>
+    <div class="seed-avoid" style="margin-bottom:14px;font-size:12.5px">${b.avoid}</div>
+    <h3 style="font-size:14px;font-weight:900;margin:0 0 8px">유튜버가 실제 소개한 가방 속 제품 실사 (${(b.realItems||[]).length}종)</h3>
+    <div style="display:grid;gap:8px;margin-bottom:16px">${itemsHtml}</div>
+    <h3 style="font-size:14px;font-weight:900;margin:0 0 10px">고수의 6칸 시행착오 스토리 (영상 발언 기반)</h3>
     ${b.story.map(row=>`
       <div style="padding:10px 12px;background:var(--bg);border-radius:8px;margin-bottom:8px;font-size:12.5px">
         <strong style="display:block;color:var(--sub);font-size:11.5px;margin-bottom:2px">${row[0]}</strong>
@@ -135,7 +148,7 @@ function openBagDrawer(bagId){
       </div>`).join('')}
   `;
   document.getElementById('drawerFoot').innerHTML = `
-    <button class="btn-dark" onclick="saveBagToChecklist('${b.id}')">이 고수 가방 기준을 내 체크리스트에 담기 (${b.save})</button>
+    <button class="btn-dark" onclick="saveBagToChecklist('${b.id}')">이 유튜버 가방 기준을 내 체크리스트에 담기 (${b.save})</button>
   `;
   document.getElementById('overlay').classList.add('open');
 }

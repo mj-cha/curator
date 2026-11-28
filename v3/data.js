@@ -81,3 +81,46 @@ const FACT_ROWS = [
   {k:'수영복 원단', trap:'나일론·스판 혼방 · 휴양지 백오픈', pick:'폴리에스터 100% 단일 원단(탄탄이)', why:'염소(락스) 내구성 3배 이상 · 6개월 이상 늘어짐·비침 방지'},
   {k:'수건·세면', trap:'두꺼운 집 면 수건 2장 · 500ml 펌프통', pick:'습식/건식 스포츠 타월 · 30ml 공병 소분', why:'출퇴근 가방 젖은 무게 절반 이하 · 가방 내 누수 원천 차단'}
 ];
+
+const CORE_CHOICES = [
+  {
+    id:'ch-goggles', label:'1. 알짜템 · 유튜버 실물', name:'실리콘 패킹 수경 (스완스 발키리 · 뷰 블레이드제로 · 아레나 코브라)', img:'./assets/goggles.webp',
+    summary:'실내 조명 시야 확보 · 스타트 때 안 벗겨지는 고무 패킹 (이프랑·초록·워터양 실착)',
+    zeroAlt:'수경 케이스는 따로 사지 말고 마른 실리콘 수모에 감싸 보관해 14,000원 절약 (워터양·오퐁 팁)',
+    links:[['쿠팡 스완스 발키리','https://www.coupang.com/vp/products/7458867519'],['다나와 코브라 최저가','https://prod.danawa.com/info/?pcode=112261843'],['번개장터 미개봉','https://m.bunjang.co.kr/search/products?q=%EC%88%98%EA%B2%BD+%EB%AF%B8%EA%B0%9C%EB%B4%89']],
+    options:[
+      {id:'new', kind:'새상품 (입문 정석)', price:19500, desc:'배송비 포함 입문 패킹 수경 총비용 (스완스 발키리 33,900원)'},
+      {id:'used', kind:'미개봉 중고', price:9000, desc:'택 유지 미개봉·1회 시착 시세 (번개장터·당근)'}
+    ]
+  },
+  {
+    id:'ch-cap', label:'2. 알짜/나눔 · 유튜버 실물', name:'실리콘 수모 (헤이엄 · 배럴 · 곰림픽 · 단색 무지)', img:'./assets/cap.webp',
+    summary:'구민체육센터 출입 규정 통과 · 마른 수모로 수경 감싸 보관 (이프랑·오퐁·오예 실착)',
+    zeroAlt:'수영장 등록 증정 수모 또는 동호회 지인 미개봉 여분 확인 (0원)',
+    links:[['헤이엄 수모(14,000원)','https://hey-um.com/products/sh-sksk'],['쿠팡 실리콘 수모','https://www.coupang.com/np/search?q=%EC%8B%A4%EB%A6%AC%EC%BD%98+%EC%88%98%EB%AA%A8'],['당근 동네 나눔','https://www.daangn.com/kr/buy-sell/?search=%EC%8B%A4%EB%A6%AC%EC%BD%98+%EC%88%98%EB%AA%A8']],
+    options:[
+      {id:'new', kind:'새상품', price:11000, desc:'단색 실리콘 11,000원 / 헤이엄 14,000원'},
+      {id:'used', kind:'미개봉 중고·나눔', price:5000, desc:'행사 사은품 미개봉 여분 중고·나눔 시세'}
+    ]
+  },
+  {
+    id:'ch-suit', label:'3. 알짜템 · 유튜버 실물', name:'폴리에스터 100% 탄탄이 수영복 (센티 싱글백 · 나이키 컷아웃 · 배럴 V백)', img:'./assets/suit.webp',
+    summary:'스판 0% 내염소성 원단 · 락스 물에 1년 이상 늘어짐·비침 방지 (이프랑·오퐁·오예 실착)',
+    zeroAlt:'피부 밀착 위생 용품으로 중고·대여 불가 · 이월 신품(3~4만 원대) 권장',
+    links:[['센티 싱글백(68,000원)','https://www.coupang.com/vp/products/8755651461'],['나이키 컷아웃','https://www.coupang.com/vp/products/8916599519'],['다나와 탄탄이 최저가','https://search.danawa.com/dsearch.php?k1=%ED%83%84%ED%83%84%EC%9D%B4+%EC%88%98%EC%98%81%EB%B3%B5']],
+    options:[
+      {id:'new', kind:'새상품 (정석)', price:42000, desc:'폴리에스터 100% 강습용 · 첫 달 1벌로 시작'},
+      {id:'sim', kind:'이월 단색 유사템', price:34000, desc:'동일 폴리에스터 100% 원단 이월 무지 신품'}
+    ]
+  },
+  {
+    id:'ch-towel', label:'4. 0원 대안 · 유튜버 실물', name:'초극세사 건식 스포츠 타올 & 목욕 바구니 (피닉스 5,900원 · 블럭마트 5,100원)', img:'./assets/towel.webp',
+    summary:'젖은 면 수건 무게 절반 이하 · 출퇴근 가방 부피 1/3 축소 (초록·이프랑 Best 3)',
+    zeroAlt:'첫 1~2주는 집에 있는 작은 세면 수건 1장 + 대형 지퍼백 + 다이소 꿀통 소분으로 0원 시작',
+    links:[['피닉스 건식타올(5,900원)','https://link.coupang.com/a/eEJrYD'],['블럭마트 목욕바구니(5,100원)','https://link.coupang.com/a/egvngL'],['이케아 렌사레(3,330원)','https://prod.danawa.com/info/?pcode=112251809']],
+    options:[
+      {id:'new', kind:'새상품 (피닉스 건식타올)', price:5900, desc:'초록님 Best 3 피닉스 초극세사 건식 스포츠타올 (5,900원)'},
+      {id:'zero', kind:'0원 집 수건 대안', price:0, desc:'첫 2주 집 작은 수건 1장 + 집 지퍼백 그대로 활용 (0원)'}
+    ]
+  }
+];

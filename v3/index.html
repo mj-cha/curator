@@ -9,7 +9,6 @@
 </head>
 <body>
 <div class="app">
-  <!-- 상단 글로벌 헤더 (2대 뷰 전환 + PC/모바일 + 체크리스트) -->
   <header class="nav">
     <div class="nav-in">
       <div class="brand" onclick="setMainView('decision')">
@@ -261,7 +260,6 @@
     </div>
   </div>
 
-  <!-- 슬라이드 오버 드로어 (6칸 스토리 가방 상세 & 내 체크리스트) -->
   <div class="overlay" id="overlay" onclick="if(event.target===this)closeDrawer()">
     <div class="drawer" role="dialog" aria-modal="true">
       <div class="d-head">
@@ -273,11 +271,11 @@
       <div class="d-foot" id="drawerFoot"></div>
     </div>
   </div>
-
   <div class="toast" id="toast"></div>
 </div>
 <script src="./data.js"></script>
 <script src="./seed-bags.js"></script>
+<script src="./seed-bags-extra.js"></script>
 <script src="./app.js"></script>
 <script src="./views.js"></script>
 </body>

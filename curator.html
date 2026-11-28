@@ -143,6 +143,7 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
         <button role="tab" class="mtab" data-mode="bag" aria-selected="true">가방별 보기</button>
       </div>
       <div class="sub-tabs" id="sub-tabs" role="tablist" aria-label="가방 선택">
+        <button role="tab" class="stab" data-d="swim">수영 유튜버 5인 실물가방</button>
         <button role="tab" class="stab" data-d="skin">아현동 피부짱 5종</button>
         <button role="tab" class="stab" data-d="pet">16살 잭러셀 수제사료</button>
         <button role="tab" class="stab" data-d="rtx">남동생·남친·남편 선물용 RTX 5000</button>
@@ -192,6 +193,82 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
   var won=n=>n===0?"0원":typeof n==="number"?n.toLocaleString("ko-KR")+"원":n;
 
   var DECKS={
+    swim:{
+      title:"수영 유튜버 5인(물먹는오예·초록·이프랑·오퐁·워터양) 실제 수영가방",
+      sub:"가상 예시가 아니라 실제 수영 유튜버 5인이 영상과 인포크에서 공개한 실제 가방(나헤 드라이백·르망고 메쉬백·블럭마트 5,100원 목욕바구니)과 실제 제품 실사(아레나 코브라·스완스 발키리·센티 싱글백·피닉스 건식타올·메노킨 30초 버블)를 다나와·쿠팡 최저가로 교차 비교합니다.",
+      pills:["실제 수영 유튜버 5인 실물 100%","첫 달 사지 마 3종 제휴링크 0개","합본 가방 실사 + 다나와·쿠팡 비교"],
+      singlePick:false,
+      baseLabel:"초보 무작정 풀세트 구매가 (184,000원)",
+      baseTotal:184000,
+      nobuy:[
+        ["사지 마세요 01 · 초급 첫 달 오리발(숏핀·롱핀) & 핸드패들","김민정 현직 수영강사(생체 2급)와 유튜버 공통 지적: 초급반 첫 두 달은 자유형 발차기만 배워 사물함 짐만 됩니다.","해결책: 8주 차 강사님 반입 공지 후 반 규정에 맞춰 사세요 (지금 지출 0원 · 55,000원 방어)."],
+        ["사지 마세요 02 · 실내 초급용 어두운 블랙 미러 & 선수용 노패킹 수경","실내·새벽 수영장 조명에서는 미러 렌즈가 어두워 바닥선이 안 보이고, 노패킹은 눈 압박이 심해 첫 주에 다시 사게 됩니다.","해결책: 스완스 발키리·뷰 블레이드제로·아레나 코브라 패킹형 수경으로 시작하세요."],
+        ["사지 마세요 03 · 500ml 대용량 샴푸 본통 & 비싼 수경 하드케이스","샤워실 선반이 좁아 큰 통은 떨어지고 가방에 다 샙니다. 수경 케이스도 따로 살 필요가 없습니다.","해결책: 이프랑처럼 다이소 꿀통(2개 1,000원)에 샴푸를 소분하고, 워터양·오퐁처럼 마른 실리콘 수모 안에 수경을 감싸 보관하세요 (0원)."]
+      ],
+      items:[
+        {id:"sw0",lbl:"합본 가방 실사 · 메인 가방",lblCls:"",src:"초록님×물먹는오예 · 이프랑 실착",img:"swim-bag-nahe.webp",
+         name:"나헤(nahe) 초경량 드라이백 & 블럭마트 5,100원 목욕바구니",
+         spec:"퇴근 직장인 초경량 방수가방(29,600원) · 이케아 렌사레(3,330원) · 블럭마트 목욕바구니(5,100원)",
+         who:"누가·왜 추천하나요? (초록님 0:45 · 이프랑 0:39 실물 검증)",
+         tip:"퇴근 후 회사 사람들에게 티 안 나게 다니려면 초록님이 정착한 ‘나헤 초경량 드라이백(29,600원)’이나 입문용 ‘이케아 렌사레 방수가방(3,330원)’이 가장 가볍습니다. 샤워실 안에 들고 들어갈 때는 이프랑이 “모든 수영인의 종착지”라고 꼽은 ‘블럭마트 목욕바구니(5,100원)’가 물빠짐과 선반 자립에 가장 편합니다.",
+         warn:"사기 전 체크: 첫 1~2주는 집에 있는 에코백과 대형 지퍼백(0원)으로 다녀본 뒤 본인 사물함 크기에 맞춰 고르셔도 됩니다.",
+         defOpt:0,
+         sum:"블럭마트 바구니 5,100원 · 이케아 렌사레 3,330원 · 나헤 드라이백 29,600원",
+         qlinks:[["다나와 나헤 드라이백",DN("하이타이드 나헤 드라이백")],["다나와 이케아 렌사레",H+"prod.danawa.com/info/?pcode=112251809"],["번개장터 수영 메쉬백",BJ("르망고 메쉬백")]],
+         offers:[
+           {k:"블럭마트 가성비 목욕 바구니 (이프랑 Best 3)",b:"5,100원 · 제휴",bCls:"aff",sub:"이프랑 인포크 추천 목록 기준가 5,100원 · 물빠짐 손잡이 바구니",p:5100,pTxt:"5,100원",u:LC+"egvngL",cta:"쿠팡 현재가"},
+           {k:"이케아 렌사레 방수가방 2.5L (초록 입문템)",b:"비제휴 다나와",bCls:"",sub:"다나와 최저가 3,330원 · 젖은 수영복 분리 수납 국민 방수백",p:3330,pTxt:"3,330원",u:H+"prod.danawa.com/info/?pcode=112251809",cta:"다나와 조회"},
+           {k:"나헤(nahe) 초경량 수영 드라이백 (초록 메인백)",b:"29,600원 · 제휴",bCls:"aff",sub:"초록 인포크 기준가 29,600원 (다나와 해외배송 33,940원 대비 저렴)",p:29600,pTxt:"29,600원",u:LC+"eEHEKL",cta:"쿠팡 현재가"},
+           {k:"집 에코백 + 대형 지퍼백 활용",b:"0원 대안",bCls:"used",sub:"첫 달 가방 지출 0원으로 시작",p:0,pTxt:"0원",u:"",cta:"0원 선택"}
+         ]},
+        {id:"sw1",lbl:"알짜템 · 2년 정착 수경",lblCls:"",src:"이프랑·초록·오퐁·워터양 전원 실착",img:"swim-goggles-swans.webp",
+         name:"스완스 발키리 패킹 수경 & 아레나 코브라 울트라 패킹 수경",
+         spec:"고무 패킹 밀착형 · 코걸이 교체 가능 · 스타트 시 벗겨짐 방지 실물 검증",
+         who:"누가·왜 추천하나요? (이프랑 2:12 · 초록 1:37 · 오퐁 3:11 교차 검증)",
+         tip:"오퐁님이 노패킹 수경을 쓰다 스타트할 때 물이 들어와 패킹형으로 바꿨듯, 입문~중급 강습에서는 고무 패킹이 눈두덩이를 편하게 잡아주는 ‘스완스 발키리(33,900원)’나 ‘아레나 코브라 울트라 패킹형(다나와 61,400원)’이 2년 이상 실패 없이 쓰는 정석입니다.",
+         warn:"사기 전 체크: 수경 케이스(14,000원)는 따로 사지 말고, 워터양·오퐁님처럼 다 쓴 수경을 마른 실리콘 수모 안에 돌돌 말아 넣으면 0원으로 렌즈 긁힘을 막을 수 있습니다.",
+         defOpt:0,
+         sum:"스완스 발키리 33,900원 · 아레나 코브라 다나와 61,400원 · 미개봉 중고",
+         qlinks:[["다나와 스완스 발키리",DN("스완스 발키리 수경")],["다나와 코브라 울트라",H+"prod.danawa.com/info/?pcode=112261843"],["번개장터 미개봉 수경",BJ("스완스 발키리 미개봉")]],
+         offers:[
+           {k:"스완스 발키리 고무패킹 수경 (이프랑 2년 정착)",b:"비제휴 쿠팡/다나와",bCls:"",sub:"인포크 확인 기준가 33,900원 · 스타트 물샘 없는 가성비 패킹 수경",p:33900,pTxt:"33,900원",u:H+"www.coupang.com/vp/products/7458867519",cta:"판매처 조회"},
+           {k:"아레나 코브라 울트라 스와이프 (초록·오퐁·워터양)",b:"다나와 최저가",bCls:"",sub:"다나와 90개 판매처 실시간 비교 최저 61,400원 (인포크 67,500원)",p:61400,pTxt:"61,400원",u:H+"prod.danawa.com/info/?pcode=112261843",cta:"다나와 조회"},
+           {k:"번개장터 택 유지 미개봉 중고",b:"중고 실시간",bCls:"used",sub:"사이즈 시착 실패 미개봉 매물 참고 시세 20,000~25,000원",p:22000,pTxt:"2.2만 원대",u:BJ("스완스 수경 미개봉"),cta:"중고 매물"}
+         ]},
+        {id:"sw2",lbl:"알짜템 · 탄탄이 수영복 & 실리콘 수모",lblCls:"",src:"이프랑·오퐁·물먹는오예 실착",img:"swim-suit-senti.webp",
+         name:"센티 팔레트 싱글백 탄탄이 수영복 & 헤이엄·곰림픽 실리콘 수모",
+         spec:"폴리에스터 100% 내염소성 원단 · 어깨끈 안 흘러내리는 싱글백/V백 + 실리콘 수모",
+         who:"누가·왜 추천하나요? (이프랑 3:27 · 오퐁 4:02 · 김민정 강사 감수)",
+         tip:"2만 원대 스판 혼방 수영복은 락스 물에 한 달이면 늘어나 비침이 생깁니다. 이프랑이 정착한 ‘센티 싱글백(68,000원)’이나 ‘이월 단색 탄탄이(3~4만 원대)’처럼 폴리에스터 100% 원단으로 시작하고, 수모는 머리를 덜 조이는 ‘헤이엄 실리콘 수모(14,000원)’로 맞추세요.",
+         warn:"사기 전 체크: 수영복은 피부 밀착 위생 용품이므로 중고 대신 새상품(또는 택 부착 이월 신품)을 권장합니다.",
+         defOpt:0,
+         sum:"이월 탄탄이+수모 4.5만 · 센티 싱글백 68,000원 · 헤이엄 수모 14,000원",
+         qlinks:[["다나와 탄탄이 수영복",DN("폴리에스터 100 탄탄이 수영복")],["헤이엄 공식몰",H+"hey-um.com/products/sh-sksk"],["쿠팡 센티 싱글백",H+"www.coupang.com/vp/products/8755651461"]],
+         offers:[
+           {k:"폴리에스터 100% 이월 단색 탄탄이 + 실리콘 수모",b:"비제휴 다나와 최저",bCls:"",sub:"동일 내염소성 원단 이월 신품(34,000원) + 단색 실리콘 수모(11,000원)",p:45000,pTxt:"45,000원",u:DN("탄탄이 실내 수영복"),cta:"다나와 조회"},
+           {k:"센티 팔레트 싱글백 수영복 (이프랑 주력)",b:"비제휴 판매처",bCls:"",sub:"확인 기준가 68,000원 · 한겹 싱글백 활동성 정석",p:68000,pTxt:"68,000원",u:H+"www.coupang.com/vp/products/8755651461",cta:"판매처 조회"},
+           {k:"헤이엄 실리콘 수모 단품 (이프랑 주 3일 원픽)",b:"비제휴 공식몰",bCls:"",sub:"확인 기준가 14,000원 · 얇고 부드러워 두통 없는 실리콘 수모",p:14000,pTxt:"14,000원",u:H+"hey-um.com/products/sh-sksk",cta:"공식몰"}
+         ]},
+        {id:"sw3",lbl:"Best 3 · 속건 타올 & 30초 샤워·보습",lblCls:"cond",src:"초록·오퐁·이프랑 Best 3",img:"swim-towel-phoenix.webp",
+         name:"피닉스 초극세사 건식타올(5,900원) & 메노킨 30초 버블 / 모레모 10초",
+         spec:"부피 1/3 초극세사 건식 스포츠타올 + 다이소 1,000원 꿀통 소분 + 30초 거품 스킨",
+         who:"누가·왜 추천하나요? (초록님 Best 3 · 오퐁님 Best 3 실물 일치)",
+         tip:"집 면 수건은 젖으면 벽돌처럼 무겁고 퇴근길 가방에서 냄새가 납니다. 초록님과 다나와 최저가(5,900원)가 일치한 ‘피닉스 초극세사 건식 스포츠타올’ 한 장이면 몸과 머리를 다 닦고도 손바닥만 하게 접힙니다. 탈의실 보습은 초록님 원픽 ‘메노킨 30초 퀵 버블 마스크(다나와 18,400원)’ 하나로 끝내세요.",
+         warn:"사기 전 체크: 첫 2주는 집에 있는 작은 수건 1장과 다이소 1,000원 꿀통에 덜어 간 집 샴푸·로션(0원)으로 먼저 시작하셔도 충분합니다.",
+         defOpt:0,
+         sum:"피닉스 건식타올 5,900원 · 다이소 꿀통 1,000원 · 메노킨 다나와 18,400원",
+         qlinks:[["다나와 피닉스 건식타올",H+"prod.danawa.com/info/?pcode=101113046"],["다나와 메노킨 30초 버블",H+"prod.danawa.com/info/?pcode=26571899"],["다이소몰 꿀통 소분용기",H+"www.daisomall.co.kr/pd/pdr/SCR_PDR_0001?pdNo=96286"]],
+         offers:[
+           {k:"피닉스 초극세사 건식 스포츠타올 (초록 Best 3)",b:"5,900원 · 제휴/다나와 동가",bCls:"aff",sub:"쿠팡·다나와 동일 최저가 5,900원 · 금방 마르고 컴팩트한 수영 타올",p:5900,pTxt:"5,900원",u:LC+"eEJrYD",cta:"쿠팡 현재가"},
+           {k:"메노킨 30초 퀵 버블 마스크 모이스트 95ml",b:"비제휴 다나와 최저",bCls:"",sub:"다나와 최저가 18,400원 (인포크 쿠팡가 19,940원보다 1,540원 저렴)",p:18400,pTxt:"18,400원",u:H+"prod.danawa.com/info/?pcode=26571899",cta:"다나와 조회"},
+           {k:"모레모 워터 트리트먼트 미라클10 (오퐁 Best 3)",b:"15,900원 · 제휴",bCls:"aff",sub:"오퐁 인포크 기준가 15,900원 · 샤워실 10초 물미역 머릿결 복구",p:15900,pTxt:"15,900원",u:LC+"c1TGbn",cta:"쿠팡 현재가"},
+           {k:"집 작은 수건 + 다이소 1,000원 꿀통 집 샴푸 소분",b:"0~1,000원 대안",bCls:"used",sub:"이프랑 꿀팁: 다이소 꿀통 2개입(1,000원)에 집 샴푸·로션 소분",p:1000,pTxt:"1,000원",u:H+"www.daisomall.co.kr/pd/pdr/SCR_PDR_0001?pdNo=96286",cta:"다이소몰"}
+         ]}
+      ],
+      notes:[
+        ["실제 수영 유튜버 5인 합본 가방 사진 & 3단 결정 보드 전체 보기","초록·이프랑·오퐁·워터양·물먹는오예 5인의 <em>한번에 모아진 실제 제품 가방 합본 사진 6종과 6칸 스토리 전체</em>는 <a href=\"v3/\">고수템 수영 3단 결정 보드 (v3 열기 ↗)</a>에서 핀 번호별로 크게 보실 수 있습니다."]
+      ]
+    },
     rtx:{
       title:"RTX 5060 Ti · 5070 고수 4인 교차검증 가방",
       sub:"테크 유튜버 고수 4인(신성조 · 잇섭 · 뻘짓연구소 · 마인드피씨)의 실측 리뷰와 엔비디아 공식 스펙을 교차 검증해, 돈 아까운 하급기·병목 함정은 빼고 모니터 해상도와 용도별 실패 없는 4종만 추렸습니다.",
@@ -407,16 +484,17 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
   };
 
   var BAG_META={
+    swim:{short:"수영 유튜버 5인 실물가방",order:0},
     skin:{short:"아현동 피부짱 5종",order:1},
     pet:{short:"16살 잭러셀 수제사료",order:2},
     rtx:{short:"선물용 RTX 5000",order:3}
   };
   var h=location.hash.slice(1);
-  var mode=(h==="rtx"||h==="skin"||h==="pet")?"bag":"all";
-  var cur=DECKS[h]?h:"skin",q="",src=u=>u.indexOf("http")===0?u:"img/"+u;
+  var mode=(h==="swim"||h==="rtx"||h==="skin"||h==="pet")?"bag":"all";
+  var cur=DECKS[h]?h:"swim",q="",src=u=>u.indexOf("http")===0?u:"img/"+u;
   /* 기본 열림: RTX 탭은 MSI 지포스(r3, r2)만 열림, 다른 카드는 접힘 */
-  var picks={rtx:{item:"r3",opt:0},skin:{s1:0,s2:0,s3:0,s4:0,s5:0},pet:{p1:0,p2:0,p3:0}};
-  var openMap={r1:false,r3:true,r2:true,r4:false,s1:true,s2:false,s3:false,s4:false,s5:false,p1:true,p2:false,p3:false};
+  var picks={swim:{sw0:0,sw1:0,sw2:0,sw3:0},rtx:{item:"r3",opt:0},skin:{s1:0,s2:0,s3:0,s4:0,s5:0},pet:{p1:0,p2:0,p3:0}};
+  var openMap={sw0:true,sw1:true,sw2:false,sw3:false,r1:false,r3:true,r2:true,r4:false,s1:true,s2:false,s3:false,s4:false,s5:false,p1:true,p2:false,p3:false};
 
   function calcBar(d){
     if(d.singlePick){
@@ -435,13 +513,13 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
   }
 
   function renderAll(){
-    $("p-title").textContent="고수템 전체 큐레이션 · 2열 사진 타일 (12종)";
-    $("p-sub").textContent="인폭링크식 2열 정사각 타일로 전체 추천템을 한눈에 보고, 타일을 누르면 가방별 다채널(다나와·쿠팡·퀘이사존·중고·약국) 가격비교로 바로 이동합니다.";
-    $("p-pills").innerHTML='<span class="mpill hi">전체 3개 가방 · 12종</span><span class="mpill">개별 [제휴] 투명 표기</span><span class="mpill">0원 대안·중고 시세 포함</span>';
+    $("p-title").textContent="고수템 전체 큐레이션 · 2열 실물 사진 타일 (16종)";
+    $("p-sub").textContent="실제 수영 유튜버 5인 실물 가방·장비부터 아현동 피부짱·16살 잭러셀·선물용 RTX 5000까지, 2열 정사각 실물 사진 타일을 누르면 가방별 다채널 가격비교로 바로 이동합니다.";
+    $("p-pills").innerHTML='<span class="mpill hi">전체 4개 가방 · 16종 실물</span><span class="mpill">개별 [제휴] 투명 표기</span><span class="mpill">0원 대안·중고 시세 포함</span>';
     $("anchor-box").innerHTML="";
     $("nobuy-box").innerHTML="";
     $("notes-box").innerHTML="";
-    var orderKeys=["skin","pet","rtx"],tiles=[];
+    var orderKeys=["swim","skin","pet","rtx"],tiles=[];
     orderKeys.forEach(k=>{
       var d=DECKS[k];
       d.items.forEach(it=>{
