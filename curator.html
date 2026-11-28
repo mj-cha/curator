@@ -222,7 +222,7 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
          ]},
         {id:"r3",lbl:"알짜템 · QHD 성능 종결",lblCls:"",src:"잇섭·마인드피씨 만장일치",img:"rtx-5070-12g.jpg",
          name:"MSI 지포스 RTX 5070 게이밍 트리오 OC D7 12GB",
-         shortName:"MSI RTX 5070 게이밍 트리오 12GB",
+         shortName:"MSI RTX 5070 트리오 12GB",
          spec:"고화질 모니터(QHD) 게임·원컴 방송용 · 메모리 12GB · 3팬 정숙 쿨링 (배그 교전 최저 135프레임)",
          who:"누가·왜 추천하나요? (잇섭 · 마인드피씨 · 신성조 만장일치)",
          tip:"유튜버 잇섭(3DMark 벤치마크)과 마인드피씨(배그·검은신화 오공 실측) 모두 입을 모아 추천한 주력 모델입니다. 바로 아래 등급인 5060 Ti 16GB(134.9만 원)에서 10만 원만 보태면, 화면을 그리는 두뇌(코어 6,144개)와 데이터 통로 폭이 훨씬 넓어져 실제 게임 속도가 30% 이상 더 빠르게 나옵니다. 메인보드 연결 통로(PCIe x16)도 꽉 채워 써서 구형 PC에 꽂아도 성능 손실이 없습니다.",
@@ -452,7 +452,7 @@ h1,h2,h3,h4,p,ul,ol{margin:0;padding:0;list-style:none}button,input,a{font:inher
       d.items.forEach(it=>{
         if(q&&(it.name+it.spec+it.tip+BAG_META[k].short+it.offers.map(o=>o.k+o.sub).join("")).toLowerCase().indexOf(q.toLowerCase())===-1)return;
         var primary=it.offers.find(o=>o.u)||it.offers[0];
-        var isAff=primary.bCls==="aff"||primary.b.indexOf("제휴")>-1;
+        var isAff=primary.bCls==="aff";
         tiles.push('<article class="atile"><div class="at-img" data-goto="'+k+':'+it.id+'"><span class="at-bag">'+BAG_META[k].short+'</span><img src="'+src(it.img)+'" alt="'+it.name+'"><span class="at-lbl'+(it.lblCls?' '+it.lblCls:'')+'">'+it.lbl.split("·")[0].trim()+'</span></div><div class="at-body"><h3 class="at-title" data-goto="'+k+':'+it.id+'">'+it.name+'</h3><div class="at-price"><span class="num">'+primary.pTxt+'</span>'+(isAff?'<span class="obadge aff">[제휴]</span>':'<span class="obadge">'+(primary.p===0?'0원 대안':'비제휴')+'</span>')+'</div><div class="at-actions"><button type="button" class="at-btn" data-goto="'+k+':'+it.id+'">가격비교 '+it.offers.length+'곳</button>'+(primary.u?'<a class="at-btn pri" href="'+primary.u+'" target="_blank" rel="noopener">'+primary.cta+' ↗</a>':'')+'</div></div></article>');
       });
     });
