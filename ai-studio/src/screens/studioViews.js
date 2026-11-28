@@ -222,6 +222,14 @@ window.GOSU_STUDIO_VIEWS = (function () {
   }
 
   function renderReportPanel(H, E) {
+    var homeEl = $("home-erp-grid");
+    if (homeEl && !homeEl.innerHTML) {
+      homeEl.innerHTML =
+        '<div class="step-box"><span>엔진 1 · 컨텐츠 스튜디오 (102종 허브)</span><strong>PPT 덱 · 미리캔버스♥(47) · 로보엠디(39)</strong><p>고수템 IR·정부지원 PSST·CEA 교육 제안서·박사논문 SLR·블로그 카드뉴스를 카드/표 뷰로 통합.</p></div>' +
+        '<div class="step-box"><span>엔진 2 · 로보엠디 제작 스튜디오 (3모드)</span><strong>AI 이미지(12) · 동영상(6) · 디자인(9) · 카피(5)</strong><p>실물 정물·성분표·CEA 커리큘럼·영수증 비교표와 금지어 자동 정화 탑재.</p></div>' +
+        '<div class="step-box"><span>엔진 3 · 핸디핏 시장검증 (6대 메뉴)</span><strong>랜딩 10선 ➔ 설문 이탈(B-02) ➔ 섹션 도달률(B-03)</strong><p>사업부별 UTM 단축링크·QR 발급 및 문항/섹션 최대 이탈 병목 자동 진단.</p></div>' +
+        '<div class="step-box"><span>엔진 4 · 매니패스트 기획 (2년 유효)</span><strong>PRD 13문항 ➔ 요구사항(R) ➔ 기능(F-ID)</strong><p>고수템·CEA 프로젝트를 F-ID로 추적하며 구매 크레딧 100,812는 2028년까지 유효.</p></div>';
+    }
     var funnelEl = $("report-funnel-bars");
     if (funnelEl) {
       funnelEl.innerHTML = H.sectionFunnel.map(function (f) {

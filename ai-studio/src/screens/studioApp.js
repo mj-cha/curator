@@ -102,7 +102,8 @@
 
   function renderActivePanel() {
     renderBizSwitcher();
-    if (state.menu === "cshub" && CS) CS.renderHub(state);
+    if (state.menu === "home") V.renderReportPanel(H, E);
+    else if (state.menu === "cshub" && CS) CS.renderHub(state);
     else if (state.menu === "studio") renderStudioPanel();
     else if (state.menu === "landing") V.renderLandingPanel(state, H, copyText);
     else if (state.menu === "copy") V.renderCopyPanel(state, H, E);
